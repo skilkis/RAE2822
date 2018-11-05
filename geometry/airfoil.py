@@ -29,7 +29,7 @@ import scipy.optimize as so
 
 class Airfoil(object):
 
-    __cache__ = {'test': None}
+    __cache__ = {}
 
     def __init__(self, airfoil_name='RAE2822', angle=0.):
         """
@@ -65,6 +65,11 @@ class Airfoil(object):
             bottom_lines = read_lines[group_indices[-1]+1:]
 
             top_points, bottom_points = str_to_point(top_lines), str_to_point(bottom_lines)
+
+            # Applying rotation to points to achieve AoA
+            top_points = [pnt.rotate(-self.angle) for pnt in top_points]
+            bottom_points = [pnt.rotate(-self.angle) for pnt in bottom_points]
+
             setattr(self, 'ordinates', {'top': top_points, 'bot': bottom_points})
 
     def write_dat(self, filename=None, extension='_mod.dat'):
@@ -138,25 +143,25 @@ class Airfoil(object):
             self.__cache__['spline'] = top_spline, bot_spline
             return top_spline, bot_spline
 
-    def make_spline(self):
-        top, bot = self.read_dat()
-        top_x, top_y = [pnt.x for pnt in top], [pnt.y for pnt in top]
-        bot_x, bot_y = [pnt.x for pnt in bot], [pnt.y for pnt in bot]
-        top_x = list(reversed(top_x))[:-1]
-        top_y = list(reversed(top_y))[:-1]
-
-        x = top_x + bot_x
-        y = top_y + bot_y
-
-        spline_data = self.spline(x, y)
-
-        curvature = self.getCurvature(spline_data)
-
-        plt.plot(spline_data[0][0], spline_data[0][1])
-        plt.plot(curvature[3], curvature[4])
-        plt.axis([0, 1, -0.5, 0.5])
-        plt.show()
-        return spline_data
+    # def make_spline(self):
+    #     top, bot = self.read_dat()
+    #     top_x, top_y = [pnt.x for pnt in top], [pnt.y for pnt in top]
+    #     bot_x, bot_y = [pnt.x for pnt in bot], [pnt.y for pnt in bot]
+    #     top_x = list(reversed(top_x))[:-1]
+    #     top_y = list(reversed(top_y))[:-1]
+    #
+    #     x = top_x + bot_x
+    #     y = top_y + bot_y
+    #
+    #     spline_data = self.spline(x, y)
+    #
+    #     curvature = self.getCurvature(spline_data)
+    #
+    #     plt.plot(spline_data[0][0], spline_data[0][1])
+    #     plt.plot(curvature[3], curvature[4])
+    #     plt.axis([0, 1, -0.5, 0.5])
+    #     plt.show()
+    #     return spline_data
 
     @staticmethod
     def getCurvature(spline_data):
@@ -208,20 +213,20 @@ class Airfoil(object):
         u_top = so.fminbound(objective, 0., 1., args=(top,))
         u_bot = so.fminbound(objective, 0., 1., args=(bot,))
 
-        top_max, bot_max = si.splev(u_top, top, der=0), si.splev(u_bot, bot, der=0)
-        return top_max, bot_max
+        # top_max, bot_max = si.splev(u_top, top, der=0), si.splev(u_bot, bot, der=0)
+        return u_top, u_bot, si.splev(u_top, top, der=1), si.splev(u_bot, top, der=1)
 
-    def plot(self):
-        """ Plots the Airfoil Geometry """
-        top, bot = self.ordinates['top'], self.ordinates['bot']
-        top, bot = [pnt.rotate(-self.angle) for pnt in top], [pnt.rotate(-self.angle) for pnt in bot]
-        top_x, top_y = [pnt.x for pnt in top], [pnt.y for pnt in top]
-        bot_x, bot_y = [pnt.x for pnt in bot], [pnt.y for pnt in bot]
-        plt.plot(top_x, top_y)
-        plt.plot(bot_x, bot_y)
-        plt.axis([0, 1, -0.5, 0.5])
-        plt.show()
-        return None
+    # def plot(self):
+    #     """ Plots the Airfoil Geometry """
+    #     top, bot = self.ordinates['top'], self.ordinates['bot']
+    #     top, bot = [pnt.rotate(-self.angle) for pnt in top], [pnt.rotate(-self.angle) for pnt in bot]
+    #     top_x, top_y = [pnt.x for pnt in top], [pnt.y for pnt in top]
+    #     bot_x, bot_y = [pnt.x for pnt in bot], [pnt.y for pnt in bot]
+    #     plt.plot(top_x, top_y)
+    #     plt.plot(bot_x, bot_y)
+    #     plt.axis([0, 1, -0.5, 0.5])
+    #     plt.show()
+    #     return None
 
     def get_ordinates(self):
         """ Retrieves the top and bottom coordinates of the
@@ -233,35 +238,85 @@ class Airfoil(object):
         bot_x, bot_y = [pnt.x for pnt in bot], [pnt.y for pnt in bot]
         return {'top': (top_x, top_y), 'bot': (bot_x, bot_y)}
 
+    def read_cp(self, filename=None, extension='_cp.dat'):
+        """ Reads airfoil ordinates from .dat file """
+        filename = filename if filename is not None else os.path.join(DIRS['DATA_DIR'], 'pressure',
+                                                                      self.__name__ + extension)
+        with open(filename, 'r') as data:
+            read_lines = data.readlines()
+            header = [line for line in read_lines if line.startswith('#')]
+            split_lines = [line.replace('\n', '').split(' ', 1) for line in read_lines if line not in header]
+            space_removed_lines = [[entry.replace(' ', '') for entry in line] for line in split_lines]
+            float_lines = [[float(entry) for entry in line if entry != ''] for line in space_removed_lines]
 
-    # def read_cp(self, filename=None, extension='_cp.dat'):
-    #     """ Reads airfoil ordinates from .dat file """
-    #     filename = filename if filename is not None else os.path.join(self.default_directory, self.__name__ + extension)
-    #     with open(filename, 'r') as data:
-    #         read_lines = data.readlines()
-    #         header = read_lines[0:3]
-    #         split_lines = [line.replace('\n', '').split(' ', 1) for line in read_lines[3:]]
-    #         space_removed_lines = [[entry.replace(' ', '') for entry in line] for line in split_lines]
-    #         float_lines = [[float(entry) for entry in line if entry != ''] for line in space_removed_lines]
-    #
-    #         idx = float_lines.index([])
-    #         top_surface = float_lines[0:idx]
-    #         bottom_surface = float_lines[idx+1:-1]
-    #
-    #     return top_surface, bottom_surface
-    #
-    # def plot_cp(self):
-    #     cp = self.read_cp()
-    #     top_x = [line[0] for line in cp]
-    #     top_cp = [line[1] for line in cp]
-    #     plt.plot(top_x, top_cp)
-    #     plt.show()
-    #     return None
+            idx = float_lines.index([])
+            surfaces = (float_lines[0:idx], float_lines[idx+1:-1])
+            sorted_surfaces = sorted(surfaces, key=lambda x: min(x))
+            top_surface, bottom_surface = sorted_surfaces[1], sorted_surfaces[0]
+
+            # Obtaining Values from Header
+            filtered_header = [line.replace('\n', '').replace('# ', '') for line in header]
+            states = filtered_header[1].split(',')
+
+            def fetch_state(state):
+                key, value = state.split('=', 1)
+
+                # Obtaining Key
+                key = key.replace(' ', '')
+
+                # Obtaining Value
+                value_list = value.split(' ')
+                # if len(value_list) != 2:
+                #     raise ValueError('Provided state does not have the proper format key = value unit')
+
+                value = 0
+                for val in value_list:
+                    try:
+                        float(val)
+                        value = val
+                    except Exception as e:
+                        pass
+
+                return key, value
+
+            mach, alpha = fetch_state(states[0]), fetch_state(states[1])
+
+        return {'top': top_surface, 'bot': bottom_surface, 'alpha': alpha, 'mach': mach}
+
+    def plot_cp(self):
+        fig = plt.figure('{}PressureDistribution'.format(self.__name__))
+        plt.style.use('tudelft')
+        cp = self.read_cp()
+        top_x, top_cp = [line[0] for line in cp['top']], [line[1] * -1. for line in cp['top']]
+        bot_x, bot_cp = [line[0] for line in cp['bot']], [line[1] * -1. for line in cp['bot']]
+        plt.plot(top_x, top_cp, label='Top Surface')
+        plt.plot(bot_x, bot_cp, label='Bottom Surface')
+        plt.axis([-0.1, 1.1, 1.5, -2])
+        plt.legend()
+        plt.xlabel(r'Normalized Location on Airfoil Chord (x/c) [-]')
+        plt.ylabel(r'Pressure Coefficient [-]')
+        plt.title(r'{} Pressure Distribution'.format(self.__name__))
+        plt.show()
+
+    def plot_airfoil(self):
+        fig = plt.figure('{}Airfoil'.format(self.__name__))
+        plt.style.use('tudelft')
+        ord_dict = self.get_ordinates()
+        top_x, top_y, bot_x, bot_y = (ord_dict['top'] + ord_dict['bot'])
+        plt.plot(top_x, top_y, label='Top Surface')
+        plt.plot(bot_x, bot_y, label='Bottom Surface')
+        plt.xlabel('Normalized Location on Airfoil Chord (x/c) [-]')
+        plt.ylabel('Normalized Thickness (t/c) [-]')
+        plt.title('{} Airfoil Shape'.format(self.__name__))
+        plt.legend()
+        plt.axis([0, 1, -0.5, 0.5])
+        plt.show()
 
 
 if __name__ == '__main__':
     obj = Airfoil(angle=2.31)
-    obj.plot()
+    obj.plot_airfoil()
+    obj.plot_cp()
     obj.write_dat()
     print(obj.get_maxima())
     # lines2 = obj.read_cp()

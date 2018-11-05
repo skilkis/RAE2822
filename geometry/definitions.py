@@ -104,14 +104,29 @@ class Vector(Point):
     def __repr__(self):
         return '<Vector({}, {}, {}) object at {}>'.format(self.x, self.y, self.z, hex(id(self)))
 
+    def cross(self, other):
+        x = (self.y*other.z - self.z*other.y)
+        y = -(self.x*other.z - self.z*other.x)
+        z = (self.x*other.y - self.y*other.x)
+        return Vector(x, y, z)
+
+    def magnitude(self):
+        return sqrt(sum([getattr(self, key)**2 for key in self.__slots__]))
+
+    def normalize(self):
+        mag = self.magnitude()
+        return Vector(*[getattr(self, key) / mag for key in self.__slots__])
+
 
 if __name__ == '__main__':
     pt1 = Point(1., 0., 0)
     pt2 = Point(0, 0.5, 0)
     vec = Vector(1, 0, 0)
+    print(vec.cross(Vector(0, 1, 0)))
     start = timer()
     distance = pt1.distance(pt2)
     end = timer()
     print(distance)
     print('Time = {}'.format(end-start))
+
 
