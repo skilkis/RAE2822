@@ -25,13 +25,14 @@ from math import atan, degrees
 
 class Blocking(object):
 
-    def __init__(self, domain_in=None, le_angle=60):
+    def __init__(self, domain_in=None, le_angle=60, refine_distance=1.5):
         self.domain_in = domain_in
         self.airfoil_in = self.domain_in.airfoil_in
         self.crv_top = self.airfoil_in.curve['top']
         self.crv_bot = self.airfoil_in.curve['bot']
         self.le_angle = le_angle
         self.le_zone = self.find_le_zone(self.le_angle)
+        self.refine_distance = refine_distance
 
     @property
     def default_directory(self):
@@ -61,7 +62,7 @@ class Blocking(object):
     @property
     def pt_1_top(self):
         u_top, _ = self.airfoil_in.get_maxima()
-        return self.pt_1.translate(self.crv_top.normal(u_top) * 0.3)
+        return self.pt_1.translate(self.crv_top.normal(u_top) * self.refine_distance)
 
     @property
     def pt_2(self):
@@ -69,7 +70,7 @@ class Blocking(object):
 
     @property
     def pt_2_top(self):
-        return self.pt_2.translate(self.crv_top.normal(0.7) * 0.3)
+        return self.pt_2.translate(self.crv_top.normal(0.7) * self.refine_distance)
 
     @property
     def pt_3(self):
@@ -77,11 +78,11 @@ class Blocking(object):
 
     @property
     def pt_3_top(self):
-        return self.pt_3.translate(self.crv_top.normal(1.0)*0.3)
+        return self.pt_3.translate(self.crv_top.normal(1.0)*self.refine_distance)
 
     @property
     def pt_3_bot(self):
-        return self.pt_3.translate(self.crv_bot.normal(1.0) * - 0.3)
+        return self.pt_3.translate(self.crv_bot.normal(1.0) * - self.refine_distance)
 
     @property
     def pt_4(self):
@@ -89,11 +90,11 @@ class Blocking(object):
 
     @property
     def pt_4_bot(self):
-        return self.pt_4.translate(self.crv_bot.normal(1.0) * -0.3)
+        return self.pt_4.translate(self.crv_bot.normal(1.0) * -self.refine_distance)
 
     @property
     def pt_4_top(self):
-        return self.pt_4.translate(self.crv_top.normal(1.0) * 0.3)
+        return self.pt_4.translate(self.crv_top.normal(1.0) * self.refine_distance)
 
     @property
     def pt_5(self):
@@ -101,7 +102,7 @@ class Blocking(object):
 
     @property
     def pt_5_bot(self):
-        return self.pt_5.translate(self.crv_bot.normal(0.7) * -0.3)
+        return self.pt_5.translate(self.crv_bot.normal(0.7) * -self.refine_distance)
 
     @property
     def pt_6(self):
@@ -111,7 +112,7 @@ class Blocking(object):
     @property
     def pt_6_bot(self):
         _, u_bot = self.airfoil_in.get_maxima()
-        return self.pt_6.translate(self.crv_bot.normal(u_bot) * -0.3)
+        return self.pt_6.translate(self.crv_bot.normal(u_bot) * -self.refine_distance)
 
     @property
     def pt_7(self):
@@ -119,7 +120,7 @@ class Blocking(object):
 
     @property
     def pt_7_bot(self):
-        return self.pt_7.translate(self.crv_bot.normal(self.le_zone['bot']) * -0.3)
+        return self.pt_7.translate(self.crv_bot.normal(self.le_zone['bot']) * -self.refine_distance)
 
     @property
     def pt_8(self):
@@ -127,11 +128,11 @@ class Blocking(object):
 
     @property
     def pt_8_top(self):
-        return self.pt_8.translate(self.crv_top.normal(self.le_zone['top']) * 0.3)
+        return self.pt_8.translate(self.crv_top.normal(self.le_zone['top']) * self.refine_distance)
 
     @property
     def pt_le_proj(self):
-        return self.airfoil_in.leading_edge.translate(Vector(-0.3, 0, 0))
+        return self.airfoil_in.leading_edge.translate(Vector(-self.refine_distance, 0, 0))
 
     def plot(self):
         fig = plt.figure('{}Airfoil'.format(self.airfoil_in.__name__))
