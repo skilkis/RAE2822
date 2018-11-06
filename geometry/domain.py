@@ -105,7 +105,7 @@ class Domain(object):
             point_format(output, pt_4)
 
             # Segment 4-1
-            output.write(' {:d} 0\n'.format(0))
+            output.write(' {:d} 0\n'.format(3))
             point_format(output, pt_4)
             point_format(output, pt_5)
             point_format(output, pt_1)

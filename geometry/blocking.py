@@ -15,11 +15,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from geometry.definitions import Vector, Point
-import scipy.interpolate as si
+import os
+from directories import DIRS
+from geometry.definitions import Point, Vector
 import scipy.optimize as so
 from matplotlib import pyplot as plt
-from math import atan, atan2, degrees, radians
+from math import atan, degrees
 
 
 class Blocking(object):
@@ -27,10 +28,14 @@ class Blocking(object):
     def __init__(self, domain_in=None, le_angle=60):
         self.domain_in = domain_in
         self.airfoil_in = self.domain_in.airfoil_in
-        self.le_angle = le_angle
-        self.le_zone = self.find_le_zone(self.le_angle)
         self.crv_top = self.airfoil_in.curve['top']
         self.crv_bot = self.airfoil_in.curve['bot']
+        self.le_angle = le_angle
+        self.le_zone = self.find_le_zone(self.le_angle)
+
+    @property
+    def default_directory(self):
+        return os.path.join(DIRS['DATA_DIR'], 'geom')
 
     def find_le_zone(self, angle):
         top, bot = self.crv_top, self.crv_bot
@@ -54,16 +59,49 @@ class Blocking(object):
         return self.crv_top.point_at_parameter(u_top)
 
     @property
+    def pt_1_top(self):
+        u_top, _ = self.airfoil_in.get_maxima()
+        return self.pt_1.translate(self.crv_top.normal(u_top) * 0.3)
+
+    @property
     def pt_2(self):
         return self.crv_top.point_at_parameter(0.7)
 
     @property
-    def pt_2_mid(self):
-        return self.pt_2.translate(self.airfoil_in.curve[])
+    def pt_2_top(self):
+        return self.pt_2.translate(self.crv_top.normal(0.7) * 0.3)
 
     @property
     def pt_3(self):
         return self.airfoil_in.trailing_edge
+
+    @property
+    def pt_3_top(self):
+        return self.pt_3.translate(self.crv_top.normal(1.0)*0.3)
+
+    @property
+    def pt_3_bot(self):
+        return self.pt_3.translate(self.crv_bot.normal(1.0) * - 0.3)
+
+    @property
+    def pt_4(self):
+        return self.pt_3.translate(self.crv_top.tangent(1.0) * 0.3)
+
+    @property
+    def pt_4_bot(self):
+        return self.pt_4.translate(self.crv_bot.normal(1.0) * -0.3)
+
+    @property
+    def pt_4_top(self):
+        return self.pt_4.translate(self.crv_top.normal(1.0) * 0.3)
+
+    @property
+    def pt_5(self):
+        return self.crv_bot.point_at_parameter(0.7)
+
+    @property
+    def pt_5_bot(self):
+        return self.pt_5.translate(self.crv_bot.normal(0.7) * -0.3)
 
     @property
     def pt_6(self):
@@ -71,16 +109,31 @@ class Blocking(object):
         return self.crv_bot.point_at_parameter(u_bot)
 
     @property
+    def pt_6_bot(self):
+        _, u_bot = self.airfoil_in.get_maxima()
+        return self.pt_6.translate(self.crv_bot.normal(u_bot) * -0.3)
+
+    @property
     def pt_7(self):
         return self.crv_bot.point_at_parameter(self.le_zone['bot'])
+
+    @property
+    def pt_7_bot(self):
+        return self.pt_7.translate(self.crv_bot.normal(self.le_zone['bot']) * -0.3)
 
     @property
     def pt_8(self):
         return self.crv_top.point_at_parameter(self.le_zone['top'])
 
+    @property
+    def pt_8_top(self):
+        return self.pt_8.translate(self.crv_top.normal(self.le_zone['top']) * 0.3)
 
+    @property
+    def pt_le_proj(self):
+        return self.airfoil_in.leading_edge.translate(Vector(-0.3, 0, 0))
 
-    def plot(self, angle=60.):
+    def plot(self):
         fig = plt.figure('{}Airfoil'.format(self.airfoil_in.__name__))
         plt.style.use('tudelft')
         ord_dict = self.airfoil_in.get_ordinates()
@@ -88,18 +141,45 @@ class Blocking(object):
         plt.plot(top_x, top_y, label='Top Surface')
         plt.plot(bot_x, bot_y, label='Bottom Surface')
 
-        # crv_top, crv_bot = self.airfoil_in.curve['top'], self.airfoil_in.curve['bot']
-
-        # u_top, u_bot = self.airfoil_in.get_maxima()
-        #
-        # # Tangent Points
-        # top_pnt = crv_top.point_at_parameter(u_top)
-        # bot_pnt = crv_bot.point_at_parameter(u_bot)
-        #
         plt.scatter(self.pt_1.x, self.pt_1.y)
+        plt.scatter(self.pt_1_top.x, self.pt_1_top.y)
+
         plt.scatter(self.pt_2.x, self.pt_2.y)
+        plt.scatter(self.pt_2_top.x, self.pt_2_top.y)
+
         plt.scatter(self.pt_3.x, self.pt_3.y)
-        #
+        plt.scatter(self.pt_3_top.x, self.pt_3_top.y)
+        plt.scatter(self.project(self.pt_3_top, 'top').x, self.project(self.pt_3_top, 'top').y)
+        plt.scatter(self.pt_3_bot.x, self.pt_3_bot.y)
+        plt.scatter(self.project(self.pt_3_bot, 'bot').x, self.project(self.pt_3_bot, 'bot').y)
+
+        plt.scatter(self.pt_4.x, self.pt_4.y)
+        plt.scatter(self.project(self.pt_4, 'wake').x, self.project(self.pt_4, 'wake').y)
+        plt.scatter(self.pt_4_top.x, self.pt_4_top.y)
+        plt.scatter(self.project(self.pt_4_top, 'top').x, self.project(self.pt_4_top, 'top').y)
+        plt.scatter(self.project(self.pt_4_top, 'wake').x, self.project(self.pt_4_top, 'wake').y)
+        plt.scatter(self.pt_4_bot.x, self.pt_4_bot.y)
+        plt.scatter(self.project(self.pt_4_bot, 'bot').x, self.project(self.pt_4_bot, 'bot').y)
+        plt.scatter(self.project(self.pt_4_bot, 'wake').x, self.project(self.pt_4_bot, 'wake').y)
+
+        plt.scatter(self.pt_5.x, self.pt_5.y)
+        plt.scatter(self.pt_5_bot.x, self.pt_5_bot.y)
+        plt.scatter(self.project(self.pt_5_bot, 'bot').x, self.project(self.pt_5_bot, 'bot').y)
+
+        plt.scatter(self.pt_6.x, self.pt_6.y)
+        plt.scatter(self.pt_6_bot.x, self.pt_6_bot.y)
+
+        plt.scatter(self.pt_7.x, self.pt_7.y)
+        plt.scatter(self.pt_7_bot.x, self.pt_7_bot.y)
+
+        plt.scatter(self.airfoil_in.leading_edge.x, self.airfoil_in.leading_edge.y)
+
+        plt.scatter(self.pt_le_proj.x, self.pt_le_proj.y)
+
+        plt.scatter(self.pt_8.x, self.pt_8.y)
+        plt.scatter(self.pt_8_top.x, self.pt_8_top.y)
+        # plt.scatter(self.pt_4_top_proj.x, self.pt_4_top_proj.y)
+
         # top_pnt = top_pnt.translate(crv_top.normal(u_top) * 0.3)
         # bot_pnt = bot_pnt.translate(crv_bot.normal(u_bot) * - 0.3)
         #
@@ -163,16 +243,61 @@ class Blocking(object):
         plt.ylabel('Normalized Thickness (t/c) [-]')
         plt.title('{} Airfoil Shape'.format(self.airfoil_in.__name__))
         plt.legend()
-        plt.axis([-0.5, 2.0, -1.25, 1.25])
+        # plt.axis([-0.5, 2.0, -1.25, 1.25])
+        plt.axis([self.domain_in.pt_5.x, self.domain_in.pt_2.x, self.domain_in.pt_3.y, self.domain_in.pt_2.y])
         plt.show()
+
+    def project(self, point, side):
+        if side == 'top':
+            pt = Point(point.x, self.domain_in.pt_1.y, 0)
+        elif side == 'wake':
+            pt = Point(self.domain_in.pt_2.x, point.y, 0)
+        elif side == 'bot':
+            pt = Point(point.x, self.domain_in.pt_3.y, 0)
+        else:
+            raise ValueError('{} is not a valid side of the domain')
+        return pt
+
+    def write_dat(self, filename=None, extension='_BLOCKING.dat'):
+        """ Writes modified airfoil ordinates to .dat file """
+        name = self.airfoil_in.__name__
+        filename = filename if filename is not None else os.path.join(self.default_directory, name + extension)
+
+        def point_format(open_file, point):
+            return open_file.write('  {:1.6f}  {:1.6f}  {:1.6f}\n'.format(point.x, point.y, point.z).replace('-0', '-'))
+
+        with open(filename, 'w') as output:
+            output.write('# {} AIRFOIL BLOCKING POINTS\n'.format(name))
+
+            # Airfoil Trailing Edge
+            output.write(' {:d} 0\n'.format(3))
+            point_format(output, self.pt_3)
+            point_format(output, self.pt_4)
+            point_format(output, self.project(self.pt_4, 'wake'))
+
+            # # Segment 2-3
+            # output.write(' {:d} 0\n'.format(2))
+            # point_format(output, pt_2)
+            # point_format(output, pt_3)
+            #
+            # # Segment 3-4
+            # output.write(' {:d} 0\n'.format(2))
+            # point_format(output, pt_3)
+            # point_format(output, pt_4)
+            #
+            # # Segment 4-1
+            # output.write(' {:d} 0\n'.format(3))
+            # point_format(output, pt_4)
+            # point_format(output, pt_5)
+            # point_format(output, pt_1)
 
 
 if __name__ == '__main__':
     from geometry.airfoil import Airfoil
     from geometry.domain import Domain
     obj = Blocking(Domain(Airfoil(angle=2.31), upstream=13., top=13., bottom=13., wake=20.))
-    print(obj.find_le_zone(60))
-    obj.plot(50)
+    obj.plot()
+    obj.write_dat()
     #
     # x = Vector(1, 0, 0)
     # z = Vector(0, 0, -1)
