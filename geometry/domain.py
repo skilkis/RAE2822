@@ -17,6 +17,8 @@
 
 import os
 from geometry.airfoil import Airfoil
+from geometry.definitions import Point
+from directories import DIRS
 
 
 class Domain(object):
@@ -34,21 +36,58 @@ class Domain(object):
         self.airfoil_in = airfoil_in
         self.upstream, self.top, self.bottom, self.wake = upstream, top, bottom, wake
 
+    @property
+    def default_directory(self):
+        return os.path.join(DIRS['DATA_DIR'], 'geom')
+
     def write_dat(self, filename=None, extension='_DOMAIN.dat'):
         """ Writes modified airfoil ordinates to .dat file """
-        filename = filename if filename is not None else os.path.join(self.default_directory, self.__name__ + extension)
-        top_pnts, bot_pnts = self.ordinates['top'], self.ordinates['bot']
+        name = self.airfoil_in.__name__
+        filename = filename if filename is not None else os.path.join(self.default_directory, name + extension)
 
         def point_format(open_file, point):
             return open_file.write('  {:1.6f}  {:1.6f}  {:1.6f}\n'.format(point.x, point.y, point.z).replace('-0', '-'))
 
-        with open(filename, 'w') as output:
-            output.write('# {} AIRFOIL MODDED AoA = {} deg\n'.format(self.__name__, self.angle))
-            output.write(' {:d} 0\n'.format(len(top_pnts)))
-            [point_format(output, pnt) for pnt in top_pnts]  # Writes top points in group to file w/ list comprehension
+        # Gathering Coordinates
+        x_center = self.airfoil_in.center.x
+        x_le = self.airfoil_in.leading_edge.x
+        x_te = self.airfoil_in.trailing_edge.x
 
-            output.write(' {:d} 0\n'.format(len(bot_pnts)))
-            [point_format(output, pnt) for pnt in bot_pnts]
+        pt_1 = Point(x_center, self.top, 0)
+        pt_2 = Point(x_te + self.wake, self.top, 0)
+        pt_3 = Point(pt_2.x, self.bottom, 0)
+        pt_4 = Point(x_center, -self.bottom, 0)
+        pt_5 = Point(x_le - self.upstream, 0, 0)
+
+        with open(filename, 'w') as output:
+            output.write('# {} AIRFOIL DOMAIN\n'.format(name))
+
+            # Segment 1-2
+            output.write(' {:d} 0\n'.format(2))
+            point_format(output, pt_1)
+            point_format(output, pt_2)
+
+            # Segment 2-3
+            output.write(' {:d} 0\n'.format(2))
+            point_format(output, pt_2)
+            point_format(output, pt_3)
+
+            # Segment 3-4
+            output.write(' {:d} 0\n'.format(2))
+            point_format(output, pt_3)
+            point_format(output, pt_4)
+
+            # Segment 4-1
+            output.write(' {:d} 0\n'.format(3))
+            point_format(output, pt_4)
+            point_format(output, pt_5)
+            point_format(output, pt_1)
+
+
+if __name__ == '__main__':
+    domain = Domain(airfoil_in=Airfoil(angle=2.31))
+    domain.write_dat()
+
 
 
 

@@ -29,14 +29,14 @@ import scipy.optimize as so
 
 class Airfoil(object):
 
-    def __init__(self, airfoil_name='RAE2822', angle=0.):
+    def __init__(self, airfoil_name='RAE2822', angle=0., position=Point(0, 0, 0)):
         """
 
         :param str airfoil_name: Name of the airfoil w/o file extension
         :param float angle: Angle of Attack in SI degree [deg]
         """
         self.__cache__ = {}
-        self.__name__, self.angle, self.ordinates = airfoil_name, angle, None
+        self.__name__, self.angle, self.ordinates, self.position = airfoil_name, angle, None, position
 
         # Updates ordinates from .dat file
         self.read_dat()
