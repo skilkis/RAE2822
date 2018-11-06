@@ -55,7 +55,7 @@ class Domain(object):
 
         pt_1 = Point(x_center, self.top, 0)
         pt_2 = Point(x_te + self.wake, self.top, 0)
-        pt_3 = Point(pt_2.x, self.bottom, 0)
+        pt_3 = Point(pt_2.x, -self.bottom, 0)
         pt_4 = Point(x_center, -self.bottom, 0)
         pt_5 = Point(x_le - self.upstream, 0, 0)
 
