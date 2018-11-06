@@ -25,7 +25,7 @@ from math import atan, degrees
 
 class Blocking(object):
 
-    def __init__(self, domain_in=None, le_angle=60, refine_distance=1.5):
+    def __init__(self, domain_in=None, le_angle=60, refine_distance=0.3):
         self.domain_in = domain_in
         self.airfoil_in = self.domain_in.airfoil_in
         self.crv_top = self.airfoil_in.curve['top']
