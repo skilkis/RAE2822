@@ -269,11 +269,28 @@ class Blocking(object):
         with open(filename, 'w') as output:
             output.write('# {} AIRFOIL BLOCKING POINTS\n'.format(name))
 
-            # Airfoil Trailing Edge
-            output.write(' {:d} 0\n'.format(3))
+            # # Airfoil Trailing Edge
+            # point_format(output, self)
+
+            # Airfoil Trailing Edge Mid
             point_format(output, self.pt_3)
             point_format(output, self.pt_4)
             point_format(output, self.project(self.pt_4, 'wake'))
+
+            # Airfoil Trailing Edge Top
+            point_format(output, self.pt_3_top)
+            point_format(output, self.project(self.pt_3_top, 'top'))
+            point_format(output, self.pt_4_top)
+            point_format(output, self.project(self.pt_4_top, 'wake'))
+            point_format(output, self.project(self.pt_4_top, 'top'))
+
+            # Airfoil Trailing Edge Bottom
+            point_format(output, self.pt_3_bot)
+            point_format(output, self.project(self.pt_3_bot, 'bot'))
+            point_format(output, self.pt_4_bot)
+            point_format(output, self.project(self.pt_4_bot, 'wake'))
+            point_format(output, self.project(self.pt_4_top, 'top'))
+
 
             # # Segment 2-3
             # output.write(' {:d} 0\n'.format(2))
