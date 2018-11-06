@@ -1,5 +1,21 @@
-from geometry.definitions import Vector, Point
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Copyright 2018 San Kilkis
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
+from geometry.definitions import Vector, Point
 import scipy.interpolate as si
 import scipy.optimize as so
 from matplotlib import pyplot as plt
@@ -8,27 +24,27 @@ from math import atan, atan2, degrees, radians
 
 class Blocking(object):
 
-    def __init__(self, airfoil_in):
+    def __init__(self, airfoil_in, domain_in=None):
         self.airfoil_in = airfoil_in
+        self.domain_in = domain_in
 
-    def get_normal(self):
-
-        _, _, top_t, bot_t = self.airfoil_in.get_maxima()
-        top_tangent, bot_tangent = Vector(top_t[0], top_t[1], 0), Vector(bot_t[0], bot_t[1], 0)
-
-        top_normal, bot_normal = top_tangent.cross(Vector(0, 0, -1)), bot_tangent.cross(Vector(0, 0, -1))
-        return top_normal.normalize(), bot_normal.normalize()
+    # def get_normal(self):
+    #
+    #     _, _, top_t, bot_t = self.airfoil_in.get_maxima()
+    #     top_tangent, bot_tangent = Vector(top_t[0], top_t[1], 0), Vector(bot_t[0], bot_t[1], 0)
+    #
+    #     top_normal, bot_normal = top_tangent.cross(Vector(0, 0, -1)), bot_tangent.cross(Vector(0, 0, -1))
+    #     return top_normal.normalize(), bot_normal.normalize()
 
     def find_le_zone(self, angle):
-        top, bot = self.airfoil_in.spline
+        top, bot = self.airfoil_in.curve['top'], self.airfoil_in.curve['bot']
 
         def objective(u, *args):
             """ Returns the angle formed between the x-axis and the normal vector in the 1st quadrant. This is done
             to ensure that the LE refinement zone has an equal angle all the way up to the airfoil surface for optimum
             orthogonality of the mesh. """
-            spline, target_angle = args
-            tangent = Vector(*si.splev(u, spline, der=1))
-            normal = tangent.cross(Vector(0, 0, -1))
+            crv, target_angle = args
+            normal = crv.normal(u)
             return degrees(atan(abs(normal.y/normal.x))) - target_angle
 
         u_top = so.brentq(objective, 0., 0.5, args=(top, angle))
@@ -47,19 +63,19 @@ class Blocking(object):
         plt.plot(top_x, top_y, label='Top Surface')
         plt.plot(bot_x, bot_y, label='Bottom Surface')
 
-        top_normal, bot_normal = self.get_normal()
-        u_top, u_bot, _, _ = self.airfoil_in.get_maxima()
+        crv_top, crv_bot = self.airfoil_in.curve['top'], self.airfoil_in.curve['bot']
+
+        u_top, u_bot = self.airfoil_in.get_maxima()
 
         # Tangent Points
-        spline_top, spline_bot = self.airfoil_in.spline
-        top_pnt = Point(*si.splev(u_top, spline_top, der=0))
-        bot_pnt = Point(*si.splev(u_bot, spline_bot, der=0))
+        top_pnt = crv_top.point_at_parameter(u_top)
+        bot_pnt = crv_bot.point_at_parameter(u_bot)
 
         plt.scatter(top_pnt.x, top_pnt.y)
         plt.scatter(bot_pnt.x, bot_pnt.y)
 
-        top_pnt = top_pnt.translate(top_normal * 0.3)
-        bot_pnt = bot_pnt.translate(bot_normal * - 0.3)
+        top_pnt = top_pnt.translate(crv_top.normal(u_top) * 0.3)
+        bot_pnt = bot_pnt.translate(crv_bot.normal(u_bot) * - 0.3)
 
         plt.scatter(top_pnt.x, top_pnt.y)
         plt.scatter(bot_pnt.x, bot_pnt.y)
@@ -68,63 +84,54 @@ class Blocking(object):
         u_top, u_bot = self.find_le_zone(angle)
 
         # Top LE Refinement Zone Points
-        top_pnt = Point(*si.splev(u_top, spline_top, der=0))
+        top_pnt = crv_top.point_at_parameter(u_top)
         plt.scatter(top_pnt.x, top_pnt.y)
-        tangent = Vector(*si.splev(u_top, spline_top, der=1))
-        normal = tangent.cross(Vector(0, 0, -1)).normalize()
-        top_pnt = top_pnt.translate(normal * 0.3)
+        top_pnt = top_pnt.translate(crv_top.normal(u_top) * 0.3)
         plt.scatter(top_pnt.x, top_pnt.y)
 
-        # Bottom LE Refinement Points
-        bot_pnt = Point(*si.splev(u_bot, spline_bot, der=0))
+        # Bottom LE Refinement Zone Points
+        bot_pnt = crv_bot.point_at_parameter(u_top)
         plt.scatter(bot_pnt.x, bot_pnt.y)
-        tangent = Vector(*si.splev(u_bot, spline_bot, der=1))
-        normal = tangent.cross(Vector(0, 0, -1)).normalize()
-        bot_pnt = bot_pnt.translate(normal * -0.3)
+        bot_pnt = bot_pnt.translate(crv_bot.normal(u_bot) * -0.3)
         plt.scatter(bot_pnt.x, bot_pnt.y)
+
+        # Top Mid-Back Refinement Points
+        top_pnt = crv_top.point_at_parameter(0.7)
+        plt.scatter(top_pnt.x, top_pnt.y)
+        top_pnt = top_pnt.translate(crv_top.normal(0.7) * 0.3)
+        plt.scatter(top_pnt.x, top_pnt.y)
 
         # Bottom Mid-Back Refinement Points
-        bot_pnt = Point(*si.splev(0.7, spline_bot, der=0))
+        bot_pnt = crv_bot.point_at_parameter(0.7)
         plt.scatter(bot_pnt.x, bot_pnt.y)
-        tangent = Vector(*si.splev(0.7, spline_bot, der=1))
-        normal = tangent.cross(Vector(0, 0, -1)).normalize()
-        bot_pnt = bot_pnt.translate(normal * -0.3)
+        bot_pnt = bot_pnt.translate(crv_bot.normal(0.7) * -0.3)
         plt.scatter(bot_pnt.x, bot_pnt.y)
 
-        # Top Mid-Back Refinement Zone Points
-        top_pnt = Point(*si.splev(0.7, spline_top, der=0))
+        # TE Refinement Zone Points (Top/Bottom)
+        top_pnt = crv_top.point_at_parameter(1.0)
         plt.scatter(top_pnt.x, top_pnt.y)
-        tangent = Vector(*si.splev(0.7, spline_top, der=1))
-        normal = tangent.cross(Vector(0, 0, -1)).normalize()
-        top_pnt = top_pnt.translate(normal * 0.3)
+        top_pnt = top_pnt.translate(crv_top.normal(1.0) * 0.3)
         plt.scatter(top_pnt.x, top_pnt.y)
 
-        # TE Refinement Zone Points
-        top_pnt = Point(*si.splev(1.0, spline_top, der=0))
-        plt.scatter(top_pnt.x, top_pnt.y)
-        tangent = Vector(*si.splev(1.0, spline_top, der=1))
-        normal = tangent.cross(Vector(0, 0, -1)).normalize()
-        top_pnt = top_pnt.translate(normal * 0.3)
-        plt.scatter(top_pnt.x, top_pnt.y)
-        bot_pnt = Point(*si.splev(1.0, spline_bot, der=0))
+        bot_pnt = crv_bot.point_at_parameter(1.0)
         plt.scatter(bot_pnt.x, bot_pnt.y)
-        tangent = Vector(*si.splev(1.0, spline_bot, der=1))
-        normal = tangent.cross(Vector(0, 0, -1)).normalize()
-        bot_pnt = bot_pnt.translate(normal * -0.3)
+        bot_pnt = bot_pnt.translate(crv_bot.normal(1.0) * -0.3)
         plt.scatter(bot_pnt.x, bot_pnt.y)
 
         # TE Farfield Point
-        te_pnt = Point(*si.splev(1.0, spline_top, der=0))
+        te_pnt = crv_top.point_at_parameter(1.0)
         plt.scatter(te_pnt.x, te_pnt.y)
-        tangent = Vector(*si.splev(1.0, spline_top, der=1)).normalize()
-        te_pnt = te_pnt.translate(tangent * 0.5)
+        te_pnt = te_pnt.translate(crv_top.tangent(1.0) * 0.5)
         plt.scatter(te_pnt.x, te_pnt.y)
 
-        te_pnt_top = te_pnt.translate(tangent.cross(Vector(0, 0, -1)) * 0.3)
+        te_pnt_top = te_pnt.translate(crv_top.normal(1.0) * 0.3)
         plt.scatter(te_pnt_top.x, te_pnt_top.y)
 
-        te_pnt_bot = te_pnt.translate(tangent.cross(Vector(0, 0, -1)) * -0.3)
+        te_pnt_bot = te_pnt.translate(crv_bot.normal(1.0) * -0.3)
         plt.scatter(te_pnt_bot.x, te_pnt_bot.y)
+
+        center_pnt = self.airfoil_in.center
+        plt.scatter(center_pnt.x, center_pnt.y)
 
         plt.xlabel('Normalized Location on Airfoil Chord (x/c) [-]')
         plt.ylabel('Normalized Thickness (t/c) [-]')

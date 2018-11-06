@@ -16,11 +16,11 @@
 # limitations under the License.
 
 import os
-from geometry.definitions import Point
+from geometry.definitions import Point, Curve
 from directories import DIRS
 from matplotlib import pyplot as plt
 import numpy as np
-import scipy.interpolate as si
+# import scipy.interpolate as si
 import scipy.optimize as so
 
 # Reference:
@@ -29,14 +29,13 @@ import scipy.optimize as so
 
 class Airfoil(object):
 
-    __cache__ = {}
-
     def __init__(self, airfoil_name='RAE2822', angle=0.):
         """
 
         :param str airfoil_name: Name of the airfoil w/o file extension
         :param float angle: Angle of Attack in SI degree [deg]
         """
+        self.__cache__ = {}
         self.__name__, self.angle, self.ordinates = airfoil_name, angle, None
 
         # Updates ordinates from .dat file
@@ -89,14 +88,31 @@ class Airfoil(object):
             [point_format(output, pnt) for pnt in bot_pnts]
 
     @property
-    def spline(self):
-        """ Interpolate spline through given points
-        Args:
-            spline (int, optional): Number of points on the spline
-            degree (int, optional): Degree of the spline
-            evaluate (bool, optional): If True, evaluate spline just at
-                                       the coordinates of the knots
+    def leading_edge(self):
+        """ Fetches the leading-edge point from the ordinates
+
+        :rtype: Point
         """
+        return self.ordinates['top'][0]
+
+    @property
+    def trailing_edge(self):
+        """ Fetches the trailing-edge point from the ordinates
+
+        :rtype: Point
+        """
+        return self.ordinates['top'][-1]
+
+    # @property
+    # def spline(self):
+    #     """ Interpolate spline through given points
+    #     Args:
+    #         spline (int, optional): Number of points on the spline
+    #         degree (int, optional): Degree of the spline
+    #         evaluate (bool, optional): If True, evaluate spline just at
+    #                                    the coordinates of the knots
+    #     """
+    #     pass
         # interpolate B-spline through data points
         # returns knots of control polygon
         # tck ... tuple (t,c,k) containing the vector of knots,
@@ -129,19 +145,39 @@ class Airfoil(object):
         # # spline_data = [coo, u, t, der1, der2, spline_vector]
         #
         # return top_spline, bot_spline
+    #
+    # @spline.getter
+    # def spline(self):
+    #     if 'spline' in self.__cache__.keys():
+    #         return self.__cache__['spline']
+    #     else:
+    #         ord_dict = self.get_ordinates()
+    #         top_x, top_y, bot_x, bot_y = (ord_dict['top'] + ord_dict['bot'])
+    #
+    #         top_spline, u, = si.splprep((top_x, top_y), s=0.0, k=3)  # Ignore unpacking warning, it is due to Numpy doc
+    #         bot_spline, u, = si.splprep((bot_x, bot_y), s=0.0, k=3)  # Ignore unpacking warning, it is due to Numpy doc
+    #         self.__cache__['spline'] = top_spline, bot_spline
+    #         return top_spline, bot_spline
 
-    @spline.getter
-    def spline(self):
-        if 'spline' in self.__cache__.keys():
-            return self.__cache__['spline']
+    @property
+    def curve(self):
+        pass
+
+    @curve.getter
+    def curve(self):
+        """ Returns a dictionary of airfoil curves. ['top'] = Top curve f/ LE -> TE, ['bot] = Bottom curve f/ LE -> TE
+        ['complete'] = Complete airfoil curve from TE -> Top-Curve -> LE -> Bottom-Curve -> TE
+
+        :rtype: dict
+        """
+        if 'curve' in self.__cache__.keys():
+            return self.__cache__['curve']
         else:
-            ord_dict = self.get_ordinates()
-            top_x, top_y, bot_x, bot_y = (ord_dict['top'] + ord_dict['bot'])
-
-            top_spline, u, = si.splprep((top_x, top_y), s=0.0, k=3)  # Ignore unpacking warning, it is due to Numpy doc
-            bot_spline, u, = si.splprep((bot_x, bot_y), s=0.0, k=3)  # Ignore unpacking warning, it is due to Numpy doc
-            self.__cache__['spline'] = top_spline, bot_spline
-            return top_spline, bot_spline
+            top_curve, bot_curve = Curve(self.ordinates['top']), Curve(self.ordinates['bot'])
+            top_pnts_reversed = list(reversed(self.ordinates['top']))[:-1]
+            complete_curve = Curve(top_pnts_reversed + self.ordinates['bot'])
+            self.__cache__['curve'] = {'top': top_curve, 'bot': bot_curve, 'complete': complete_curve}
+            return self.__cache__['curve']
 
     # def make_spline(self):
     #     top, bot = self.read_dat()
@@ -202,19 +238,40 @@ class Airfoil(object):
         return [gradient, C, R, xc, yc]
 
     def get_maxima(self):
+        """ Returns the parameter ``u`` on the top and bottom curves where the local tangent vector is parallel with the
+        x-axis
 
-        top, bot = self.spline
+        :return [0] Top curve ``u``, [1] Bottom curve ``u``
+        :rtype: tuple[float]
+        """
+
+        top, bot = self.curve['top'], self.curve['bot']
 
         def objective(u, *args):
-            spline = args[0]
-            slope = si.splev(u, spline, der=1)
-            return (slope[1] / slope[0])**2  # slope dy/dx = dy/du / dx/du
+            curve = args[0]
+            tan = curve.tangent(u)
+            slope = tan.y/tan.x  # slope dy/dx = Vector.y/Vector.x
+            return slope**2  # Finding where slope = zero
 
         u_top = so.fminbound(objective, 0., 1., args=(top,))
         u_bot = so.fminbound(objective, 0., 1., args=(bot,))
 
-        # top_max, bot_max = si.splev(u_top, top, der=0), si.splev(u_bot, bot, der=0)
-        return u_top, u_bot, si.splev(u_top, top, der=1), si.splev(u_bot, top, der=1)
+        return u_top, u_bot
+
+    @property
+    def center(self):
+        """ Defines the Point where the C-mesh should transform into an H-mesh for maximum orthogonality of the mesh.
+        The location is defined by the average x-value of the top and bottom maxima as obtained by
+        :py:meth:`get_maxima`. Furthermore, it is coincident with the y-axis.
+
+        :rtype: Point
+        """
+
+        u_top, u_bot = self.get_maxima()
+        x_top, x_bot = self.curve['top'].point_at_parameter(u_top).x, self.curve['bot'].point_at_parameter(u_bot).x
+        return Point((x_top + x_bot) / 2., 0)
+
+
 
     # def plot(self):
     #     """ Plots the Airfoil Geometry """
@@ -229,7 +286,7 @@ class Airfoil(object):
     #     return None
 
     def get_ordinates(self):
-        """ Retrieves the top and bottom coordinates of the
+        """ Retrieves the top and bottom coordinates of the airfoil. Both set of ordinates run from LE to TE.
 
         :rtype: dict
         """
@@ -303,8 +360,19 @@ class Airfoil(object):
         plt.style.use('tudelft')
         ord_dict = self.get_ordinates()
         top_x, top_y, bot_x, bot_y = (ord_dict['top'] + ord_dict['bot'])
-        plt.plot(top_x, top_y, label='Top Surface')
-        plt.plot(bot_x, bot_y, label='Bottom Surface')
+        plt.plot(top_x, top_y, label='Top Surface', marker='.')
+        plt.plot(bot_x, bot_y, label='Bottom Surface', marker='.')
+
+        control_u = np.linspace(0, 1, 100)
+        top_pnts = [self.curve['top'].point_at_parameter(u) for u in control_u]
+        bot_pnts = [self.curve['bot'].point_at_parameter(u) for u in control_u]
+
+        top_x, top_y = [[getattr(pnt, key) for pnt in top_pnts] for key in ('x', 'y')]
+        bot_x, bot_y = [[getattr(pnt, key) for pnt in bot_pnts] for key in ('x', 'y')]
+
+        plt.plot(top_x, top_y, linewidth=0.5, linestyle='-.', label='Top Spline')
+        plt.plot(bot_x, bot_y, linewidth=0.5, linestyle='-.', label='Bottom Spline')
+
         plt.xlabel('Normalized Location on Airfoil Chord (x/c) [-]')
         plt.ylabel('Normalized Thickness (t/c) [-]')
         plt.title('{} Airfoil Shape'.format(self.__name__))
