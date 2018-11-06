@@ -269,9 +269,6 @@ class Blocking(object):
         with open(filename, 'w') as output:
             output.write('# {} AIRFOIL BLOCKING POINTS\n'.format(name))
 
-            # # Airfoil Trailing Edge
-            # point_format(output, self)
-
             # Airfoil Trailing Edge Mid
             point_format(output, self.pt_3)
             point_format(output, self.pt_4)
@@ -291,6 +288,26 @@ class Blocking(object):
             point_format(output, self.project(self.pt_4_bot, 'wake'))
             point_format(output, self.project(self.pt_4_top, 'top'))
 
+            # Airfoil Surface Points
+            point_format(output, self.pt_1)
+            point_format(output, self.pt_2)
+            point_format(output, self.pt_3)
+            point_format(output, self.pt_5)
+            point_format(output, self.pt_6)
+            point_format(output, self.pt_7)
+            point_format(output, self.pt_8)
+
+            # Airfoil Refinment Spline
+            output.write(' {:d} 0\n'.format(9))
+            point_format(output, self.pt_3_bot)
+            point_format(output, self.pt_5_bot)
+            point_format(output, self.pt_6_bot)
+            point_format(output, self.pt_7_bot)
+            point_format(output, self.pt_le_proj)
+            point_format(output, self.pt_8_top)
+            point_format(output, self.pt_1_top)
+            point_format(output, self.pt_2_top)
+            point_format(output, self.pt_3_top)
 
             # # Segment 2-3
             # output.write(' {:d} 0\n'.format(2))
