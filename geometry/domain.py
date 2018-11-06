@@ -40,6 +40,38 @@ class Domain(object):
     def default_directory(self):
         return os.path.join(DIRS['DATA_DIR'], 'geom')
 
+    @property
+    def x_center(self):
+        return self.airfoil_in.center.x
+
+    @property
+    def x_le(self):
+        return self.airfoil_in.leading_edge.x
+
+    @property
+    def x_te(self):
+        return self.airfoil_in.trailing_edge.x
+
+    @property
+    def pt_1(self):
+        return Point(self.x_center, self.top, 0)
+
+    @property
+    def pt_2(self):
+        return Point(self.x_te + self.wake, self.top, 0)
+
+    @property
+    def pt_3(self):
+        return Point(self.pt_2.x, -self.bottom, 0)
+
+    @property
+    def pt_4(self):
+        return Point(self.x_center, -self.bottom, 0)
+
+    @property
+    def pt_5(self):
+        return Point(self.x_le - self.upstream, 0, 0)
+
     def write_dat(self, filename=None, extension='_DOMAIN.dat'):
         """ Writes modified airfoil ordinates to .dat file """
         name = self.airfoil_in.__name__
@@ -48,16 +80,11 @@ class Domain(object):
         def point_format(open_file, point):
             return open_file.write('  {:1.6f}  {:1.6f}  {:1.6f}\n'.format(point.x, point.y, point.z).replace('-0', '-'))
 
-        # Gathering Coordinates
-        x_center = self.airfoil_in.center.x
-        x_le = self.airfoil_in.leading_edge.x
-        x_te = self.airfoil_in.trailing_edge.x
-
-        pt_1 = Point(x_center, self.top, 0)
-        pt_2 = Point(x_te + self.wake, self.top, 0)
-        pt_3 = Point(pt_2.x, -self.bottom, 0)
-        pt_4 = Point(x_center, -self.bottom, 0)
-        pt_5 = Point(x_le - self.upstream, 0, 0)
+        pt_1 = self.pt_1
+        pt_2 = self.pt_2
+        pt_3 = self.pt_3
+        pt_4 = self.pt_4
+        pt_5 = self.pt_5
 
         with open(filename, 'w') as output:
             output.write('# {} AIRFOIL DOMAIN\n'.format(name))
@@ -78,7 +105,7 @@ class Domain(object):
             point_format(output, pt_4)
 
             # Segment 4-1
-            output.write(' {:d} 0\n'.format(3))
+            output.write(' {:d} 0\n'.format(0))
             point_format(output, pt_4)
             point_format(output, pt_5)
             point_format(output, pt_1)
