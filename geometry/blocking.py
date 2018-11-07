@@ -287,7 +287,7 @@ class Blocking(object):
             point_format(output, self.project(self.pt_3_bot, 'bot'))
             point_format(output, self.pt_4_bot)
             point_format(output, self.project(self.pt_4_bot, 'wake'))
-            point_format(output, self.project(self.pt_4_top, 'top'))
+            point_format(output, self.project(self.pt_4_bot, 'bot'))
 
             # Airfoil Surface Points
             point_format(output, self.pt_1)
@@ -297,6 +297,10 @@ class Blocking(object):
             point_format(output, self.pt_6)
             point_format(output, self.pt_7)
             point_format(output, self.pt_8)
+
+            # Additional Projections
+            point_format(output, self.project(self.pt_2_top, 'top'))
+            point_format(output, self.project(self.pt_5_bot, 'bot'))
 
             # Airfoil Refinment Spline
             output.write(' {:d} 0\n'.format(9))
@@ -331,7 +335,7 @@ if __name__ == '__main__':
     from geometry.airfoil import Airfoil
     from geometry.domain import Domain
     obj = Blocking(Domain(Airfoil(angle=2.31), upstream=13., top=13., bottom=13., wake=20.))
-    obj.plot()
+    # obj.plot()
     obj.write_dat()
     #
     # x = Vector(1, 0, 0)
