@@ -1,0 +1,70 @@
+# Written by ICEM CFD 19.0, user San, Wed Nov 07 9:25:04 PM W. Europe Standard Time 2018
+
+begin family AIRFOIL
+    begin solver "ANSYS CFX"
+        begin bctype color
+            active 1
+            color 39321 1
+        end bctype color
+    end solver "ANSYS CFX"
+end family AIRFOIL
+
+begin family DOMAIN
+    begin solver "ANSYS CFX"
+    end solver "ANSYS CFX"
+end family DOMAIN
+
+begin family BLOCKING
+    begin solver "ANSYS CFX"
+    end solver "ANSYS CFX"
+end family BLOCKING
+
+begin family POINTS_MESH
+    begin solver "ANSYS CFX"
+    end solver "ANSYS CFX"
+end family POINTS_MESH
+
+begin family INLET
+    begin solver "ANSYS CFX"
+        begin bctype color
+            active 1
+            color 16663100 1
+        end bctype color
+    end solver "ANSYS CFX"
+end family INLET
+
+begin family WALL
+    begin solver "ANSYS CFX"
+        begin bctype color
+            active 1
+            color 3604040 1
+        end bctype color
+    end solver "ANSYS CFX"
+end family WALL
+
+begin family OUTLET
+    begin solver "ANSYS CFX"
+        begin bctype color
+            active 1
+            color 3387850 1
+        end bctype color
+    end solver "ANSYS CFX"
+end family OUTLET
+
+begin family SYMMETRY
+    begin solver "ANSYS CFX"
+        begin bctype color
+            active 1
+            color 10171400 1
+        end bctype color
+    end solver "ANSYS CFX"
+end family SYMMETRY
+
+begin family SOLID
+    begin solver "ANSYS CFX"
+        begin bctype color
+            active 1
+            color 39168 1
+        end bctype color
+    end solver "ANSYS CFX"
+end family SOLID

@@ -1,0 +1,5 @@
+# family_boco file written by ICEM CFD by San on Wed Nov 07 9:57:32 AM W. Europe Standard Time 2018
+## solver ANSYS Fluent
+"AIRFOIL"
+"DOMAIN"
+"BLOCKING"
