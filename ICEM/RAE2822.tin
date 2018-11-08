@@ -1,11 +1,12 @@
 // tetin file version 1.1
 // written by ICEM CFD - version 19.0 on Tue Nov 06 16:08:02 2018
+// written by ICEM CFD - version 19.0 on Wed Nov 07 09:53:00 2018
+// written by ICEM CFD - version 19.0 on Wed Nov 07 09:57:32 2018
 
 set_triangulation_tolerance 0.001
-# In ICEM CFD 4.2 the family_boco file is no longer tied to tetin
-# read_family_boco family_boco
 define_family AIRFOIL color 11586867
 define_family DOMAIN color 14522931
+define_family BLOCKING color 3368951
 
 prescribed_point 0 0 0 family AIRFOIL name pnt0
 prescribed_point 0.000729 0.003138 0 family AIRFOIL name pnt1
@@ -146,6 +147,39 @@ prescribed_point 0.366251 -13 0 family DOMAIN name pnt135
 prescribed_point 0.366251 -13 0 family DOMAIN name pnt136
 prescribed_point -13 0 0 family DOMAIN name pnt137
 prescribed_point 0.366251 13 0 family DOMAIN name pnt138
+prescribed_point 0.999187 -0.040306 0 family BLOCKING name pnt139
+prescribed_point 1.28986 -0.11453 0 family BLOCKING name pnt140
+prescribed_point 20.999187 -0.11453 0 family BLOCKING name pnt141
+prescribed_point 1.073411 0.250367 0 family BLOCKING name pnt142
+prescribed_point 1.073411 13 0 family BLOCKING name pnt143
+prescribed_point 1.364084 0.176143 0 family BLOCKING name pnt144
+prescribed_point 20.999187 0.176143 0 family BLOCKING name pnt145
+prescribed_point 1.364084 13 0 family BLOCKING name pnt146
+prescribed_point 0.969602 -0.338844 0 family BLOCKING name pnt147
+prescribed_point 0.969602 -13 0 family BLOCKING name pnt148
+prescribed_point 1.260275 -0.413068 0 family BLOCKING name pnt149
+prescribed_point 20.999187 -0.413068 0 family BLOCKING name pnt150
+prescribed_point 1.260275 -13 0 family BLOCKING name pnt151
+prescribed_point 0.334076 0.047247 0 family BLOCKING name pnt152
+prescribed_point 0.70027 0.019526 0 family BLOCKING name pnt153
+prescribed_point 0.999187 -0.040306 0 family BLOCKING name pnt154
+prescribed_point 0.695205 -0.051783 0 family BLOCKING name pnt155
+prescribed_point 0.398426 -0.074399 0 family BLOCKING name pnt156
+prescribed_point 0.013832 -0.015949 0 family BLOCKING name pnt157
+prescribed_point 0.010165 0.012119 0 family BLOCKING name pnt158
+prescribed_point 0.74572 13 0 family BLOCKING name pnt159
+prescribed_point 0.72585 -13 0 family BLOCKING name pnt160
+prescribed_point 0.969602 -0.338844 0 family BLOCKING name pnt161
+prescribed_point 0.72585 -0.350214 0 family BLOCKING name pnt162
+prescribed_point 0.398425 -0.374399 0 family BLOCKING name pnt163
+prescribed_point -0.136168 -0.275757 0 family BLOCKING name pnt164
+prescribed_point -0.3 0 0 family BLOCKING name pnt165
+prescribed_point -0.139835 0.271926 0 family BLOCKING name pnt166
+prescribed_point 0.334076 0.347247 0 family BLOCKING name pnt167
+prescribed_point 0.74572 0.316063 0 family BLOCKING name pnt168
+prescribed_point 1.073411 0.250367 0 family BLOCKING name pnt169
+prescribed_point -6.2752944512419 9.2209397126678 0 family BLOCKING name pnt.03
+prescribed_point -6.269088102108 -9.2251938151416 0 family BLOCKING name pnt.04
 define_curve family AIRFOIL tetra_size 1e+010 name crv0
 bspline
 65,4,0
@@ -336,6 +370,22 @@ bspline
 0.366251,-13,0
 -26.366251,0,0
 0.366251,13,0
+define_curve family BLOCKING tetra_size 1e+010 name crv6
+bspline
+9,4,0
+0,0,0,0,0.57233402548474
+1.1171957025459,1.431406993887,1.7572557404629,2.2321535177588,2.9791885401225
+2.9791885401225,2.9791885401225,2.9791885401225
+0.969602,-0.338844,0
+0.7753865547504,-0.34201769869274,0
+0.41982003318657,-0.38124002026093,0
+-0.097513511200215,-0.39338749211571,0
+-0.3724726503402,0.00660448087367,0
+-0.12686309413416,0.36363562993445,0
+0.44592951580639,0.34588405198584,0
+0.8243627581466,0.3202293455441,0
+1.073411,0.250367,0
 affix 0
 define_model 1e+010 reference_size 1
+define_prism_meshing_parameters law 0 nlay 3 hratio 1.2 min_quality 0.01 fillet 0.1 tetra_smooth_limit 0.3
 return

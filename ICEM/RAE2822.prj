@@ -1,38 +1,39 @@
 # ICEM CFD Project Settings
-# Saved by San on G75VW on Tue Nov 06 4:08:02 PM W. Europe Standard Time 2018
+# Saved by San on G75VW on Wed Nov 07 9:57:32 AM W. Europe Standard Time 2018
 # ICEM CFD - version 19.0 - Release date: Dec 04 2017
 
 array set file_name {
-    catia_dir .
-    parts_dir .
+    catia_dir {D:/My Documents/Python/RAE2822/ICEM}
+    parts_dir {D:/My Documents/Python/RAE2822/ICEM/parts}
     domain_loaded 0
     cart_file_loaded 0
     cart_file {}
     archive {}
     med_replay {}
-    topology_dir .
-    ugparts_dir .
+    topology_dir {D:/My Documents/Python/RAE2822/ICEM}
+    ugparts_dir {D:/My Documents/Python/RAE2822/ICEM}
     icons {{$env(ICEM_ACN)/lib/ai_env/icons} {$env(ICEM_ACN)/lib/va/EZCAD/icons} {$env(ICEM_ACN)/lib/icons} {$env(ICEM_ACN)/lib/va/CABIN/icons}}
-    tetin RAE2922.tin
-    family_boco {}
-    iges_dir .
-    solver_params_loaded 0
-    attributes_loaded 0
+    tetin RAE2822.tin
+    family_boco RAE2822.fbc
+    prism_params RAE2822.prism_params
+    iges_dir {D:/My Documents/Python/RAE2822/ICEM}
+    solver_params_loaded 1
+    attributes_loaded 1
     project_lock {}
-    attributes {}
+    attributes RAE2822.atr
     domain {}
-    domains_dir .
+    domains_dir {D:/My Documents/Python/RAE2822/ICEM}
     settings_loaded 0
-    settings RAE2922.prj
+    settings RAE2822.prj
     blocking {}
     hexa_replay {}
-    transfer_dir .
-    mesh_dir .
+    transfer_dir {D:/My Documents/Python/RAE2822/ICEM}
+    mesh_dir {D:/My Documents/Python/RAE2822/ICEM}
     family_topo {}
-    gemsparts_dir .
-    family_boco_loaded 0
-    tetin_loaded 0
-    project_dir .
+    gemsparts_dir {D:/My Documents/Python/RAE2822/ICEM}
+    family_boco_loaded 1
+    tetin_loaded 1
+    project_dir {D:/My Documents/Python/RAE2822/ICEM}
     topo_mulcad_out {}
     solver_params {}
 }
@@ -169,11 +170,11 @@ array set prism_values {
     max_size_ratio {}
     triangle_quality {}
     max_prism_angle 180
-    tetra_smooth_limit 0.3
+    tetra_smooth_limit 0.30000001
     max_jump_factor 5
     use_existing_quad_layers 0
     layers 3
-    fillet 0.10
+    fillet 0.1
     into_orphan 0
     init_dir_from_prev {}
     blayer_2d 0
@@ -186,7 +187,7 @@ array set prism_values {
     stair_step 1
     smoothing_steps 12
     side_family {}
-    min_prism_quality 0.01
+    min_prism_quality 0.0099999998
     ratio 1.2
 }
 set aie_current_flavor {}
@@ -206,11 +207,12 @@ array set vid_options {
     wb_import_delete_solids 0
     wb_import_mix_res_solid 0
     wb_import_save_pmdb {}
-    inherit 1
+    inherit 0
     default_part GEOM
     new_srf_topo 1
     wb_import_associativity_model_name {}
     DelPerFlag 0
+    show_item_name 0
     wb_import_line_bodies 0
     wb_import_save_partfile 0
     composite_tolerance 1.0
@@ -235,8 +237,8 @@ array set vid_options {
     vid_mode 0
     DelBlkPerFlag 0
 }
-set savedTreeVisibility {geomNode 1 geom_subsetNode 0 geomPointNode 2 geomCurveNode 2 partNode 2 part-AIRFOIL 2 part-DOMAIN 2}
-set last_view {rot {-0.0979388240222 0.112424907165 -0.159813512441 0.975821842464} scale {17.2387989582 17.2387989582 17.2387989582} center {3.9996 0.0 0.0} pos {0.0 0.0 0}}
+set savedTreeVisibility {geomNode 1 geom_subsetNode 0 geomPointNode 2 geomCurveNode 2 partNode 2 part-AIRFOIL 2 part-BLOCKING 2 part-DOMAIN 2}
+set last_view {rot {0 0 0 1} scale {24.4623490565 24.4623490565 24.4623490565} center {1.2898598424702339 -0.23120042209714328 0.013611771747581191} pos {-66.2866095861 -5.65570542737 0}}
 array set cut_info {
     active 0
 }
@@ -270,13 +272,169 @@ array set saved_views {
 #------------- DEZ Data ------------------
 
 namespace eval ::AIEnv::GUIManagement::DEZ {
+    array set createPointsDEZ_data {
+        this createPointsDEZ
+        type DEZ
+        PartList {"From screen" AIRFOIL BLOCKING DOMAIN}
+        __createPointsFam_Last_Index 2
+        name pnt.05
+        createPointsEXGVal 8
+        pickScreenList {}
+        createPntExplicitVal 0
+        x 0
+        y 0
+        z 0
+        crePntParamList {}
+        Xexpress {}
+        Yexpress {}
+        Zexpress {}
+        pickBasePnt {}
+        dx 0
+        dy 0
+        dz 0
+        createPointsCentFRVal 0
+        pickCenterList {}
+        pickCenterCrv {}
+        createPnt2LocMethodVal 1
+        nPnt2Loc 1
+        ratio 0.5
+        pickBetweenList {}
+        ptExtEGVal 0
+        pickEndList {}
+        how_select_end {both xmin xmax ymin ymax zmin zmax}
+        which_end both
+        __createPntCrvEnd_Last_Index 0
+        fangle 30
+        toler 0.1
+        pickIntList {}
+        createPntCrvParMethodVal 1
+        crePnts3param 0.5
+        pickParList {}
+        pickProjCrv {}
+        pickPoint pnt164
+        trimCrvPrjFlag 0
+        movePointPrjFlag 0
+        pickProjSrf {}
+        pickPoint2 {}
+        embedPntOnSurfFlag 0
+    }
+    array set createCurvesDEZ_data {
+        this createCurvesDEZ
+        type DEZ
+        PartList {"From screen" AIRFOIL BLOCKING DOMAIN}
+        __createCurvesFam_Last_Index 0
+        name crv.09
+        createCurvesEXGVal 0
+        pickList {}
+        createCrvArcMethodVal 0
+        pickArcList {pnt144 pnt151}
+        RadiusArcGGVal 0
+        radius 0
+        keep_arc 0
+        RadiusGGVal 0
+        stangle 0
+        enangle 360
+        pickCircleList {}
+        creCurveEGVal 2
+        pickSurf {}
+        pickCurvCrePnt {}
+        pickEdgePnt {}
+        pickEdgePnt2 {}
+        UVChoiceVal 0
+        isopar 0.5
+        creCrvIntSetRVal 0
+        diffPartsFlag 0
+        singleCurveFlag 0
+        pickSetSurfs {}
+        createCurveIntCTVal 1
+        pickSet1Surfs {}
+        pickSet2Surfs {}
+        createCrvProjMethodVal 0
+        pickCurvesProj {}
+        pickSurfsProj {}
+        createCrvPrjEGVal 0
+        projpointsvec {}
+        prjOriginCurvFlag 1
+        prTrFlag 0
+        modifyCurveSegFRVal 0
+        pickCurveSeg {}
+        pickPointSeg {}
+        pickCurveSegWith {}
+        segBothFlag 0
+        modSegmCRVNormEGVal 0
+        SegPlanePntList {}
+        segVecList {}
+        keepOriginCurvFlag 0
+        seg_angle2 20
+        minSeg2 1
+        modifyReapproxCrvVal 0
+        pickCurveConcat {}
+        creCrvConcatTolGGVal 0
+        ctol 0.1
+        pickCurveReapp {}
+        ctol1 0.1
+        reappcrvfacetedFlag 0
+        pickCurveHull {}
+        hull_tol 0.02
+        shrink 0.2
+        four 0
+        pickCurveExtract {}
+        crvExtEGVal 0
+        extract_bsp_how 0
+        fangle 20
+        MinSeg {}
+        boundary {}
+        __facetedBoundaryOpt_Last_Index 0
+        modCrvEGVal 0
+        modCrv_crv0 {}
+        modCrv_crv1 {}
+        modCrvExtEndEGVal 0
+        modCrvExtEndPnt {}
+        allowExtendTargetFlag 0
+        CrvExtTo {}
+        modCrvExtLen 1
+        modCrvExtMethod line
+        modCrv_crv2 {}
+        modCrvMatchAcc 1
+        modCrvMatchOneOrBoth 0
+        modCrvMatchMethodEGVal 2
+        modCrvKeepFlag 0
+        modCrv_crv3_1 {}
+        createCrvMidMethodVal 0
+        pickMidline_crv2 {}
+        midlineList {}
+        midlineList2 {}
+        pickSurfSect {}
+        sectCurvePlaneEGVal 0
+        sectCurvePlaneXYZEGVal 0
+        sectCurveplnpnt1 {}
+        sectCurveplnpnt2 {}
+        sectCurveplnpnt3 {}
+        pickcrvexist {}
+        numsect {}
+        sectCurveOffsetGGVal 0
+        mpsectdelta {}
+        mpsectstart {}
+        mpsectend {}
+    }
+    array set meshPrismDEZ_data {
+        this meshPrismDEZ
+        type DEZ
+        n_triangle_smoothing_steps 5
+        triangle_quality {}
+        __meshPrismTriQuality_Last_Index 0
+        n_tetra_smoothing_steps 10
+        smoothing_steps 12
+        first_layer_smoothing_steps 1
+        loadmesh 0
+    }
     array set geoImportINPUTDEZ_data {
         this geoImportINPUTDEZ
         type DEZ
-        INPUTfile {D:/My Documents/Python/RAE2822/data/geom/RAE2822_DOMAIN.dat}
-        ppart DOMAIN
-        cpart DOMAIN
-        spart DOMAIN
+        INPUTfile {D:/My Documents/Python/RAE2822/data/geom/RAE2822_BLOCKING.dat}
+        ppart BLOCKING
+        cpart BLOCKING
+        spart BLOCKING
         ppartp pnt
         cpartp crv
         spartp srf

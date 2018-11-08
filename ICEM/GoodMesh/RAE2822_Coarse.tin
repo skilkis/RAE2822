@@ -1,0 +1,1803 @@
+// tetin file version 1.1
+// written by ICEM CFD - version 19.0 on Tue Nov 06 16:08:02 2018
+// written by ICEM CFD - version 19.0 on Wed Nov 07 09:53:00 2018
+// written by ICEM CFD - version 19.0 on Wed Nov 07 09:57:32 2018
+// written by ICEM CFD - version 19.1 on Wed Nov 7 14:31:20 2018
+// written by ICEM CFD - version 19.1 on Wed Nov 7 15:47:44 2018
+// written by ICEM CFD - version 19.1 on Wed Nov 7 15:53:30 2018
+// written by ICEM CFD - version 19.1 on Wed Nov 7 17:32:11 2018
+// written by ICEM CFD - version 19.1 on Wed Nov 7 17:36:51 2018
+// written by ICEM CFD - version 19.1 on Wed Nov 7 17:56:39 2018
+// written by ICEM CFD - version 19.0 on Wed Nov 07 20:16:03 2018
+// written by ICEM CFD - version 19.0 on Wed Nov 07 21:25:04 2018
+
+set_triangulation_tolerance 9.9999997e-010
+define_family AIRFOIL color 39321
+define_family DOMAIN color 14522931
+define_family BLOCKING color 3368951
+define_family POINTS_MESH color 16473139
+define_family INLET color 16663101
+define_family WALL color 3604041
+define_family OUTLET color 3387852
+define_family SYMMETRY color 10171357
+define_family SOLID color 39168
+
+prescribed_point 0 0 0 family AIRFOIL name pnt0
+prescribed_point 0.000729 0.003138 0 family AIRFOIL name pnt1
+prescribed_point 0.00266 0.006204 0 family AIRFOIL name pnt2
+prescribed_point 0.005787 0.00919 0 family AIRFOIL name pnt3
+prescribed_point 0.010102 0.012083 0 family AIRFOIL name pnt4
+prescribed_point 0.015596 0.014872 0 family AIRFOIL name pnt5
+prescribed_point 0.022256 0.017558 0 family AIRFOIL name pnt6
+prescribed_point 0.030065 0.020153 0 family AIRFOIL name pnt7
+prescribed_point 0.039005 0.022665 0 family AIRFOIL name pnt8
+prescribed_point 0.049057 0.025105 0 family AIRFOIL name pnt9
+prescribed_point 0.060195 0.02747 0 family AIRFOIL name pnt10
+prescribed_point 0.072394 0.02975 0 family AIRFOIL name pnt11
+prescribed_point 0.085622 0.031935 0 family AIRFOIL name pnt12
+prescribed_point 0.099848 0.034014 0 family AIRFOIL name pnt13
+prescribed_point 0.115039 0.035977 0 family AIRFOIL name pnt14
+prescribed_point 0.131155 0.037815 0 family AIRFOIL name pnt15
+prescribed_point 0.14816 0.039517 0 family AIRFOIL name pnt16
+prescribed_point 0.166011 0.041071 0 family AIRFOIL name pnt17
+prescribed_point 0.184665 0.042465 0 family AIRFOIL name pnt18
+prescribed_point 0.204077 0.043695 0 family AIRFOIL name pnt19
+prescribed_point 0.224201 0.044753 0 family AIRFOIL name pnt20
+prescribed_point 0.244987 0.045633 0 family AIRFOIL name pnt21
+prescribed_point 0.266386 0.046327 0 family AIRFOIL name pnt22
+prescribed_point 0.288344 0.04683 0 family AIRFOIL name pnt23
+prescribed_point 0.310811 0.04714 0 family AIRFOIL name pnt24
+prescribed_point 0.333731 0.047247 0 family AIRFOIL name pnt25
+prescribed_point 0.357048 0.047144 0 family AIRFOIL name pnt26
+prescribed_point 0.380707 0.046826 0 family AIRFOIL name pnt27
+prescribed_point 0.40465 0.04629 0 family AIRFOIL name pnt28
+prescribed_point 0.428819 0.045532 0 family AIRFOIL name pnt29
+prescribed_point 0.453155 0.044545 0 family AIRFOIL name pnt30
+prescribed_point 0.4776 0.043315 0 family AIRFOIL name pnt31
+prescribed_point 0.502094 0.041826 0 family AIRFOIL name pnt32
+prescribed_point 0.526577 0.040062 0 family AIRFOIL name pnt33
+prescribed_point 0.550989 0.038017 0 family AIRFOIL name pnt34
+prescribed_point 0.575271 0.035687 0 family AIRFOIL name pnt35
+prescribed_point 0.599366 0.033087 0 family AIRFOIL name pnt36
+prescribed_point 0.623216 0.030249 0 family AIRFOIL name pnt37
+prescribed_point 0.646764 0.027212 0 family AIRFOIL name pnt38
+prescribed_point 0.669957 0.024009 0 family AIRFOIL name pnt39
+prescribed_point 0.692738 0.02067 0 family AIRFOIL name pnt40
+prescribed_point 0.715053 0.017222 0 family AIRFOIL name pnt41
+prescribed_point 0.736849 0.013689 0 family AIRFOIL name pnt42
+prescribed_point 0.758074 0.010094 0 family AIRFOIL name pnt43
+prescribed_point 0.778678 0.006467 0 family AIRFOIL name pnt44
+prescribed_point 0.798613 0.00283 0 family AIRFOIL name pnt45
+prescribed_point 0.81783 -0.000788 0 family AIRFOIL name pnt46
+prescribed_point 0.836283 -0.004364 0 family AIRFOIL name pnt47
+prescribed_point 0.85393 -0.007871 0 family AIRFOIL name pnt48
+prescribed_point 0.870729 -0.011288 0 family AIRFOIL name pnt49
+prescribed_point 0.886637 -0.014596 0 family AIRFOIL name pnt50
+prescribed_point 0.90162 -0.017775 0 family AIRFOIL name pnt51
+prescribed_point 0.91564 -0.02081 0 family AIRFOIL name pnt52
+prescribed_point 0.928664 -0.023681 0 family AIRFOIL name pnt53
+prescribed_point 0.940662 -0.026374 0 family AIRFOIL name pnt54
+prescribed_point 0.951605 -0.028871 0 family AIRFOIL name pnt55
+prescribed_point 0.961466 -0.031156 0 family AIRFOIL name pnt56
+prescribed_point 0.970222 -0.033218 0 family AIRFOIL name pnt57
+prescribed_point 0.977852 -0.035041 0 family AIRFOIL name pnt58
+prescribed_point 0.98434 -0.036613 0 family AIRFOIL name pnt59
+prescribed_point 0.989669 -0.03792 0 family AIRFOIL name pnt60
+prescribed_point 0.993826 -0.038952 0 family AIRFOIL name pnt61
+prescribed_point 0.996802 -0.0397 0 family AIRFOIL name pnt62
+prescribed_point 0.998591 -0.040154 0 family AIRFOIL name pnt63
+prescribed_point 0.999187 -0.040306 0 family AIRFOIL name pnt64
+prescribed_point 0 0 0 family AIRFOIL name pnt65
+prescribed_point 0.000474 -0.003182 0 family AIRFOIL name pnt66
+prescribed_point 0.002152 -0.0064 0 family AIRFOIL name pnt67
+prescribed_point 0.005027 -0.009653 0 family AIRFOIL name pnt68
+prescribed_point 0.009093 -0.012936 0 family AIRFOIL name pnt69
+prescribed_point 0.014341 -0.01624 0 family AIRFOIL name pnt70
+prescribed_point 0.020758 -0.01956 0 family AIRFOIL name pnt71
+prescribed_point 0.028329 -0.022882 0 family AIRFOIL name pnt72
+prescribed_point 0.037034 -0.026199 0 family AIRFOIL name pnt73
+prescribed_point 0.046854 -0.029498 0 family AIRFOIL name pnt74
+prescribed_point 0.057765 -0.032771 0 family AIRFOIL name pnt75
+prescribed_point 0.069741 -0.03601 0 family AIRFOIL name pnt76
+prescribed_point 0.082752 -0.03921 0 family AIRFOIL name pnt77
+prescribed_point 0.096767 -0.042366 0 family AIRFOIL name pnt78
+prescribed_point 0.111753 -0.04547 0 family AIRFOIL name pnt79
+prescribed_point 0.127672 -0.048511 0 family AIRFOIL name pnt80
+prescribed_point 0.14449 -0.051476 0 family AIRFOIL name pnt81
+prescribed_point 0.162162 -0.054353 0 family AIRFOIL name pnt82
+prescribed_point 0.180647 -0.057133 0 family AIRFOIL name pnt83
+prescribed_point 0.199902 -0.0598 0 family AIRFOIL name pnt84
+prescribed_point 0.219881 -0.06234 0 family AIRFOIL name pnt85
+prescribed_point 0.240535 -0.064742 0 family AIRFOIL name pnt86
+prescribed_point 0.261815 -0.066983 0 family AIRFOIL name pnt87
+prescribed_point 0.28367 -0.069037 0 family AIRFOIL name pnt88
+prescribed_point 0.306051 -0.070852 0 family AIRFOIL name pnt89
+prescribed_point 0.328906 -0.072362 0 family AIRFOIL name pnt90
+prescribed_point 0.352182 -0.073491 0 family AIRFOIL name pnt91
+prescribed_point 0.375825 -0.074182 0 family AIRFOIL name pnt92
+prescribed_point 0.399781 -0.074398 0 family AIRFOIL name pnt93
+prescribed_point 0.423992 -0.074129 0 family AIRFOIL name pnt94
+prescribed_point 0.448397 -0.07339 0 family AIRFOIL name pnt95
+prescribed_point 0.472939 -0.07222 0 family AIRFOIL name pnt96
+prescribed_point 0.497556 -0.070675 0 family AIRFOIL name pnt97
+prescribed_point 0.522184 -0.068822 0 family AIRFOIL name pnt98
+prescribed_point 0.546764 -0.066734 0 family AIRFOIL name pnt99
+prescribed_point 0.571231 -0.064474 0 family AIRFOIL name pnt100
+prescribed_point 0.595526 -0.062097 0 family AIRFOIL name pnt101
+prescribed_point 0.619589 -0.059653 0 family AIRFOIL name pnt102
+prescribed_point 0.64336 -0.057185 0 family AIRFOIL name pnt103
+prescribed_point 0.666781 -0.054734 0 family AIRFOIL name pnt104
+prescribed_point 0.689793 -0.05234 0 family AIRFOIL name pnt105
+prescribed_point 0.71234 -0.050041 0 family AIRFOIL name pnt106
+prescribed_point 0.734365 -0.04787 0 family AIRFOIL name pnt107
+prescribed_point 0.755817 -0.045858 0 family AIRFOIL name pnt108
+prescribed_point 0.776641 -0.044029 0 family AIRFOIL name pnt109
+prescribed_point 0.796789 -0.042394 0 family AIRFOIL name pnt110
+prescribed_point 0.816209 -0.040959 0 family AIRFOIL name pnt111
+prescribed_point 0.834856 -0.03973 0 family AIRFOIL name pnt112
+prescribed_point 0.852686 -0.038714 0 family AIRFOIL name pnt113
+prescribed_point 0.869655 -0.037912 0 family AIRFOIL name pnt114
+prescribed_point 0.88572 -0.037322 0 family AIRFOIL name pnt115
+prescribed_point 0.900847 -0.03694 0 family AIRFOIL name pnt116
+prescribed_point 0.914997 -0.036753 0 family AIRFOIL name pnt117
+prescribed_point 0.928137 -0.036746 0 family AIRFOIL name pnt118
+prescribed_point 0.940238 -0.036894 0 family AIRFOIL name pnt119
+prescribed_point 0.95127 -0.037175 0 family AIRFOIL name pnt120
+prescribed_point 0.961207 -0.037561 0 family AIRFOIL name pnt121
+prescribed_point 0.970028 -0.038017 0 family AIRFOIL name pnt122
+prescribed_point 0.977713 -0.038504 0 family AIRFOIL name pnt123
+prescribed_point 0.984245 -0.038984 0 family AIRFOIL name pnt124
+prescribed_point 0.989608 -0.039422 0 family AIRFOIL name pnt125
+prescribed_point 0.993792 -0.039792 0 family AIRFOIL name pnt126
+prescribed_point 0.996787 -0.040072 0 family AIRFOIL name pnt127
+prescribed_point 0.998587 -0.040247 0 family AIRFOIL name pnt128
+prescribed_point 0.999187 -0.040306 0 family AIRFOIL name pnt129
+prescribed_point 0.366251 13 0 family POINTS_MESH name pnt130
+prescribed_point 20.999187 13 0 family POINTS_MESH name pnt131
+prescribed_point 20.999187 13 0 family POINTS_MESH name pnt132
+prescribed_point 20.999187 -13 0 family POINTS_MESH name pnt133
+prescribed_point 20.999187 -13 0 family POINTS_MESH name pnt134
+prescribed_point 0.366251 -13 0 family POINTS_MESH name pnt135
+prescribed_point 0.366251 -13 0 family POINTS_MESH name pnt136
+prescribed_point -13 0 0 family POINTS_MESH name pnt137
+prescribed_point 0.366251 13 0 family POINTS_MESH name pnt138
+prescribed_point 0.999187 -0.040306 0 family POINTS_MESH name pnt139
+prescribed_point 1.28986 -0.11453 0 family POINTS_MESH name pnt140
+prescribed_point 20.999187 -0.11453 0 family POINTS_MESH name pnt141
+prescribed_point 1.073411 0.250367 0 family POINTS_MESH name pnt142
+prescribed_point 1.073411 13 0 family POINTS_MESH name pnt143
+prescribed_point 1.364084 0.176143 0 family POINTS_MESH name pnt144
+prescribed_point 20.999187 0.176143 0 family POINTS_MESH name pnt145
+prescribed_point 1.364084 13 0 family POINTS_MESH name pnt146
+prescribed_point 0.969602 -0.338844 0 family POINTS_MESH name pnt147
+prescribed_point 0.969602 -13 0 family POINTS_MESH name pnt148
+prescribed_point 1.260275 -0.413068 0 family POINTS_MESH name pnt149
+prescribed_point 20.999187 -0.413068 0 family POINTS_MESH name pnt150
+prescribed_point 1.260275 -13 0 family POINTS_MESH name pnt151
+prescribed_point 0.334076 0.047247 0 family POINTS_MESH name pnt152
+prescribed_point 0.70027 0.019526 0 family POINTS_MESH name pnt153
+prescribed_point 0.999187 -0.040306 0 family POINTS_MESH name pnt154
+prescribed_point 0.695205 -0.051783 0 family POINTS_MESH name pnt155
+prescribed_point 0.398426 -0.074399 0 family POINTS_MESH name pnt156
+prescribed_point 0.013832 -0.015949 0 family POINTS_MESH name pnt157
+prescribed_point 0.010165 0.012119 0 family POINTS_MESH name pnt158
+prescribed_point 0.74572 13 0 family POINTS_MESH name pnt159
+prescribed_point 0.72585 -13 0 family POINTS_MESH name pnt160
+prescribed_point 0.969602 -0.338844 0 family POINTS_MESH name pnt161
+prescribed_point 0.72585 -0.350214 0 family POINTS_MESH name pnt162
+prescribed_point 0.398425 -0.374399 0 family POINTS_MESH name pnt163
+prescribed_point -0.136168 -0.275757 0 family POINTS_MESH name pnt164
+prescribed_point -0.3 0 0 family POINTS_MESH name pnt165
+prescribed_point -0.139835 0.271926 0 family POINTS_MESH name pnt166
+prescribed_point 0.334076 0.347247 0 family POINTS_MESH name pnt167
+prescribed_point 0.74572 0.316063 0 family POINTS_MESH name pnt168
+prescribed_point 1.073411 0.250367 0 family POINTS_MESH name pnt169
+prescribed_point -6.2752944512419 9.2209397126678 0 family POINTS_MESH name pnt.03
+prescribed_point -6.269088102108 -9.2251938151416 0 family POINTS_MESH name pnt.04
+prescribed_point 0 0 0 family AIRFOIL name AIRFOIL.60
+prescribed_point 0.99918699264526 -0.040306005626917 0 family AIRFOIL name AIRFOIL.61
+prescribed_point 0.36625111103058 13 0 family DOMAIN name DOMAIN.63
+prescribed_point 20.999187 13 0 family DOMAIN name DOMAIN.64
+prescribed_point 20.999187 -13 0 family DOMAIN name DOMAIN.66
+prescribed_point 0.366251 -13 0 family DOMAIN name DOMAIN.68
+prescribed_point 0.969602 -0.338844 0 family BLOCKING name BLOCKING.70
+prescribed_point 1.0734109020933 0.25036702746451 0 family BLOCKING name BLOCKING.71
+prescribed_point -6.269088102108 -9.2251938151416 1 family POINTS_MESH name pnt.04.0
+prescribed_point -6.2752944512419 9.2209397126678 1 family POINTS_MESH name pnt.03.0
+prescribed_point 1.073411 0.250367 1 family POINTS_MESH name pnt169.0
+prescribed_point 0.74572 0.316063 1 family POINTS_MESH name pnt168.0
+prescribed_point 0.334076 0.347247 1 family POINTS_MESH name pnt167.0
+prescribed_point -0.139835 0.271926 1 family POINTS_MESH name pnt166.0
+prescribed_point -0.3 0 1 family POINTS_MESH name pnt165.0
+prescribed_point -0.136168 -0.275757 1 family POINTS_MESH name pnt164.0
+prescribed_point 0.398425 -0.374399 1 family POINTS_MESH name pnt163.0
+prescribed_point 0.72585 -0.350214 1 family POINTS_MESH name pnt162.0
+prescribed_point 0.969602 -0.338844 1 family POINTS_MESH name pnt161.0
+prescribed_point 0.72585 -13 1 family POINTS_MESH name pnt160.0
+prescribed_point 0.74572 13 1 family POINTS_MESH name pnt159.0
+prescribed_point 0.010165 0.012119 1 family POINTS_MESH name pnt158.0
+prescribed_point 0.013832 -0.015949 1 family POINTS_MESH name pnt157.0
+prescribed_point 0.398426 -0.074399 1 family POINTS_MESH name pnt156.0
+prescribed_point 0.695205 -0.051783 1 family POINTS_MESH name pnt155.0
+prescribed_point 0.999187 -0.040306 1 family POINTS_MESH name pnt154.0
+prescribed_point 0.70027 0.019526 1 family POINTS_MESH name pnt153.0
+prescribed_point 0.334076 0.047247 1 family POINTS_MESH name pnt152.0
+prescribed_point 1.260275 -13 1 family POINTS_MESH name pnt151.0
+prescribed_point 20.999187 -0.413068 1 family POINTS_MESH name pnt150.0
+prescribed_point 1.260275 -0.413068 1 family POINTS_MESH name pnt149.0
+prescribed_point 0.969602 -13 1 family POINTS_MESH name pnt148.0
+prescribed_point 0.969602 -0.338844 1 family POINTS_MESH name pnt147.0
+prescribed_point 1.364084 13 1 family POINTS_MESH name pnt146.0
+prescribed_point 20.999187 0.176143 1 family POINTS_MESH name pnt145.0
+prescribed_point 1.364084 0.176143 1 family POINTS_MESH name pnt144.0
+prescribed_point 1.073411 13 1 family POINTS_MESH name pnt143.0
+prescribed_point 1.073411 0.250367 1 family POINTS_MESH name pnt142.0
+prescribed_point 20.999187 -0.11453 1 family POINTS_MESH name pnt141.0
+prescribed_point 1.28986 -0.11453 1 family POINTS_MESH name pnt140.0
+prescribed_point 0.999187 -0.040306 1 family POINTS_MESH name pnt139.0
+prescribed_point 0.366251 13 1 family POINTS_MESH name pnt138.0
+prescribed_point -13 0 1 family POINTS_MESH name pnt137.0
+prescribed_point 0.366251 -13 1 family POINTS_MESH name pnt136.0
+prescribed_point 0.366251 -13 1 family POINTS_MESH name pnt135.0
+prescribed_point 20.999187 -13 1 family POINTS_MESH name pnt134.0
+prescribed_point 20.999187 -13 1 family POINTS_MESH name pnt133.0
+prescribed_point 0.366251 13 1 family POINTS_MESH name pnt130.0
+prescribed_point 20.999187 13 1 family POINTS_MESH name pnt132.0
+prescribed_point 0 0 1 family AIRFOIL name pnt0.0
+prescribed_point 0.000729 0.003138 1 family AIRFOIL name pnt1.0
+prescribed_point 0.00266 0.006204 1 family AIRFOIL name pnt2.0
+prescribed_point 0.005787 0.00919 1 family AIRFOIL name pnt3.0
+prescribed_point 0.010102 0.012083 1 family AIRFOIL name pnt4.0
+prescribed_point 0.015596 0.014872 1 family AIRFOIL name pnt5.0
+prescribed_point 0.022256 0.017558 1 family AIRFOIL name pnt6.0
+prescribed_point 0.030065 0.020153 1 family AIRFOIL name pnt7.0
+prescribed_point 0.039005 0.022665 1 family AIRFOIL name pnt8.0
+prescribed_point 0.049057 0.025105 1 family AIRFOIL name pnt9.0
+prescribed_point 0.060195 0.02747 1 family AIRFOIL name pnt10.0
+prescribed_point 0.072394 0.02975 1 family AIRFOIL name pnt11.0
+prescribed_point 0.085622 0.031935 1 family AIRFOIL name pnt12.0
+prescribed_point 0.099848 0.034014 1 family AIRFOIL name pnt13.0
+prescribed_point 0.115039 0.035977 1 family AIRFOIL name pnt14.0
+prescribed_point 0.131155 0.037815 1 family AIRFOIL name pnt15.0
+prescribed_point 0.14816 0.039517 1 family AIRFOIL name pnt16.0
+prescribed_point 0.166011 0.041071 1 family AIRFOIL name pnt17.0
+prescribed_point 0.184665 0.042465 1 family AIRFOIL name pnt18.0
+prescribed_point 0.204077 0.043695 1 family AIRFOIL name pnt19.0
+prescribed_point 0.224201 0.044753 1 family AIRFOIL name pnt20.0
+prescribed_point 0.244987 0.045633 1 family AIRFOIL name pnt21.0
+prescribed_point 0.266386 0.046327 1 family AIRFOIL name pnt22.0
+prescribed_point 0.288344 0.04683 1 family AIRFOIL name pnt23.0
+prescribed_point 0.310811 0.04714 1 family AIRFOIL name pnt24.0
+prescribed_point 0.333731 0.047247 1 family AIRFOIL name pnt25.0
+prescribed_point 0.357048 0.047144 1 family AIRFOIL name pnt26.0
+prescribed_point 0.380707 0.046826 1 family AIRFOIL name pnt27.0
+prescribed_point 0.40465 0.04629 1 family AIRFOIL name pnt28.0
+prescribed_point 0.428819 0.045532 1 family AIRFOIL name pnt29.0
+prescribed_point 0.453155 0.044545 1 family AIRFOIL name pnt30.0
+prescribed_point 0.4776 0.043315 1 family AIRFOIL name pnt31.0
+prescribed_point 0.502094 0.041826 1 family AIRFOIL name pnt32.0
+prescribed_point 0.526577 0.040062 1 family AIRFOIL name pnt33.0
+prescribed_point 0.550989 0.038017 1 family AIRFOIL name pnt34.0
+prescribed_point 0.575271 0.035687 1 family AIRFOIL name pnt35.0
+prescribed_point 0.599366 0.033087 1 family AIRFOIL name pnt36.0
+prescribed_point 0.623216 0.030249 1 family AIRFOIL name pnt37.0
+prescribed_point 0.646764 0.027212 1 family AIRFOIL name pnt38.0
+prescribed_point 0.669957 0.024009 1 family AIRFOIL name pnt39.0
+prescribed_point 0.692738 0.02067 1 family AIRFOIL name pnt40.0
+prescribed_point 0.715053 0.017222 1 family AIRFOIL name pnt41.0
+prescribed_point 0.736849 0.013689 1 family AIRFOIL name pnt42.0
+prescribed_point 0.758074 0.010094 1 family AIRFOIL name pnt43.0
+prescribed_point 0.778678 0.006467 1 family AIRFOIL name pnt44.0
+prescribed_point 0.798613 0.00283 1 family AIRFOIL name pnt45.0
+prescribed_point 0.81783 -0.000788 1 family AIRFOIL name pnt46.0
+prescribed_point 0.836283 -0.004364 1 family AIRFOIL name pnt47.0
+prescribed_point 0.85393 -0.007871 1 family AIRFOIL name pnt48.0
+prescribed_point 0.870729 -0.011288 1 family AIRFOIL name pnt49.0
+prescribed_point 0.886637 -0.014596 1 family AIRFOIL name pnt50.0
+prescribed_point 0.90162 -0.017775 1 family AIRFOIL name pnt51.0
+prescribed_point 0.91564 -0.02081 1 family AIRFOIL name pnt52.0
+prescribed_point 0.928664 -0.023681 1 family AIRFOIL name pnt53.0
+prescribed_point 0.940662 -0.026374 1 family AIRFOIL name pnt54.0
+prescribed_point 0.951605 -0.028871 1 family AIRFOIL name pnt55.0
+prescribed_point 0.961466 -0.031156 1 family AIRFOIL name pnt56.0
+prescribed_point 0.970222 -0.033218 1 family AIRFOIL name pnt57.0
+prescribed_point 0.977852 -0.035041 1 family AIRFOIL name pnt58.0
+prescribed_point 0.98434 -0.036613 1 family AIRFOIL name pnt59.0
+prescribed_point 0.989669 -0.03792 1 family AIRFOIL name pnt60.0
+prescribed_point 0.993826 -0.038952 1 family AIRFOIL name pnt61.0
+prescribed_point 0.996802 -0.0397 1 family AIRFOIL name pnt62.0
+prescribed_point 0.998591 -0.040154 1 family AIRFOIL name pnt63.0
+prescribed_point 0.999187 -0.040306 1 family AIRFOIL name pnt64.0
+prescribed_point 0 0 1 family AIRFOIL name pnt65.0
+prescribed_point 0.000474 -0.003182 1 family AIRFOIL name pnt66.0
+prescribed_point 0.002152 -0.0064 1 family AIRFOIL name pnt67.0
+prescribed_point 0.005027 -0.009653 1 family AIRFOIL name pnt68.0
+prescribed_point 0.009093 -0.012936 1 family AIRFOIL name pnt69.0
+prescribed_point 0.014341 -0.01624 1 family AIRFOIL name pnt70.0
+prescribed_point 0.020758 -0.01956 1 family AIRFOIL name pnt71.0
+prescribed_point 0.028329 -0.022882 1 family AIRFOIL name pnt72.0
+prescribed_point 0.037034 -0.026199 1 family AIRFOIL name pnt73.0
+prescribed_point 0.046854 -0.029498 1 family AIRFOIL name pnt74.0
+prescribed_point 0.057765 -0.032771 1 family AIRFOIL name pnt75.0
+prescribed_point 0.069741 -0.03601 1 family AIRFOIL name pnt76.0
+prescribed_point 0.082752 -0.03921 1 family AIRFOIL name pnt77.0
+prescribed_point 0.096767 -0.042366 1 family AIRFOIL name pnt78.0
+prescribed_point 0.111753 -0.04547 1 family AIRFOIL name pnt79.0
+prescribed_point 0.127672 -0.048511 1 family AIRFOIL name pnt80.0
+prescribed_point 0.14449 -0.051476 1 family AIRFOIL name pnt81.0
+prescribed_point 0.162162 -0.054353 1 family AIRFOIL name pnt82.0
+prescribed_point 0.180647 -0.057133 1 family AIRFOIL name pnt83.0
+prescribed_point 0.199902 -0.0598 1 family AIRFOIL name pnt84.0
+prescribed_point 0.219881 -0.06234 1 family AIRFOIL name pnt85.0
+prescribed_point 0.240535 -0.064742 1 family AIRFOIL name pnt86.0
+prescribed_point 0.261815 -0.066983 1 family AIRFOIL name pnt87.0
+prescribed_point 0.28367 -0.069037 1 family AIRFOIL name pnt88.0
+prescribed_point 0.306051 -0.070852 1 family AIRFOIL name pnt89.0
+prescribed_point 0.328906 -0.072362 1 family AIRFOIL name pnt90.0
+prescribed_point 0.352182 -0.073491 1 family AIRFOIL name pnt91.0
+prescribed_point 0.375825 -0.074182 1 family AIRFOIL name pnt92.0
+prescribed_point 0.399781 -0.074398 1 family AIRFOIL name pnt93.0
+prescribed_point 0.423992 -0.074129 1 family AIRFOIL name pnt94.0
+prescribed_point 0.448397 -0.07339 1 family AIRFOIL name pnt95.0
+prescribed_point 0.472939 -0.07222 1 family AIRFOIL name pnt96.0
+prescribed_point 0.497556 -0.070675 1 family AIRFOIL name pnt97.0
+prescribed_point 0.522184 -0.068822 1 family AIRFOIL name pnt98.0
+prescribed_point 0.546764 -0.066734 1 family AIRFOIL name pnt99.0
+prescribed_point 0.571231 -0.064474 1 family AIRFOIL name pnt100.0
+prescribed_point 0.595526 -0.062097 1 family AIRFOIL name pnt101.0
+prescribed_point 0.619589 -0.059653 1 family AIRFOIL name pnt102.0
+prescribed_point 0.64336 -0.057185 1 family AIRFOIL name pnt103.0
+prescribed_point 0.666781 -0.054734 1 family AIRFOIL name pnt104.0
+prescribed_point 0.689793 -0.05234 1 family AIRFOIL name pnt105.0
+prescribed_point 0.71234 -0.050041 1 family AIRFOIL name pnt106.0
+prescribed_point 0.734365 -0.04787 1 family AIRFOIL name pnt107.0
+prescribed_point 0.755817 -0.045858 1 family AIRFOIL name pnt108.0
+prescribed_point 0.776641 -0.044029 1 family AIRFOIL name pnt109.0
+prescribed_point 0.796789 -0.042394 1 family AIRFOIL name pnt110.0
+prescribed_point 0.816209 -0.040959 1 family AIRFOIL name pnt111.0
+prescribed_point 0.834856 -0.03973 1 family AIRFOIL name pnt112.0
+prescribed_point 0.852686 -0.038714 1 family AIRFOIL name pnt113.0
+prescribed_point 0.869655 -0.037912 1 family AIRFOIL name pnt114.0
+prescribed_point 0.88572 -0.037322 1 family AIRFOIL name pnt115.0
+prescribed_point 0.900847 -0.03694 1 family AIRFOIL name pnt116.0
+prescribed_point 0.914997 -0.036753 1 family AIRFOIL name pnt117.0
+prescribed_point 0.928137 -0.036746 1 family AIRFOIL name pnt118.0
+prescribed_point 0.940238 -0.036894 1 family AIRFOIL name pnt119.0
+prescribed_point 0.95127 -0.037175 1 family AIRFOIL name pnt120.0
+prescribed_point 0.961207 -0.037561 1 family AIRFOIL name pnt121.0
+prescribed_point 0.970028 -0.038017 1 family AIRFOIL name pnt122.0
+prescribed_point 0.977713 -0.038504 1 family AIRFOIL name pnt123.0
+prescribed_point 0.984245 -0.038984 1 family AIRFOIL name pnt124.0
+prescribed_point 0.989608 -0.039422 1 family AIRFOIL name pnt125.0
+prescribed_point 0.993792 -0.039792 1 family AIRFOIL name pnt126.0
+prescribed_point 0.996787 -0.040072 1 family AIRFOIL name pnt127.0
+prescribed_point 0.998587 -0.040247 1 family AIRFOIL name pnt128.0
+prescribed_point 0.999187 -0.040306 1 family AIRFOIL name pnt129.0
+prescribed_point 0.366251 13 1 family POINTS_MESH name pnt130.1
+prescribed_point 20.999187 13 1 family POINTS_MESH name pnt131.0
+prescribed_point 20.999187 13 1 family POINTS_MESH name pnt132.1
+prescribed_point 20.999187 -13 1 family POINTS_MESH name pnt133.1
+prescribed_point 20.999187 -13 1 family POINTS_MESH name pnt134.1
+prescribed_point 0.366251 -13 1 family POINTS_MESH name pnt135.1
+prescribed_point 0.366251 -13 1 family POINTS_MESH name pnt136.1
+prescribed_point -13 0 1 family POINTS_MESH name pnt137.1
+prescribed_point 0.366251 13 1 family POINTS_MESH name pnt138.1
+prescribed_point 0.999187 -0.040306 1 family POINTS_MESH name pnt139.1
+prescribed_point 1.28986 -0.11453 1 family POINTS_MESH name pnt140.1
+prescribed_point 20.999187 -0.11453 1 family POINTS_MESH name pnt141.1
+prescribed_point 1.073411 0.250367 1 family POINTS_MESH name pnt142.1
+prescribed_point 1.073411 13 1 family POINTS_MESH name pnt143.1
+prescribed_point 1.364084 0.176143 1 family POINTS_MESH name pnt144.1
+prescribed_point 20.999187 0.176143 1 family POINTS_MESH name pnt145.1
+prescribed_point 1.364084 13 1 family POINTS_MESH name pnt146.1
+prescribed_point 0.969602 -0.338844 1 family POINTS_MESH name pnt147.1
+prescribed_point 0.969602 -13 1 family POINTS_MESH name pnt148.1
+prescribed_point 1.260275 -0.413068 1 family POINTS_MESH name pnt149.1
+prescribed_point 20.999187 -0.413068 1 family POINTS_MESH name pnt150.1
+prescribed_point 1.260275 -13 1 family POINTS_MESH name pnt151.1
+prescribed_point 0.334076 0.047247 1 family POINTS_MESH name pnt152.1
+prescribed_point 0.70027 0.019526 1 family POINTS_MESH name pnt153.1
+prescribed_point 0.999187 -0.040306 1 family POINTS_MESH name pnt154.1
+prescribed_point 0.695205 -0.051783 1 family POINTS_MESH name pnt155.1
+prescribed_point 0.398426 -0.074399 1 family POINTS_MESH name pnt156.1
+prescribed_point 0.013832 -0.015949 1 family POINTS_MESH name pnt157.1
+prescribed_point 0.010165 0.012119 1 family POINTS_MESH name pnt158.1
+prescribed_point 0.74572 13 1 family POINTS_MESH name pnt159.1
+prescribed_point 0.72585 -13 1 family POINTS_MESH name pnt160.1
+prescribed_point 0.969602 -0.338844 1 family POINTS_MESH name pnt161.1
+prescribed_point 0.72585 -0.350214 1 family POINTS_MESH name pnt162.1
+prescribed_point 0.398425 -0.374399 1 family POINTS_MESH name pnt163.1
+prescribed_point -0.136168 -0.275757 1 family POINTS_MESH name pnt164.1
+prescribed_point -0.3 0 1 family POINTS_MESH name pnt165.1
+prescribed_point -0.139835 0.271926 1 family POINTS_MESH name pnt166.1
+prescribed_point 0.334076 0.347247 1 family POINTS_MESH name pnt167.1
+prescribed_point 0.74572 0.316063 1 family POINTS_MESH name pnt168.1
+prescribed_point 1.073411 0.250367 1 family POINTS_MESH name pnt169.1
+prescribed_point -6.2752944512419 9.2209397126678 1 family POINTS_MESH name pnt.03.1
+prescribed_point -6.269088102108 -9.2251938151416 1 family POINTS_MESH name pnt.04.1
+prescribed_point 0 0 1 family AIRFOIL name AIRFOIL.60.0
+prescribed_point 0.99918699264526 -0.040306005626917 1 family AIRFOIL name AIRFOIL.61.0
+prescribed_point 0.36625111103058 13 1 family DOMAIN name DOMAIN.63.0
+prescribed_point 20.999187 13 1 family DOMAIN name DOMAIN.64.0
+prescribed_point 20.999187 -13 1 family DOMAIN name DOMAIN.66.0
+prescribed_point 0.366251 -13 1 family DOMAIN name DOMAIN.68.0
+prescribed_point 0.969602 -0.338844 1 family BLOCKING name BLOCKING.70.0
+prescribed_point 1.0734109020933 0.25036702746451 1 family BLOCKING name BLOCKING.71.0
+prescribed_point 0.366251 13 0 family INLET name INLET.7
+prescribed_point 0.366251 13 1 family INLET name INLET.8
+prescribed_point 0.366251 -13 1 family INLET name INLET.9
+prescribed_point 0.366251 -13 0 family INLET name INLET.10
+prescribed_point 0.366251 -13 0 family DOMAIN name DOMAIN.10
+prescribed_point 0.36625121840197 13.000000106209 0 family DOMAIN name DOMAIN.11
+prescribed_point 0.366251 -13 1 family DOMAIN name DOMAIN.12
+prescribed_point 0.36625121840197 13.000000106209 1 family DOMAIN name DOMAIN.13
+prescribed_point 0.366251 13 0 family INLET name INLET.15
+prescribed_point 0.366251 13 1 family INLET name INLET.16
+prescribed_point 20.999187 13 0 family WALL name WALL.21
+prescribed_point 20.999187 13 1 family WALL name WALL.22
+prescribed_point 20.999187 -13 0 family WALL name WALL.29
+prescribed_point 20.999187 -13 1 family WALL name WALL.30
+prescribed_point 0.36625121840197 13.000000106209 1 family DOMAIN name DOMAIN.30
+prescribed_point 0 0 0 family POINTS_MESH name pnt.06
+prescribed_point 0 0 1 family POINTS_MESH name pnt.07
+prescribed_point 0.99918705522787 -0.040306014102342 0 family AIRFOIL name AIRFOIL.8
+prescribed_point 0.99918705522787 -0.040306014102342 1 family AIRFOIL name AIRFOIL.10
+prescribed_point 0 0 1 family AIRFOIL name AIRFOIL.13
+prescribed_point 0.999187 -0.040306 1 family AIRFOIL name AIRFOIL.14
+prescribed_point 0.999187 -0.040306 0 family AIRFOIL name AIRFOIL.15
+prescribed_point 0 0 0 family AIRFOIL name AIRFOIL.16
+prescribed_point 0.99918695470301 -0.040305995539838 0 family AIRFOIL name AIRFOIL.18
+prescribed_point 0.99918695470301 -0.040305995539838 1 family AIRFOIL name AIRFOIL.20
+define_curve family AIRFOIL tetra_size 1e+010 name crv0 vertex1 AIRFOIL.16 vertex2 AIRFOIL.8
+bspline
+65,4,0
+0,0,0,0,0.0068449779551545
+0.011167417207348,0.016378878570778,0.022520958034819,0.029717738012888,0.037938197901631
+0.047213358304402,0.057574239824554,0.06895880125538,0.081367042596879,0.094767943245699
+0.10916150320184,0.12445466065524,0.14067843620925,0.15777078865716,0.17570069739563
+0.19440612121794,0.21385603952074,0.23398841109732,0.25480323594769,0.27620745226177
+0.29817003943623,0.3206599768677,0.34358420274612,0.36688067586478,0.39054939622369
+0.41449730201279,0.43866235202536,0.4630445462614,0.48751980230751,0.5120570995603
+0.53659439681307,0.56110067346249,0.58548286769849,0.60970995891773,0.63375092651684
+0.65748168808242,0.68090224361445,0.70391953130289,0.72650253054438,0.74858920013221
+0.77011749885968,0.79102538552006,0.81128183951003,0.83085584022621,0.84965432585854
+0.86764627580369,0.88476964885492,0.90102444501226,0.91634862306898,0.93068014181839
+0.94401900126048,0.95633418079189,0.96753261860258,0.97767635589924,0.98667233087181
+0.99452054352029,1.0011899732413,1.006680620035,1.0109614632978,1.0140223457413
+1.0164831306955,1.0164831306955,1.0164831306955,1.0164831306955
+0,0,0
+8.2069737418589e-005,0.0023476610079498,0
+0.0018924810056375,0.0057636917701363,0
+0.0059475783221568,0.00948045619464,0
+0.010304817348449,0.012328061019509,0
+0.015894126811962,0.015108364539034,0
+0.022539930631324,0.01774287550253,0
+0.030383978395314,0.020320827664261,0
+0.039349058783791,0.022812878482962,0
+0.049370393765737,0.0252286606857,0
+0.060523644939315,0.027584438558879,0
+0.072708215186336,0.029850644613023,0
+0.085952507100012,0.032029528354415,0
+0.10012394210422,0.034093158335998,0
+0.11535495294816,0.036054673157094,0
+0.13143403085594,0.037883149152706,0
+0.14843899899125,0.039580687023255,0
+0.1662605428744,0.04112893061734,0
+0.18491328548957,0.042517687627452,0
+0.20429418020861,0.043743263499564,0
+0.22443799945843,0.044798873223852,0
+0.24517450016472,0.04567481312093,0
+0.26657294839534,0.046366741148107,0
+0.28852499322429,0.046866512305408,0
+0.31095134418208,0.04717595327886,0
+0.33384764412629,0.047282017429984,0
+0.35718222878559,0.047178183458447,0
+0.38079758053839,0.046859667339845,0
+0.40471678636753,0.046324184176028,0
+0.42890761778006,0.04556562363016,0
+0.45317632119785,0.044583629253771,0
+0.47762669017274,0.043356074537675,0
+0.50209249007627,0.04187250468523,0
+0.52657766447279,0.040109398591122,0
+0.55094551183066,0.038070961535942,0
+0.57522415333624,0.035740461441566,0
+0.59932062323934,0.03313658166021,0
+0.62310418457678,0.030301982793647,0
+0.64667630581809,0.027259231753272,0
+0.66982125797573,0.024060635409668,0
+0.69260354670334,0.020720053948235,0
+0.71489372152192,0.017274879115054,0
+0.73666937954463,0.013745364861674,0
+0.75787062502713,0.01015174757765,0
+0.77846771556956,0.0065269269505259,0
+0.79840136090398,0.0028877735677172,0
+0.81757252711956,-0.00072108514127819,0
+0.8360251564338,-0.004298817938564,0
+0.85364069366979,-0.0077995062681904,0
+0.87045583217836,-0.011219152331374,0
+0.88633592518081,-0.01452234639089,0
+0.90129270932078,-0.01769399389259,0
+0.91532071504167,-0.020731688453324,0
+0.9283422158647,-0.023600837387527,0
+0.94028186893964,-0.026280821025543,0
+0.95128196457973,-0.028790896799468,0
+0.96108538331048,-0.031060903343839,0
+0.96985506464613,-0.033126504528388,0
+0.97746627334753,-0.034944043241336,0
+0.98396245760975,-0.036518170664178,0
+0.98927713231237,-0.037821033498694,0
+0.99342858867119,-0.038850811504952,0
+0.99661058804185,-0.039650362324584,0
+0.99839196104046,-0.040102988184545,0
+0.999187,-0.040306,0
+define_curve family AIRFOIL tetra_size 1e+010 name crv1 vertex1 AIRFOIL.16 vertex2 AIRFOIL.18
+bspline
+65,4,0
+0,0,0,0,0.0068463263980603
+0.011189139389493,0.016427268355766,0.022626237546621,0.029848036653967,0.038092665677805
+0.047422114310042,0.057774392858771,0.069180496169944,0.081578434551653,0.094968208003898
+0.10934981652668,0.12466127042809,0.14084058001623,0.15791874013704,0.17583376109861
+0.19452365320905,0.21395742162239,0.23410407149267,0.25490161312799,0.27628805683643
+0.298263402618,0.32070367108888,0.34360886224908,0.36691698640668,0.39056605386978
+0.41452506979242,0.43873204448269,0.46315598309465,0.48773489593637,0.51237579847001
+0.53707869069555,0.56175058807514,0.58632950091687,0.61072244468287,0.63492941937314
+0.65882644560388,0.68238252852911,0.70550468361099,0.72816191600355,0.75029223601489
+0.7718336539531,0.79275517497222,0.8129638145344,0.83242857779367,0.85111846990409
+0.86897150117374,0.88598767160263,0.90204300180693,0.91716848663261,0.93133313123371
+0.94447494591831,0.95656293584047,0.96759710100019,0.97754644655151,0.98637997764847
+0.99409769429108,1.0006376067874,1.0060307099835,1.0102150141873,1.0132277314384
+1.0156391122297,1.0156391122297,1.0156391122297,1.0156391122297
+0,0,0
+-0.00010744142279808,-0.0023472000736879,0
+0.0014331019959944,-0.0059026514068081,0
+0.0051622848173837,-0.0099533238907829,0
+0.0092893127837039,-0.01320663887971,0
+0.014596935969065,-0.016489284061037,0
+0.021024709769259,-0.019776199343062,0
+0.028651458455072,-0.023089330682372,0
+0.037322034733389,-0.026370345035732,0
+0.04718179996399,-0.029663048158028,0
+0.058059347888789,-0.032910226836624,0
+0.070050647432139,-0.036140379442287,0
+0.083069455387819,-0.039330788304011,0
+0.097059200550413,-0.042472226947073,0
+0.11201887595419,-0.045564011462601,0
+0.12796978989235,-0.048605824505113,0
+0.14475891664607,-0.051560193719302,0
+0.16240811597352,-0.054428420356817,0
+0.18088695463647,-0.057205071679052,0
+0.20013563438259,-0.059868354746698,0
+0.22009227946052,-0.062401615245899,0
+0.2407186031193,-0.064801099736792,0
+0.26202062627486,-0.067043034502153,0
+0.28380505338527,-0.069096229016451,0
+0.30620907759284,-0.070919903462098,0
+0.32903591076664,-0.072437752177765,0
+0.35228965543599,-0.073570983215539,0
+0.37592988853058,-0.074264941440197,0
+0.39986018520293,-0.074479199881117,0
+0.42406963732504,-0.074205698573515,0
+0.44845376488904,-0.073458892609953,0
+0.47295128225008,-0.072281324564628,0
+0.49759181400494,-0.070723985662168,0
+0.52217220478853,-0.068862178606381,0
+0.546740995987,-0.066766179454683,0
+0.57115982004536,-0.064502923518586,0
+0.59548093602289,-0.062116282857265,0
+0.6194762821485,-0.059673613412845,0
+0.64325423118393,-0.057199312372355,0
+0.66662904817608,-0.054747571484898,0
+0.68964126116444,-0.052347666107376,0
+0.71216533850828,-0.050046108671251,0
+0.7341645250678,-0.047871902866127,0
+0.75561772437852,-0.045854818594753,0
+0.77639477701786,-0.04402700558282,0
+0.79653966465572,-0.04238949690076,0
+0.81595416648269,-0.040951802902393,0
+0.83456856972361,-0.039720388823485,0
+0.85242125725747,-0.038699756307789,0
+0.86931663337653,-0.037897527629038,0
+0.88541490251329,-0.037301260295523,0
+0.90053067534568,-0.036917127271454,0
+0.91465367758371,-0.036726147848249,0
+0.92778115035638,-0.036717490757119,0
+0.93989025199166,-0.036861778783252,0
+0.95091167074128,-0.037140044133482,0
+0.96083207321258,-0.037523652546811,0
+0.96966759311795,-0.037980206389863,0
+0.97730949059275,-0.038464079420131,0
+0.98387733904182,-0.038947543549875,0
+0.98919390578594,-0.039381136393404,0
+0.99341061232461,-0.039754432127872,0
+0.99658522017329,-0.040050499416292,0
+0.99838738201436,-0.040227265728881,0
+0.999187,-0.040306,0
+define_curve family DOMAIN tetra_size 1e+010 name crv2 vertex1 INLET.15 vertex2 WALL.21
+bspline
+2,2,0
+0,0,1,1
+0.366251,13,0
+20.999187,13,0
+define_curve family DOMAIN tetra_size 1e+010 name crv3 vertex1 WALL.21 vertex2 WALL.29
+bspline
+2,2,0
+0,0,1,1
+20.999187,13,0
+20.999187,-13,0
+define_curve family DOMAIN tetra_size 1e+010 name crv4 vertex1 WALL.29 vertex2 DOMAIN.10
+bspline
+2,2,0
+0,0,1,1
+20.999187,-13,0
+0.366251,-13,0
+define_curve family DOMAIN tetra_size 1e+010 name crv5 vertex1 DOMAIN.10 vertex2 DOMAIN.11
+bspline
+3,3,0
+0,0,0,37.291107025402,37.291107025402
+37.291107025402
+0.366251,-13,0
+-26.366251,0,0
+0.366251,13,0
+define_curve family BLOCKING tetra_size 1e+010 name crv6 vertex1 BLOCKING.70 vertex2 BLOCKING.71
+bspline
+9,4,0
+0,0,0,0,0.57233402548474
+1.1171957025459,1.431406993887,1.7572557404629,2.2321535177588,2.9791885401225
+2.9791885401225,2.9791885401225,2.9791885401225
+0.969602,-0.338844,0
+0.7753865547504,-0.34201769869274,0
+0.41982003318657,-0.38124002026093,0
+-0.097513511200215,-0.39338749211571,0
+-0.3724726503402,0.00660448087367,0
+-0.12686309413416,0.36363562993445,0
+0.44592951580639,0.34588405198584,0
+0.8243627581466,0.3202293455441,0
+1.073411,0.250367,0
+define_curve family DOMAIN tetra_size 1e+010 name crv5.0
+bspline
+3,3,0
+0,0,0,37.291107025402,37.291107025402
+37.291107025402
+0.366251,-13,1
+-26.366251,0,1
+0.366251,13,1
+define_curve family DOMAIN tetra_size 1e+010 name crv2.0
+bspline
+2,2,0
+0,0,1,1
+0.366251,13,1
+20.999187,13,1
+define_curve family DOMAIN tetra_size 1e+010 name crv3.0
+bspline
+2,2,0
+0,0,1,1
+20.999187,13,1
+20.999187,-13,1
+define_curve family DOMAIN tetra_size 1e+010 name crv4.0
+bspline
+2,2,0
+0,0,1,1
+20.999187,-13,1
+0.366251,-13,1
+define_curve family AIRFOIL tetra_size 1e+010 name crv0.0 vertex1 AIRFOIL.13 vertex2 AIRFOIL.10
+bspline
+65,4,0
+0,0,0,0,0.0068449779551545
+0.011167417207348,0.016378878570778,0.022520958034819,0.029717738012888,0.037938197901631
+0.047213358304402,0.057574239824554,0.06895880125538,0.081367042596879,0.094767943245699
+0.10916150320184,0.12445466065524,0.14067843620925,0.15777078865716,0.17570069739563
+0.19440612121794,0.21385603952074,0.23398841109732,0.25480323594769,0.27620745226177
+0.29817003943623,0.3206599768677,0.34358420274612,0.36688067586478,0.39054939622369
+0.41449730201279,0.43866235202536,0.4630445462614,0.48751980230751,0.5120570995603
+0.53659439681307,0.56110067346249,0.58548286769849,0.60970995891773,0.63375092651684
+0.65748168808242,0.68090224361445,0.70391953130289,0.72650253054438,0.74858920013221
+0.77011749885968,0.79102538552006,0.81128183951003,0.83085584022621,0.84965432585854
+0.86764627580369,0.88476964885492,0.90102444501226,0.91634862306898,0.93068014181839
+0.94401900126048,0.95633418079189,0.96753261860258,0.97767635589924,0.98667233087181
+0.99452054352029,1.0011899732413,1.006680620035,1.0109614632978,1.0140223457413
+1.0164831306955,1.0164831306955,1.0164831306955,1.0164831306955
+0,0,1
+8.2069737418589e-005,0.0023476610079498,1
+0.0018924810056375,0.0057636917701363,1
+0.0059475783221568,0.00948045619464,1
+0.010304817348449,0.012328061019509,1
+0.015894126811962,0.015108364539034,1
+0.022539930631324,0.01774287550253,1
+0.030383978395314,0.020320827664261,1
+0.039349058783791,0.022812878482962,1
+0.049370393765737,0.0252286606857,1
+0.060523644939315,0.027584438558879,1
+0.072708215186336,0.029850644613023,1
+0.085952507100012,0.032029528354415,1
+0.10012394210422,0.034093158335998,1
+0.11535495294816,0.036054673157094,1
+0.13143403085594,0.037883149152706,1
+0.14843899899125,0.039580687023255,1
+0.1662605428744,0.04112893061734,1
+0.18491328548957,0.042517687627452,1
+0.20429418020861,0.043743263499564,1
+0.22443799945843,0.044798873223852,1
+0.24517450016472,0.04567481312093,1
+0.26657294839534,0.046366741148107,1
+0.28852499322429,0.046866512305408,1
+0.31095134418208,0.04717595327886,1
+0.33384764412629,0.047282017429984,1
+0.35718222878559,0.047178183458447,1
+0.38079758053839,0.046859667339845,1
+0.40471678636753,0.046324184176028,1
+0.42890761778006,0.04556562363016,1
+0.45317632119785,0.044583629253771,1
+0.47762669017274,0.043356074537675,1
+0.50209249007627,0.04187250468523,1
+0.52657766447279,0.040109398591122,1
+0.55094551183066,0.038070961535942,1
+0.57522415333624,0.035740461441566,1
+0.59932062323934,0.03313658166021,1
+0.62310418457678,0.030301982793647,1
+0.64667630581809,0.027259231753272,1
+0.66982125797573,0.024060635409668,1
+0.69260354670334,0.020720053948235,1
+0.71489372152192,0.017274879115054,1
+0.73666937954463,0.013745364861674,1
+0.75787062502713,0.01015174757765,1
+0.77846771556956,0.0065269269505259,1
+0.79840136090398,0.0028877735677172,1
+0.81757252711956,-0.00072108514127819,1
+0.8360251564338,-0.004298817938564,1
+0.85364069366979,-0.0077995062681904,1
+0.87045583217836,-0.011219152331374,1
+0.88633592518081,-0.01452234639089,1
+0.90129270932078,-0.01769399389259,1
+0.91532071504167,-0.020731688453324,1
+0.9283422158647,-0.023600837387527,1
+0.94028186893964,-0.026280821025543,1
+0.95128196457973,-0.028790896799468,1
+0.96108538331048,-0.031060903343839,1
+0.96985506464613,-0.033126504528388,1
+0.97746627334753,-0.034944043241336,1
+0.98396245760975,-0.036518170664178,1
+0.98927713231237,-0.037821033498694,1
+0.99342858867119,-0.038850811504952,1
+0.99661058804185,-0.039650362324584,1
+0.99839196104046,-0.040102988184545,1
+0.999187,-0.040306,1
+define_curve family AIRFOIL tetra_size 1e+010 name crv1.0 vertex1 AIRFOIL.13 vertex2 AIRFOIL.20
+bspline
+65,4,0
+0,0,0,0,0.0068463263980603
+0.011189139389493,0.016427268355766,0.022626237546621,0.029848036653967,0.038092665677805
+0.047422114310042,0.057774392858771,0.069180496169944,0.081578434551653,0.094968208003898
+0.10934981652668,0.12466127042809,0.14084058001623,0.15791874013704,0.17583376109861
+0.19452365320905,0.21395742162239,0.23410407149267,0.25490161312799,0.27628805683643
+0.298263402618,0.32070367108888,0.34360886224908,0.36691698640668,0.39056605386978
+0.41452506979242,0.43873204448269,0.46315598309465,0.48773489593637,0.51237579847001
+0.53707869069555,0.56175058807514,0.58632950091687,0.61072244468287,0.63492941937314
+0.65882644560388,0.68238252852911,0.70550468361099,0.72816191600355,0.75029223601489
+0.7718336539531,0.79275517497222,0.8129638145344,0.83242857779367,0.85111846990409
+0.86897150117374,0.88598767160263,0.90204300180693,0.91716848663261,0.93133313123371
+0.94447494591831,0.95656293584047,0.96759710100019,0.97754644655151,0.98637997764847
+0.99409769429108,1.0006376067874,1.0060307099835,1.0102150141873,1.0132277314384
+1.0156391122297,1.0156391122297,1.0156391122297,1.0156391122297
+0,0,1
+-0.00010744142279808,-0.0023472000736879,1
+0.0014331019959944,-0.0059026514068081,1
+0.0051622848173837,-0.0099533238907829,1
+0.0092893127837039,-0.01320663887971,1
+0.014596935969065,-0.016489284061037,1
+0.021024709769259,-0.019776199343062,1
+0.028651458455072,-0.023089330682372,1
+0.037322034733389,-0.026370345035732,1
+0.04718179996399,-0.029663048158028,1
+0.058059347888789,-0.032910226836624,1
+0.070050647432139,-0.036140379442287,1
+0.083069455387819,-0.039330788304011,1
+0.097059200550413,-0.042472226947073,1
+0.11201887595419,-0.045564011462601,1
+0.12796978989235,-0.048605824505113,1
+0.14475891664607,-0.051560193719302,1
+0.16240811597352,-0.054428420356817,1
+0.18088695463647,-0.057205071679052,1
+0.20013563438259,-0.059868354746698,1
+0.22009227946052,-0.062401615245899,1
+0.2407186031193,-0.064801099736792,1
+0.26202062627486,-0.067043034502153,1
+0.28380505338527,-0.069096229016451,1
+0.30620907759284,-0.070919903462098,1
+0.32903591076664,-0.072437752177765,1
+0.35228965543599,-0.073570983215539,1
+0.37592988853058,-0.074264941440197,1
+0.39986018520293,-0.074479199881117,1
+0.42406963732504,-0.074205698573515,1
+0.44845376488904,-0.073458892609953,1
+0.47295128225008,-0.072281324564628,1
+0.49759181400494,-0.070723985662168,1
+0.52217220478853,-0.068862178606381,1
+0.546740995987,-0.066766179454683,1
+0.57115982004536,-0.064502923518586,1
+0.59548093602289,-0.062116282857265,1
+0.6194762821485,-0.059673613412845,1
+0.64325423118393,-0.057199312372355,1
+0.66662904817608,-0.054747571484898,1
+0.68964126116444,-0.052347666107376,1
+0.71216533850828,-0.050046108671251,1
+0.7341645250678,-0.047871902866127,1
+0.75561772437852,-0.045854818594753,1
+0.77639477701786,-0.04402700558282,1
+0.79653966465572,-0.04238949690076,1
+0.81595416648269,-0.040951802902393,1
+0.83456856972361,-0.039720388823485,1
+0.85242125725747,-0.038699756307789,1
+0.86931663337653,-0.037897527629038,1
+0.88541490251329,-0.037301260295523,1
+0.90053067534568,-0.036917127271454,1
+0.91465367758371,-0.036726147848249,1
+0.92778115035638,-0.036717490757119,1
+0.93989025199166,-0.036861778783252,1
+0.95091167074128,-0.037140044133482,1
+0.96083207321258,-0.037523652546811,1
+0.96966759311795,-0.037980206389863,1
+0.97730949059275,-0.038464079420131,1
+0.98387733904182,-0.038947543549875,1
+0.98919390578594,-0.039381136393404,1
+0.99341061232461,-0.039754432127872,1
+0.99658522017329,-0.040050499416292,1
+0.99838738201436,-0.040227265728881,1
+0.999187,-0.040306,1
+define_curve family DOMAIN tetra_size 1e+010 name crv2.41 vertex1 INLET.16 vertex2 WALL.22
+bspline
+2,2,0
+0,0,1,1
+0.366251,13,1
+20.999187,13,1
+define_curve family DOMAIN tetra_size 1e+010 name crv3.42 vertex1 WALL.22 vertex2 WALL.30
+bspline
+2,2,0
+0,0,1,1
+20.999187,13,1
+20.999187,-13,1
+define_curve family DOMAIN tetra_size 1e+010 name crv4.43 vertex1 WALL.30 vertex2 DOMAIN.12
+bspline
+2,2,0
+0,0,1,1
+20.999187,-13,1
+0.366251,-13,1
+define_curve family DOMAIN tetra_size 1e+010 name crv5.44 vertex1 DOMAIN.12 vertex2 DOMAIN.30
+bspline
+3,3,0
+0,0,0,37.291107025402,37.291107025402
+37.291107025402
+0.366251,-13,1
+-26.366251,0,1
+0.366251,13,1
+define_curve family BLOCKING tetra_size 1e+010 name crv6.0
+bspline
+9,4,0
+0,0,0,0,0.57233402548474
+1.1171957025459,1.431406993887,1.7572557404629,2.2321535177588,2.9791885401225
+2.9791885401225,2.9791885401225,2.9791885401225
+0.969602,-0.338844,1
+0.7753865547504,-0.34201769869274,1
+0.41982003318657,-0.38124002026093,1
+-0.097513511200215,-0.39338749211571,1
+-0.3724726503402,0.00660448087367,1
+-0.12686309413416,0.36363562993445,1
+0.44592951580639,0.34588405198584,1
+0.8243627581466,0.3202293455441,1
+1.073411,0.250367,1
+define_curve family DOMAIN tetra_size 1e+010 name crv.00 vertex1 INLET.15 vertex2 INLET.16
+bspline
+2,2,0
+0,0,1,1
+0.366251,13,0
+0.366251,13,1
+define_curve family DOMAIN tetra_size 1e+010 name crv.01 vertex1 WALL.21 vertex2 WALL.22
+bspline
+2,2,0
+0,0,1,1
+20.999187,13,0
+20.999187,13,1
+define_curve family DOMAIN tetra_size 1e+010 name crv.02 vertex1 WALL.29 vertex2 WALL.30
+bspline
+2,2,0
+0,0,1,1
+20.999187,-13,0
+20.999187,-13,1
+define_curve family DOMAIN tetra_size 1e+010 name crv.03 vertex1 DOMAIN.10 vertex2 DOMAIN.12
+bspline
+2,2,0
+0,0,1,1
+0.366251,-13,0
+0.366251,-13,1
+define_curve family INLET tetra_size 1e+010 name srf.02e63 vertex1 INLET.16 vertex2 DOMAIN.12
+bspline
+3,3,0
+0,0,0,1,1
+1
+0.366251,13,1
+-26.366251,0,1
+0.366251,-13,1
+define_curve family INLET tetra_size 1e+010 name srf.02e65 vertex1 DOMAIN.10 vertex2 INLET.15
+bspline
+3,3,0
+-1,-1,-1,-0,-0
+-0
+0.366251,-13,0
+-26.366251,0,0
+0.366251,13,0
+define_curve family POINTS_MESH tetra_size 1e+010 name crv.04 vertex1 AIRFOIL.16 vertex2 AIRFOIL.13
+bspline
+2,2,0
+0,0,1,1
+0,0,0
+0,0,1
+define_curve family POINTS_MESH tetra_size 1e+010 name crv.05 vertex1 AIRFOIL.15 vertex2 AIRFOIL.14
+bspline
+2,2,0
+0,0,1,1
+0.999187,-0.040306,0
+0.999187,-0.040306,1
+define_curve family AIRFOIL tetra_size 1e+010 name srf.10e104 vertex1 AIRFOIL.13 vertex2 AIRFOIL.14
+bspline
+65,4,0
+0,0,0,0,0.0067339808683997
+0.010986328125,0.016113281250001,0.02215576171875,0.029235839843751,0.037322998046876
+0.046447753906253,0.056640625000004,0.067840576171881,0.080047607421882,0.093231201171884
+0.10739135742189,0.12243652343752,0.13839721679689,0.15521240234377,0.17285156250002
+0.1912536621094,0.21038818359377,0.2301940917969,0.25067138671878,0.27172851562503
+0.29333496093754,0.31546020507817,0.33801269531255,0.36093139648442,0.3842163085938
+0.40777587890631,0.43154907226568,0.45553588867193,0.47961425781256,0.50375366210941
+0.52789306640625,0.55200195312496,0.57598876953117,0.59982299804676,0.62347412109359
+0.64682006835918,0.66986083984351,0.69250488281222,0.71472167968719,0.73645019531215
+0.75762939453087,0.77819824218708,0.79812622070268,0.81738281249952,0.83587646484324
+0.85357666015571,0.87042236328068,0.88641357421816,0.90148925781188,0.91558837890561
+0.92871093749934,0.94082641601494,0.95184326171805,0.96182250976491,0.97067260742115
+0.97839355468675,0.98495483398358,0.99035644531179,0.99456787109303,0.99757911874788
+1,1,1,1
+0,0,1
+8.2069737418589e-005,0.0023476610079498,1
+0.0018924810056375,0.0057636917701363,1
+0.0059475783221568,0.00948045619464,1
+0.010304817348449,0.012328061019509,1
+0.015894126811962,0.015108364539034,1
+0.022539930631324,0.01774287550253,1
+0.030383978395314,0.020320827664261,1
+0.039349058783791,0.022812878482962,1
+0.049370393765737,0.0252286606857,1
+0.060523644939315,0.027584438558879,1
+0.072708215186336,0.029850644613023,1
+0.085952507100012,0.032029528354415,1
+0.10012394210422,0.034093158335998,1
+0.11535495294816,0.036054673157094,1
+0.13143403085594,0.037883149152706,1
+0.14843899899125,0.039580687023255,1
+0.1662605428744,0.04112893061734,1
+0.18491328548957,0.042517687627452,1
+0.20429418020861,0.043743263499564,1
+0.22443799945843,0.044798873223852,1
+0.24517450016472,0.04567481312093,1
+0.26657294839534,0.046366741148107,1
+0.28852499322429,0.046866512305408,1
+0.31095134418208,0.04717595327886,1
+0.33384764412629,0.047282017429984,1
+0.35718222878559,0.047178183458447,1
+0.38079758053839,0.046859667339845,1
+0.40471678636753,0.046324184176028,1
+0.42890761778006,0.04556562363016,1
+0.45317632119785,0.044583629253771,1
+0.47762669017274,0.043356074537675,1
+0.50209249007627,0.04187250468523,1
+0.52657766447279,0.040109398591122,1
+0.55094551183066,0.038070961535942,1
+0.57522415333624,0.035740461441566,1
+0.59932062323934,0.03313658166021,1
+0.62310418457678,0.030301982793647,1
+0.64667630581809,0.027259231753272,1
+0.66982125797573,0.024060635409668,1
+0.69260354670334,0.020720053948235,1
+0.71489372152192,0.017274879115054,1
+0.73666937954463,0.013745364861674,1
+0.75787062502713,0.01015174757765,1
+0.77846771556956,0.0065269269505259,1
+0.79840136090398,0.0028877735677172,1
+0.81757252711956,-0.00072108514127819,1
+0.8360251564338,-0.004298817938564,1
+0.85364069366979,-0.0077995062681904,1
+0.87045583217836,-0.011219152331374,1
+0.88633592518081,-0.01452234639089,1
+0.90129270932078,-0.01769399389259,1
+0.91532071504167,-0.020731688453324,1
+0.9283422158647,-0.023600837387527,1
+0.94028186893964,-0.026280821025543,1
+0.95128196457973,-0.028790896799468,1
+0.96108538331048,-0.031060903343839,1
+0.96985506464613,-0.033126504528388,1
+0.97746627334753,-0.034944043241336,1
+0.98396245760975,-0.036518170664178,1
+0.98927713231237,-0.037821033498694,1
+0.99342858867119,-0.038850811504952,1
+0.99661058804185,-0.039650362324584,1
+0.99839196104046,-0.040102988184545,1
+0.999187,-0.040306,1
+define_curve family AIRFOIL tetra_size 1e+010 name srf.10e106 vertex1 AIRFOIL.15 vertex2 AIRFOIL.16
+bspline
+65,4,0
+-1,-1,-1,-1,-0.99757911874788
+-0.99456787109303,-0.99035644531179,-0.98495483398358,-0.97839355468675,-0.97067260742115
+-0.96182250976491,-0.95184326171805,-0.94082641601494,-0.92871093749934,-0.91558837890561
+-0.90148925781188,-0.88641357421816,-0.87042236328068,-0.85357666015571,-0.83587646484324
+-0.81738281249952,-0.79812622070268,-0.77819824218708,-0.75762939453087,-0.73645019531215
+-0.71472167968719,-0.69250488281222,-0.66986083984351,-0.64682006835918,-0.62347412109359
+-0.59982299804676,-0.57598876953117,-0.55200195312496,-0.52789306640625,-0.50375366210941
+-0.47961425781256,-0.45553588867193,-0.43154907226568,-0.40777587890631,-0.3842163085938
+-0.36093139648442,-0.33801269531255,-0.31546020507817,-0.29333496093754,-0.27172851562503
+-0.25067138671878,-0.2301940917969,-0.21038818359377,-0.1912536621094,-0.17285156250002
+-0.15521240234377,-0.13839721679689,-0.12243652343752,-0.10739135742189,-0.093231201171884
+-0.080047607421882,-0.067840576171881,-0.056640625000004,-0.046447753906253,-0.037322998046876
+-0.029235839843751,-0.02215576171875,-0.016113281250001,-0.010986328125,-0.0067339808683997
+-0,-0,-0,-0
+0.999187,-0.040306,0
+0.99839196104046,-0.040102988184545,0
+0.99661058804185,-0.039650362324584,0
+0.99342858867119,-0.038850811504952,0
+0.98927713231237,-0.037821033498694,0
+0.98396245760975,-0.036518170664178,0
+0.97746627334753,-0.034944043241336,0
+0.96985506464613,-0.033126504528388,0
+0.96108538331048,-0.031060903343839,0
+0.95128196457973,-0.028790896799468,0
+0.94028186893964,-0.026280821025543,0
+0.9283422158647,-0.023600837387527,0
+0.91532071504167,-0.020731688453324,0
+0.90129270932078,-0.01769399389259,0
+0.88633592518081,-0.01452234639089,0
+0.87045583217836,-0.011219152331374,0
+0.85364069366979,-0.0077995062681904,0
+0.8360251564338,-0.004298817938564,0
+0.81757252711956,-0.00072108514127819,0
+0.79840136090398,0.0028877735677172,0
+0.77846771556956,0.0065269269505259,0
+0.75787062502713,0.01015174757765,0
+0.73666937954463,0.013745364861674,0
+0.71489372152192,0.017274879115054,0
+0.69260354670334,0.020720053948235,0
+0.66982125797573,0.024060635409668,0
+0.64667630581809,0.027259231753272,0
+0.62310418457678,0.030301982793647,0
+0.59932062323934,0.03313658166021,0
+0.57522415333624,0.035740461441566,0
+0.55094551183066,0.038070961535942,0
+0.52657766447279,0.040109398591122,0
+0.50209249007627,0.04187250468523,0
+0.47762669017274,0.043356074537675,0
+0.45317632119785,0.044583629253771,0
+0.42890761778006,0.04556562363016,0
+0.40471678636753,0.046324184176028,0
+0.38079758053839,0.046859667339845,0
+0.35718222878559,0.047178183458447,0
+0.33384764412629,0.047282017429984,0
+0.31095134418208,0.04717595327886,0
+0.28852499322429,0.046866512305408,0
+0.26657294839534,0.046366741148107,0
+0.24517450016472,0.04567481312093,0
+0.22443799945843,0.044798873223852,0
+0.20429418020861,0.043743263499564,0
+0.18491328548957,0.042517687627452,0
+0.1662605428744,0.04112893061734,0
+0.14843899899125,0.039580687023255,0
+0.13143403085594,0.037883149152706,0
+0.11535495294816,0.036054673157094,0
+0.10012394210422,0.034093158335998,0
+0.085952507100012,0.032029528354415,0
+0.072708215186336,0.029850644613023,0
+0.060523644939315,0.027584438558879,0
+0.049370393765737,0.0252286606857,0
+0.039349058783791,0.022812878482962,0
+0.030383978395314,0.020320827664261,0
+0.022539930631324,0.01774287550253,0
+0.015894126811962,0.015108364539034,0
+0.010304817348449,0.012328061019509,0
+0.0059475783221568,0.00948045619464,0
+0.0018924810056375,0.0057636917701363,0
+8.2069737418589e-005,0.0023476610079498,0
+0,0,0
+define_curve family AIRFOIL tetra_size 1e+010 name srf.11e108 vertex1 AIRFOIL.13 vertex2 AIRFOIL.14
+bspline
+65,4,0
+0,0,0,0,0.0067409046339602
+0.011016845703125,0.01617431640625,0.02227783203125,0.029388427734375,0.037506103515625
+0.04669189453125,0.056884765625001,0.068115234375001,0.080322265625,0.093505859374998
+0.107666015625,0.12274169921874,0.138671875,0.15548706054688,0.17312622070313
+0.19152832031252,0.2106628417969,0.23049926757815,0.25097656250003,0.27203369140627
+0.29367065429688,0.31576538085937,0.33831787109373,0.36126708984372,0.38455200195308
+0.40814208984369,0.4319763183593,0.45602416992179,0.48022460937489,0.50448608398426
+0.52880859374987,0.55310058593735,0.57730102539047,0.60131835937483,0.62515258789043
+0.6486816406248,0.67187499999978,0.69464111328102,0.71694946289038,0.73873901367162
+0.75994873046849,0.78054809570284,0.80044555664034,0.81961059570282,0.83801269531219
+0.85559082031218,0.87234497070279,0.88815307617153,0.90304565429652,0.91699218749964
+0.92993164062463,0.94183349609338,0.95269775390587,0.962493896484,0.97119140624961
+0.97879028320273,0.98522949218708,0.99053955078088,0.99465942382773,0.9976257503652
+1,1,1,1
+0,0,1
+-0.00010744142279808,-0.0023472000736879,1
+0.0014331019959944,-0.0059026514068081,1
+0.0051622848173837,-0.0099533238907829,1
+0.0092893127837039,-0.01320663887971,1
+0.014596935969065,-0.016489284061037,1
+0.021024709769259,-0.019776199343062,1
+0.028651458455072,-0.023089330682372,1
+0.037322034733389,-0.026370345035732,1
+0.04718179996399,-0.029663048158028,1
+0.058059347888789,-0.032910226836624,1
+0.070050647432139,-0.036140379442287,1
+0.083069455387819,-0.039330788304011,1
+0.097059200550413,-0.042472226947073,1
+0.11201887595419,-0.045564011462601,1
+0.12796978989235,-0.048605824505113,1
+0.14475891664607,-0.051560193719302,1
+0.16240811597352,-0.054428420356817,1
+0.18088695463647,-0.057205071679052,1
+0.20013563438259,-0.059868354746698,1
+0.22009227946052,-0.062401615245899,1
+0.2407186031193,-0.064801099736792,1
+0.26202062627486,-0.067043034502153,1
+0.28380505338527,-0.069096229016451,1
+0.30620907759284,-0.070919903462098,1
+0.32903591076664,-0.072437752177765,1
+0.35228965543599,-0.073570983215539,1
+0.37592988853058,-0.074264941440197,1
+0.39986018520293,-0.074479199881117,1
+0.42406963732504,-0.074205698573515,1
+0.44845376488904,-0.073458892609953,1
+0.47295128225008,-0.072281324564628,1
+0.49759181400494,-0.070723985662168,1
+0.52217220478853,-0.068862178606381,1
+0.546740995987,-0.066766179454683,1
+0.57115982004536,-0.064502923518586,1
+0.59548093602289,-0.062116282857265,1
+0.6194762821485,-0.059673613412845,1
+0.64325423118393,-0.057199312372355,1
+0.66662904817608,-0.054747571484898,1
+0.68964126116444,-0.052347666107376,1
+0.71216533850828,-0.050046108671251,1
+0.7341645250678,-0.047871902866127,1
+0.75561772437852,-0.045854818594753,1
+0.77639477701786,-0.04402700558282,1
+0.79653966465572,-0.04238949690076,1
+0.81595416648269,-0.040951802902393,1
+0.83456856972361,-0.039720388823485,1
+0.85242125725747,-0.038699756307789,1
+0.86931663337653,-0.037897527629038,1
+0.88541490251329,-0.037301260295523,1
+0.90053067534568,-0.036917127271454,1
+0.91465367758371,-0.036726147848249,1
+0.92778115035638,-0.036717490757119,1
+0.93989025199166,-0.036861778783252,1
+0.95091167074128,-0.037140044133482,1
+0.96083207321258,-0.037523652546811,1
+0.96966759311795,-0.037980206389863,1
+0.97730949059275,-0.038464079420131,1
+0.98387733904182,-0.038947543549875,1
+0.98919390578594,-0.039381136393404,1
+0.99341061232461,-0.039754432127872,1
+0.99658522017329,-0.040050499416292,1
+0.99838738201436,-0.040227265728881,1
+0.999187,-0.040306,1
+define_curve family AIRFOIL tetra_size 1e+010 name srf.11e110 vertex1 AIRFOIL.15 vertex2 AIRFOIL.16
+bspline
+65,4,0
+-1,-1,-1,-1,-0.9976257503652
+-0.99465942382773,-0.99053955078088,-0.98522949218708,-0.97879028320273,-0.97119140624961
+-0.962493896484,-0.95269775390587,-0.94183349609338,-0.92993164062463,-0.91699218749964
+-0.90304565429652,-0.88815307617153,-0.87234497070279,-0.85559082031218,-0.83801269531219
+-0.81961059570282,-0.80044555664034,-0.78054809570284,-0.75994873046849,-0.73873901367162
+-0.71694946289038,-0.69464111328102,-0.67187499999978,-0.6486816406248,-0.62515258789043
+-0.60131835937483,-0.57730102539047,-0.55310058593735,-0.52880859374987,-0.50448608398426
+-0.48022460937489,-0.45602416992179,-0.4319763183593,-0.40814208984369,-0.38455200195308
+-0.36126708984372,-0.33831787109373,-0.31576538085937,-0.29367065429688,-0.27203369140627
+-0.25097656250003,-0.23049926757815,-0.2106628417969,-0.19152832031252,-0.17312622070313
+-0.15548706054688,-0.138671875,-0.12274169921874,-0.107666015625,-0.093505859374998
+-0.080322265625,-0.068115234375001,-0.056884765625001,-0.04669189453125,-0.037506103515625
+-0.029388427734375,-0.02227783203125,-0.01617431640625,-0.011016845703125,-0.0067409046339602
+-0,-0,-0,-0
+0.999187,-0.040306,0
+0.99838738201436,-0.040227265728881,0
+0.99658522017329,-0.040050499416292,0
+0.99341061232461,-0.039754432127872,0
+0.98919390578594,-0.039381136393404,0
+0.98387733904182,-0.038947543549875,0
+0.97730949059275,-0.038464079420131,0
+0.96966759311795,-0.037980206389863,0
+0.96083207321258,-0.037523652546811,0
+0.95091167074128,-0.037140044133482,0
+0.93989025199166,-0.036861778783252,0
+0.92778115035638,-0.036717490757119,0
+0.91465367758371,-0.036726147848249,0
+0.90053067534568,-0.036917127271454,0
+0.88541490251329,-0.037301260295523,0
+0.86931663337653,-0.037897527629038,0
+0.85242125725747,-0.038699756307789,0
+0.83456856972361,-0.039720388823485,0
+0.81595416648269,-0.040951802902393,0
+0.79653966465572,-0.04238949690076,0
+0.77639477701786,-0.04402700558282,0
+0.75561772437852,-0.045854818594753,0
+0.7341645250678,-0.047871902866127,0
+0.71216533850828,-0.050046108671251,0
+0.68964126116444,-0.052347666107376,0
+0.66662904817608,-0.054747571484898,0
+0.64325423118393,-0.057199312372355,0
+0.6194762821485,-0.059673613412845,0
+0.59548093602289,-0.062116282857265,0
+0.57115982004536,-0.064502923518586,0
+0.546740995987,-0.066766179454683,0
+0.52217220478853,-0.068862178606381,0
+0.49759181400494,-0.070723985662168,0
+0.47295128225008,-0.072281324564628,0
+0.44845376488904,-0.073458892609953,0
+0.42406963732504,-0.074205698573515,0
+0.39986018520293,-0.074479199881117,0
+0.37592988853058,-0.074264941440197,0
+0.35228965543599,-0.073570983215539,0
+0.32903591076664,-0.072437752177765,0
+0.30620907759284,-0.070919903462098,0
+0.28380505338527,-0.069096229016451,0
+0.26202062627486,-0.067043034502153,0
+0.2407186031193,-0.064801099736792,0
+0.22009227946052,-0.062401615245899,0
+0.20013563438259,-0.059868354746698,0
+0.18088695463647,-0.057205071679052,0
+0.16240811597352,-0.054428420356817,0
+0.14475891664607,-0.051560193719302,0
+0.12796978989235,-0.048605824505113,0
+0.11201887595419,-0.045564011462601,0
+0.097059200550413,-0.042472226947073,0
+0.083069455387819,-0.039330788304011,0
+0.070050647432139,-0.036140379442287,0
+0.058059347888789,-0.032910226836624,0
+0.04718179996399,-0.029663048158028,0
+0.037322034733389,-0.026370345035732,0
+0.028651458455072,-0.023089330682372,0
+0.021024709769259,-0.019776199343062,0
+0.014596935969065,-0.016489284061037,0
+0.0092893127837039,-0.01320663887971,0
+0.0051622848173837,-0.0099533238907829,0
+0.0014331019959944,-0.0059026514068081,0
+-0.00010744142279808,-0.0023472000736879,0
+0,0,0
+define_surface name srf.01 family INLET tetra_size 1e+010
+trim_surface n_loops 1
+loop n_curves 4
+coedge 3dcurve   crv.00
+polyline n_points 2
+0,0
+1,0
+coedge 3dcurve - crv5.44
+polyline n_points 2
+1,0
+1,1
+coedge 3dcurve - crv.03
+polyline n_points 2
+1,1
+0,1
+coedge 3dcurve   crv5
+polyline n_points 2
+0,1
+0,0
+bspline
+2,3,2,3,0
+0,0,1,1
+0,0,0,1,1
+1
+0.366251,13,0
+0.366251,13,1
+-26.366251,0,0
+-26.366251,0,1
+0.366251,-13,0
+0.366251,-13,1
+define_surface name srf.02 family INLET tetra_size 1e+010
+trim_surface n_loops 1
+loop n_curves 4
+coedge 3dcurve   crv.00
+polyline n_points 2
+0,0
+1,0
+coedge 3dcurve   srf.02e63
+polyline n_points 2
+1,0
+1,1
+coedge 3dcurve - crv.03
+polyline n_points 2
+1,1
+0,1
+coedge 3dcurve   srf.02e65
+polyline n_points 2
+0,1
+0,0
+bspline
+2,3,2,3,0
+0,0,1,1
+0,0,0,1,1
+1
+0.366251,13,0
+0.366251,13,1
+-26.366251,0,0
+-26.366251,0,1
+0.366251,-13,0
+0.366251,-13,1
+define_surface name srf.03 family WALL tetra_size 1e+010
+trim_surface n_loops 1
+loop n_curves 4
+coedge 3dcurve   crv.01
+polyline n_points 2
+0,0
+1,0
+coedge 3dcurve - crv2.41
+polyline n_points 2
+1,0
+1,1
+coedge 3dcurve - crv.00
+polyline n_points 2
+1,1
+0,1
+coedge 3dcurve   crv2
+polyline n_points 2
+0,1
+0,0
+bspline
+2,2,2,2,0
+0,0,1,1
+0,0,1,1
+20.999187,13,0
+20.999187,13,1
+0.366251,13,0
+0.366251,13,1
+define_surface name srf.04 family WALL tetra_size 1e+010
+trim_surface n_loops 1
+loop n_curves 4
+coedge 3dcurve - crv.03
+polyline n_points 2
+0,0
+1,0
+coedge 3dcurve - crv4
+polyline n_points 2
+1,0
+1,1
+coedge 3dcurve   crv.02
+polyline n_points 2
+1,1
+0,1
+coedge 3dcurve   crv4.43
+polyline n_points 2
+0,1
+0,0
+bspline
+2,2,2,2,0
+0,0,1,1
+0,0,1,1
+0.366251,-13,1
+0.366251,-13,0
+20.999187,-13,1
+20.999187,-13,0
+define_surface name srf.06 family OUTLET tetra_size 1e+010
+trim_surface n_loops 1
+loop n_curves 4
+coedge 3dcurve - crv.02
+polyline n_points 2
+0,0
+1,0
+coedge 3dcurve - crv3
+polyline n_points 2
+1,0
+1,1
+coedge 3dcurve   crv.01
+polyline n_points 2
+1,1
+0,1
+coedge 3dcurve   crv3.42
+polyline n_points 2
+0,1
+0,0
+bspline
+2,2,2,2,0
+0,0,1,1
+0,0,1,1
+20.999187,-13,1
+20.999187,-13,0
+20.999187,13,1
+20.999187,13,0
+define_surface name srf.07 family SYMMETRY tetra_size 1e+010
+trim_surface n_loops 1
+loop n_curves 4
+coedge 3dcurve   crv2.41
+polyline n_points 2
+0,0
+1,0
+coedge 3dcurve   crv3.42
+polyline n_points 2
+1,0
+1,1
+coedge 3dcurve   crv4.43
+polyline n_points 2
+1,1
+0,1
+coedge 3dcurve - srf.02e63
+polyline n_points 2
+0,1
+0,0
+bspline
+2,3,2,3,0
+0,0,1,1
+0,0,0,1,1
+1
+0.366251,13,1
+20.999187,13,1
+-26.366251,0,1
+20.999187,0,1
+0.366251,-13,1
+20.999187,-13,1
+define_surface name srf.08 family SYMMETRY tetra_size 1e+010
+trim_surface n_loops 1
+loop n_curves 4
+coedge 3dcurve   srf.02e65
+polyline n_points 2
+0,0
+1,0
+coedge 3dcurve   crv2
+polyline n_points 2
+1,0
+1,1
+coedge 3dcurve   crv3
+polyline n_points 2
+1,1
+0,1
+coedge 3dcurve   crv4
+polyline n_points 2
+0,1
+0,0
+bspline
+3,2,3,2,0
+0,0,0,1,1
+1
+0,0,1,1
+0.366251,-13,0
+-26.366251,0,0
+0.366251,13,0
+20.999187,-13,0
+20.999187,0,0
+20.999187,13,0
+define_surface name srf.10 family AIRFOIL tetra_size 1e+010
+trim_surface n_loops 1
+loop n_curves 4
+coedge 3dcurve   srf.10e104
+polyline n_points 2
+0,0
+1,0
+coedge 3dcurve - crv.05
+polyline n_points 2
+1,0
+1,1
+coedge 3dcurve   srf.10e106
+polyline n_points 2
+1,1
+0,1
+coedge 3dcurve   crv.04
+polyline n_points 2
+0,1
+0,0
+bspline
+65,2,4,2,0
+0,0,0,0,0.0067339808683997
+0.010986328125,0.016113281250001,0.02215576171875,0.029235839843751,0.037322998046876
+0.046447753906253,0.056640625000004,0.067840576171881,0.080047607421882,0.093231201171884
+0.10739135742189,0.12243652343752,0.13839721679689,0.15521240234377,0.17285156250002
+0.1912536621094,0.21038818359377,0.2301940917969,0.25067138671878,0.27172851562503
+0.29333496093754,0.31546020507817,0.33801269531255,0.36093139648442,0.3842163085938
+0.40777587890631,0.43154907226568,0.45553588867193,0.47961425781256,0.50375366210941
+0.52789306640625,0.55200195312496,0.57598876953117,0.59982299804676,0.62347412109359
+0.64682006835918,0.66986083984351,0.69250488281222,0.71472167968719,0.73645019531215
+0.75762939453087,0.77819824218708,0.79812622070268,0.81738281249952,0.83587646484324
+0.85357666015571,0.87042236328068,0.88641357421816,0.90148925781188,0.91558837890561
+0.92871093749934,0.94082641601494,0.95184326171805,0.96182250976491,0.97067260742115
+0.97839355468675,0.98495483398358,0.99035644531179,0.99456787109303,0.99757911874788
+1,1,1,1
+0,0,1,1
+0,0,1
+8.2069737418589e-005,0.0023476610079498,1
+0.0018924810056375,0.0057636917701363,1
+0.0059475783221568,0.00948045619464,1
+0.010304817348449,0.012328061019509,1
+0.015894126811962,0.015108364539034,1
+0.022539930631324,0.01774287550253,1
+0.030383978395314,0.020320827664261,1
+0.039349058783791,0.022812878482962,1
+0.049370393765737,0.0252286606857,1
+0.060523644939315,0.027584438558879,1
+0.072708215186336,0.029850644613023,1
+0.085952507100012,0.032029528354415,1
+0.10012394210422,0.034093158335998,1
+0.11535495294816,0.036054673157094,1
+0.13143403085594,0.037883149152706,1
+0.14843899899125,0.039580687023255,1
+0.1662605428744,0.04112893061734,1
+0.18491328548957,0.042517687627452,1
+0.20429418020861,0.043743263499564,1
+0.22443799945843,0.044798873223852,1
+0.24517450016472,0.04567481312093,1
+0.26657294839534,0.046366741148107,1
+0.28852499322429,0.046866512305408,1
+0.31095134418208,0.04717595327886,1
+0.33384764412629,0.047282017429984,1
+0.35718222878559,0.047178183458447,1
+0.38079758053839,0.046859667339845,1
+0.40471678636753,0.046324184176028,1
+0.42890761778006,0.04556562363016,1
+0.45317632119785,0.044583629253771,1
+0.47762669017274,0.043356074537675,1
+0.50209249007627,0.04187250468523,1
+0.52657766447279,0.040109398591122,1
+0.55094551183066,0.038070961535942,1
+0.57522415333624,0.035740461441566,1
+0.59932062323934,0.03313658166021,1
+0.62310418457678,0.030301982793647,1
+0.64667630581809,0.027259231753272,1
+0.66982125797573,0.024060635409668,1
+0.69260354670334,0.020720053948235,1
+0.71489372152192,0.017274879115054,1
+0.73666937954463,0.013745364861674,1
+0.75787062502713,0.01015174757765,1
+0.77846771556956,0.0065269269505259,1
+0.79840136090398,0.0028877735677172,1
+0.81757252711956,-0.00072108514127819,1
+0.8360251564338,-0.004298817938564,1
+0.85364069366979,-0.0077995062681904,1
+0.87045583217836,-0.011219152331374,1
+0.88633592518081,-0.01452234639089,1
+0.90129270932078,-0.01769399389259,1
+0.91532071504167,-0.020731688453324,1
+0.9283422158647,-0.023600837387527,1
+0.94028186893964,-0.026280821025543,1
+0.95128196457973,-0.028790896799468,1
+0.96108538331048,-0.031060903343839,1
+0.96985506464613,-0.033126504528388,1
+0.97746627334753,-0.034944043241336,1
+0.98396245760975,-0.036518170664178,1
+0.98927713231237,-0.037821033498694,1
+0.99342858867119,-0.038850811504952,1
+0.99661058804185,-0.039650362324584,1
+0.99839196104046,-0.040102988184545,1
+0.999187,-0.040306,1
+0,0,0
+8.2069737418589e-005,0.0023476610079498,0
+0.0018924810056375,0.0057636917701363,0
+0.0059475783221568,0.00948045619464,0
+0.010304817348449,0.012328061019509,0
+0.015894126811962,0.015108364539034,0
+0.022539930631324,0.01774287550253,0
+0.030383978395314,0.020320827664261,0
+0.039349058783791,0.022812878482962,0
+0.049370393765737,0.0252286606857,0
+0.060523644939315,0.027584438558879,0
+0.072708215186336,0.029850644613023,0
+0.085952507100012,0.032029528354415,0
+0.10012394210422,0.034093158335998,0
+0.11535495294816,0.036054673157094,0
+0.13143403085594,0.037883149152706,0
+0.14843899899125,0.039580687023255,0
+0.1662605428744,0.04112893061734,0
+0.18491328548957,0.042517687627452,0
+0.20429418020861,0.043743263499564,0
+0.22443799945843,0.044798873223852,0
+0.24517450016472,0.04567481312093,0
+0.26657294839534,0.046366741148107,0
+0.28852499322429,0.046866512305408,0
+0.31095134418208,0.04717595327886,0
+0.33384764412629,0.047282017429984,0
+0.35718222878559,0.047178183458447,0
+0.38079758053839,0.046859667339845,0
+0.40471678636753,0.046324184176028,0
+0.42890761778006,0.04556562363016,0
+0.45317632119785,0.044583629253771,0
+0.47762669017274,0.043356074537675,0
+0.50209249007627,0.04187250468523,0
+0.52657766447279,0.040109398591122,0
+0.55094551183066,0.038070961535942,0
+0.57522415333624,0.035740461441566,0
+0.59932062323934,0.03313658166021,0
+0.62310418457678,0.030301982793647,0
+0.64667630581809,0.027259231753272,0
+0.66982125797573,0.024060635409668,0
+0.69260354670334,0.020720053948235,0
+0.71489372152192,0.017274879115054,0
+0.73666937954463,0.013745364861674,0
+0.75787062502713,0.01015174757765,0
+0.77846771556956,0.0065269269505259,0
+0.79840136090398,0.0028877735677172,0
+0.81757252711956,-0.00072108514127819,0
+0.8360251564338,-0.004298817938564,0
+0.85364069366979,-0.0077995062681904,0
+0.87045583217836,-0.011219152331374,0
+0.88633592518081,-0.01452234639089,0
+0.90129270932078,-0.01769399389259,0
+0.91532071504167,-0.020731688453324,0
+0.9283422158647,-0.023600837387527,0
+0.94028186893964,-0.026280821025543,0
+0.95128196457973,-0.028790896799468,0
+0.96108538331048,-0.031060903343839,0
+0.96985506464613,-0.033126504528388,0
+0.97746627334753,-0.034944043241336,0
+0.98396245760975,-0.036518170664178,0
+0.98927713231237,-0.037821033498694,0
+0.99342858867119,-0.038850811504952,0
+0.99661058804185,-0.039650362324584,0
+0.99839196104046,-0.040102988184545,0
+0.999187,-0.040306,0
+define_surface name srf.11 family AIRFOIL tetra_size 1e+010
+trim_surface n_loops 1
+loop n_curves 4
+coedge 3dcurve   srf.11e108
+polyline n_points 2
+0,0
+1,0
+coedge 3dcurve - crv.05
+polyline n_points 2
+1,0
+1,1
+coedge 3dcurve   srf.11e110
+polyline n_points 2
+1,1
+0,1
+coedge 3dcurve   crv.04
+polyline n_points 2
+0,1
+0,0
+bspline
+65,2,4,2,0
+0,0,0,0,0.0067409046339602
+0.011016845703125,0.01617431640625,0.02227783203125,0.029388427734375,0.037506103515625
+0.04669189453125,0.056884765625001,0.068115234375001,0.080322265625,0.093505859374998
+0.107666015625,0.12274169921874,0.138671875,0.15548706054688,0.17312622070313
+0.19152832031252,0.2106628417969,0.23049926757815,0.25097656250003,0.27203369140627
+0.29367065429688,0.31576538085937,0.33831787109373,0.36126708984372,0.38455200195308
+0.40814208984369,0.4319763183593,0.45602416992179,0.48022460937489,0.50448608398426
+0.52880859374987,0.55310058593735,0.57730102539047,0.60131835937483,0.62515258789043
+0.6486816406248,0.67187499999978,0.69464111328102,0.71694946289038,0.73873901367162
+0.75994873046849,0.78054809570284,0.80044555664034,0.81961059570282,0.83801269531219
+0.85559082031218,0.87234497070279,0.88815307617153,0.90304565429652,0.91699218749964
+0.92993164062463,0.94183349609338,0.95269775390587,0.962493896484,0.97119140624961
+0.97879028320273,0.98522949218708,0.99053955078088,0.99465942382773,0.9976257503652
+1,1,1,1
+0,0,1,1
+0,0,1
+-0.00010744142279808,-0.0023472000736879,1
+0.0014331019959944,-0.0059026514068081,1
+0.0051622848173837,-0.0099533238907829,1
+0.0092893127837039,-0.01320663887971,1
+0.014596935969065,-0.016489284061037,1
+0.021024709769259,-0.019776199343062,1
+0.028651458455072,-0.023089330682372,1
+0.037322034733389,-0.026370345035732,1
+0.04718179996399,-0.029663048158028,1
+0.058059347888789,-0.032910226836624,1
+0.070050647432139,-0.036140379442287,1
+0.083069455387819,-0.039330788304011,1
+0.097059200550413,-0.042472226947073,1
+0.11201887595419,-0.045564011462601,1
+0.12796978989235,-0.048605824505113,1
+0.14475891664607,-0.051560193719302,1
+0.16240811597352,-0.054428420356817,1
+0.18088695463647,-0.057205071679052,1
+0.20013563438259,-0.059868354746698,1
+0.22009227946052,-0.062401615245899,1
+0.2407186031193,-0.064801099736792,1
+0.26202062627486,-0.067043034502153,1
+0.28380505338527,-0.069096229016451,1
+0.30620907759284,-0.070919903462098,1
+0.32903591076664,-0.072437752177765,1
+0.35228965543599,-0.073570983215539,1
+0.37592988853058,-0.074264941440197,1
+0.39986018520293,-0.074479199881117,1
+0.42406963732504,-0.074205698573515,1
+0.44845376488904,-0.073458892609953,1
+0.47295128225008,-0.072281324564628,1
+0.49759181400494,-0.070723985662168,1
+0.52217220478853,-0.068862178606381,1
+0.546740995987,-0.066766179454683,1
+0.57115982004536,-0.064502923518586,1
+0.59548093602289,-0.062116282857265,1
+0.6194762821485,-0.059673613412845,1
+0.64325423118393,-0.057199312372355,1
+0.66662904817608,-0.054747571484898,1
+0.68964126116444,-0.052347666107376,1
+0.71216533850828,-0.050046108671251,1
+0.7341645250678,-0.047871902866127,1
+0.75561772437852,-0.045854818594753,1
+0.77639477701786,-0.04402700558282,1
+0.79653966465572,-0.04238949690076,1
+0.81595416648269,-0.040951802902393,1
+0.83456856972361,-0.039720388823485,1
+0.85242125725747,-0.038699756307789,1
+0.86931663337653,-0.037897527629038,1
+0.88541490251329,-0.037301260295523,1
+0.90053067534568,-0.036917127271454,1
+0.91465367758371,-0.036726147848249,1
+0.92778115035638,-0.036717490757119,1
+0.93989025199166,-0.036861778783252,1
+0.95091167074128,-0.037140044133482,1
+0.96083207321258,-0.037523652546811,1
+0.96966759311795,-0.037980206389863,1
+0.97730949059275,-0.038464079420131,1
+0.98387733904182,-0.038947543549875,1
+0.98919390578594,-0.039381136393404,1
+0.99341061232461,-0.039754432127872,1
+0.99658522017329,-0.040050499416292,1
+0.99838738201436,-0.040227265728881,1
+0.999187,-0.040306,1
+0,0,0
+-0.00010744142279808,-0.0023472000736879,0
+0.0014331019959944,-0.0059026514068081,0
+0.0051622848173837,-0.0099533238907829,0
+0.0092893127837039,-0.01320663887971,0
+0.014596935969065,-0.016489284061037,0
+0.021024709769259,-0.019776199343062,0
+0.028651458455072,-0.023089330682372,0
+0.037322034733389,-0.026370345035732,0
+0.04718179996399,-0.029663048158028,0
+0.058059347888789,-0.032910226836624,0
+0.070050647432139,-0.036140379442287,0
+0.083069455387819,-0.039330788304011,0
+0.097059200550413,-0.042472226947073,0
+0.11201887595419,-0.045564011462601,0
+0.12796978989235,-0.048605824505113,0
+0.14475891664607,-0.051560193719302,0
+0.16240811597352,-0.054428420356817,0
+0.18088695463647,-0.057205071679052,0
+0.20013563438259,-0.059868354746698,0
+0.22009227946052,-0.062401615245899,0
+0.2407186031193,-0.064801099736792,0
+0.26202062627486,-0.067043034502153,0
+0.28380505338527,-0.069096229016451,0
+0.30620907759284,-0.070919903462098,0
+0.32903591076664,-0.072437752177765,0
+0.35228965543599,-0.073570983215539,0
+0.37592988853058,-0.074264941440197,0
+0.39986018520293,-0.074479199881117,0
+0.42406963732504,-0.074205698573515,0
+0.44845376488904,-0.073458892609953,0
+0.47295128225008,-0.072281324564628,0
+0.49759181400494,-0.070723985662168,0
+0.52217220478853,-0.068862178606381,0
+0.546740995987,-0.066766179454683,0
+0.57115982004536,-0.064502923518586,0
+0.59548093602289,-0.062116282857265,0
+0.6194762821485,-0.059673613412845,0
+0.64325423118393,-0.057199312372355,0
+0.66662904817608,-0.054747571484898,0
+0.68964126116444,-0.052347666107376,0
+0.71216533850828,-0.050046108671251,0
+0.7341645250678,-0.047871902866127,0
+0.75561772437852,-0.045854818594753,0
+0.77639477701786,-0.04402700558282,0
+0.79653966465572,-0.04238949690076,0
+0.81595416648269,-0.040951802902393,0
+0.83456856972361,-0.039720388823485,0
+0.85242125725747,-0.038699756307789,0
+0.86931663337653,-0.037897527629038,0
+0.88541490251329,-0.037301260295523,0
+0.90053067534568,-0.036917127271454,0
+0.91465367758371,-0.036726147848249,0
+0.92778115035638,-0.036717490757119,0
+0.93989025199166,-0.036861778783252,0
+0.95091167074128,-0.037140044133482,0
+0.96083207321258,-0.037523652546811,0
+0.96966759311795,-0.037980206389863,0
+0.97730949059275,-0.038464079420131,0
+0.98387733904182,-0.038947543549875,0
+0.98919390578594,-0.039381136393404,0
+0.99341061232461,-0.039754432127872,0
+0.99658522017329,-0.040050499416292,0
+0.99838738201436,-0.040227265728881,0
+0.999187,-0.040306,0
+affix 0
+define_model 1e+010 reference_size 1 units mm
+define_prism_meshing_parameters law 0 nlay 3 hratio 1.2 min_quality 0.01 fillet 0.1 tetra_smooth_limit 0.3
+return

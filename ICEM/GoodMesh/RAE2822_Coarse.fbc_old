@@ -1,0 +1,17 @@
+# family_boco file written by ICEM CFD by San on Wed Nov 07 9:25:04 PM W. Europe Standard Time 2018
+## solver ANSYS CFX
+"AIRFOIL"
+"AIRFOIL" "color" 39321
+"DOMAIN"
+"BLOCKING"
+"POINTS_MESH"
+"INLET"
+"INLET" "color" 16663100
+"WALL"
+"WALL" "color" 3604040
+"OUTLET"
+"OUTLET" "color" 3387850
+"SYMMETRY"
+"SYMMETRY" "color" 10171400
+"SOLID"
+"SOLID" "color" 39168
