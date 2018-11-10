@@ -20,12 +20,12 @@ from directories import DIRS
 from geometry.definitions import Point, Vector
 import scipy.optimize as so
 from matplotlib import pyplot as plt
-from math import atan, degrees, tan
+from math import atan, degrees
 
 
 class Blocking(object):
 
-    def __init__(self, domain_in=None, le_angle=35, refine_distance=0.3, x_value=0.01):
+    def __init__(self, domain_in=None, le_angle=35, refine_distance=0.3):
         self.domain_in = domain_in
         self.airfoil_in = self.domain_in.airfoil_in
         self.crv_top = self.airfoil_in.curve['top']
@@ -54,20 +54,6 @@ class Blocking(object):
 
         return {'top': u_top, 'bot': u_bot}
 
-    # def find_le_zone(self, x_value):
-    #     top, bot = self.crv_top, self.crv_bot
-    #
-    #     def objective(u, *args):
-    #         """ Returns the error between the requested x_value and the current x value at u """
-    #         crv, target_x = args
-    #         point = crv.point_at_parameter(u)
-    #         return point.x - target_x
-    #
-    #     u_top = so.brentq(objective, 0., 0.5, args=(top, x_value))
-    #     u_bot = so.brentq(objective, 0., 0.5, args=(bot, x_value))
-    #
-    #     return {'top': u_top, 'bot': u_bot}
-
     @property
     def pt_1(self):
         u_top, _ = self.airfoil_in.get_maxima()
@@ -89,26 +75,6 @@ class Blocking(object):
     @property
     def pt_2_bot(self):
         return self.pt_2.translate(self.crv_bot.normal(1.0) * - self.refine_distance)
-
-    # @property
-    # def pt_4(self):
-    #     return self.pt_2.translate(self.crv_top.tangent(1.0) * 0.1)
-    #
-    # @property
-    # def pt_4_bot(self):
-    #     return self.pt_4.translate(self.crv_bot.normal(1.0) * -self.refine_distance)
-    #
-    # @property
-    # def pt_4_top(self):
-    #     return self.pt_4.translate(self.crv_top.normal(1.0) * self.refine_distance)
-    #
-    # @property
-    # def pt_5(self):
-    #     return self.crv_bot.point_at_parameter(0.7)
-    #
-    # @property
-    # def pt_5_bot(self):
-    #     return self.pt_5.translate(self.crv_bot.normal(0.7) * -self.refine_distance)
 
     @property
     def pt_3(self):
@@ -179,102 +145,6 @@ class Blocking(object):
 
         plt.scatter(self.pt_2_top.x + x, self.domain_in.pt_2.y)
 
-
-
-
-
-        # plt.scatter(self.pt_3.x, self.pt_3.y)
-        # plt.scatter(self.pt_3_top.x, self.pt_3_top.y)
-        # plt.scatter(self.project(self.pt_3_top, 'top').x, self.project(self.pt_3_top, 'top').y)
-        # plt.scatter(self.pt_3_bot.x, self.pt_3_bot.y)
-        # plt.scatter(self.project(self.pt_3_bot, 'bot').x, self.project(self.pt_3_bot, 'bot').y)
-        #
-        # plt.scatter(self.pt_4.x, self.pt_4.y)
-        # plt.scatter(self.project(self.pt_4, 'wake').x, self.project(self.pt_4, 'wake').y)
-        # plt.scatter(self.pt_4_top.x, self.pt_4_top.y)
-        # plt.scatter(self.project(self.pt_4_top, 'top').x, self.project(self.pt_4_top, 'top').y)
-        # plt.scatter(self.project(self.pt_4_top, 'wake').x, self.project(self.pt_4_top, 'wake').y)
-        # plt.scatter(self.pt_4_bot.x, self.pt_4_bot.y)
-        # plt.scatter(self.project(self.pt_4_bot, 'bot').x, self.project(self.pt_4_bot, 'bot').y)
-        # plt.scatter(self.project(self.pt_4_bot, 'wake').x, self.project(self.pt_4_bot, 'wake').y)
-        #
-        # plt.scatter(self.pt_5.x, self.pt_5.y)
-        # plt.scatter(self.pt_5_bot.x, self.pt_5_bot.y)
-        # plt.scatter(self.project(self.pt_5_bot, 'bot').x, self.project(self.pt_5_bot, 'bot').y)
-        #
-        # plt.scatter(self.pt_6.x, self.pt_6.y)
-        # plt.scatter(self.pt_6_bot.x, self.pt_6_bot.y)
-        #
-        # plt.scatter(self.pt_7.x, self.pt_7.y)
-        # plt.scatter(self.pt_7_bot.x, self.pt_7_bot.y)
-        #
-        # plt.scatter(self.airfoil_in.leading_edge.x, self.airfoil_in.leading_edge.y)
-        #
-        # plt.scatter(self.pt_le_proj.x, self.pt_le_proj.y)
-        #
-        # plt.scatter(self.pt_8.x, self.pt_8.y)
-        # plt.scatter(self.pt_8_top.x, self.pt_8_top.y)
-        # plt.scatter(self.pt_4_top_proj.x, self.pt_4_top_proj.y)
-
-        # top_pnt = top_pnt.translate(crv_top.normal(u_top) * 0.3)
-        # bot_pnt = bot_pnt.translate(crv_bot.normal(u_bot) * - 0.3)
-        #
-        # plt.scatter(top_pnt.x, top_pnt.y)
-        # plt.scatter(bot_pnt.x, bot_pnt.y)
-        #
-        # # 50 Degree LE Refinement Zone
-        # u_top, u_bot = self.find_le_zone(angle)
-        #
-        # # Top LE Refinement Zone Points
-        # top_pnt = crv_top.point_at_parameter(u_top)
-        # plt.scatter(top_pnt.x, top_pnt.y)
-        # top_pnt = top_pnt.translate(crv_top.normal(u_top) * 0.3)
-        # plt.scatter(top_pnt.x, top_pnt.y)
-        #
-        # # Bottom LE Refinement Zone Points
-        # bot_pnt = crv_bot.point_at_parameter(u_top)
-        # plt.scatter(bot_pnt.x, bot_pnt.y)
-        # bot_pnt = bot_pnt.translate(crv_bot.normal(u_bot) * -0.3)
-        # plt.scatter(bot_pnt.x, bot_pnt.y)
-        #
-        # # Top Mid-Back Refinement Points
-        # top_pnt = crv_top.point_at_parameter(0.7)
-        # plt.scatter(top_pnt.x, top_pnt.y)
-        # top_pnt = top_pnt.translate(crv_top.normal(0.7) * 0.3)
-        # plt.scatter(top_pnt.x, top_pnt.y)
-        #
-        # # Bottom Mid-Back Refinement Points
-        # bot_pnt = crv_bot.point_at_parameter(0.7)
-        # plt.scatter(bot_pnt.x, bot_pnt.y)
-        # bot_pnt = bot_pnt.translate(crv_bot.normal(0.7) * -0.3)
-        # plt.scatter(bot_pnt.x, bot_pnt.y)
-        #
-        # # TE Refinement Zone Points (Top/Bottom)
-        # top_pnt = crv_top.point_at_parameter(1.0)
-        # plt.scatter(top_pnt.x, top_pnt.y)
-        # top_pnt = top_pnt.translate(crv_top.normal(1.0) * 0.3)
-        # plt.scatter(top_pnt.x, top_pnt.y)
-        #
-        # bot_pnt = crv_bot.point_at_parameter(1.0)
-        # plt.scatter(bot_pnt.x, bot_pnt.y)
-        # bot_pnt = bot_pnt.translate(crv_bot.normal(1.0) * -0.3)
-        # plt.scatter(bot_pnt.x, bot_pnt.y)
-        #
-        # # TE Farfield Point
-        # te_pnt = crv_top.point_at_parameter(1.0)
-        # plt.scatter(te_pnt.x, te_pnt.y)
-        # te_pnt = te_pnt.translate(crv_top.tangent(1.0) * 0.5)
-        # plt.scatter(te_pnt.x, te_pnt.y)
-        #
-        # te_pnt_top = te_pnt.translate(crv_top.normal(1.0) * 0.3)
-        # plt.scatter(te_pnt_top.x, te_pnt_top.y)
-        #
-        # te_pnt_bot = te_pnt.translate(crv_bot.normal(1.0) * -0.3)
-        # plt.scatter(te_pnt_bot.x, te_pnt_bot.y)
-        #
-        # center_pnt = self.airfoil_in.center
-        # plt.scatter(center_pnt.x, center_pnt.y)
-
         plt.xlabel('Normalized Location on Airfoil Chord (x/c) [-]')
         plt.ylabel('Normalized Thickness (t/c) [-]')
         plt.title('{} Airfoil Shape'.format(self.airfoil_in.__name__))
@@ -305,30 +175,12 @@ class Blocking(object):
         with open(filename, 'w') as output:
             output.write('# {} AIRFOIL BLOCKING POINTS\n'.format(name))
 
-            # # Airfoil Trailing Edge Mid
-            # point_format(output, self.pt_2)
-            # point_format(output, self.pt_4)
-            # point_format(output, self.project(self.pt_4, 'wake'))
-            #
-            # # Airfoil Trailing Edge Top
-            # point_format(output, self.pt_3_top)
-            # point_format(output, self.project(self.pt_3_top, 'top'))
-            # point_format(output, self.pt_4_top)
-            # point_format(output, self.project(self.pt_4_top, 'wake'))
-            # point_format(output, self.project(self.pt_4_top, 'top'))
-            #
-            # # Airfoil Trailing Edge Bottom
-            # point_format(output, self.pt_3_bot)
-            # point_format(output, self.project(self.pt_3_bot, 'bot'))
-            # point_format(output, self.pt_4_bot)
-            # point_format(output, self.project(self.pt_4_bot, 'wake'))
-            # point_format(output, self.project(self.pt_4_top, 'top'))
-
             # Airfoil Trailing Edge
             point_format(output, self.project(self.pt_2, 'wake'))
             point_format(output, self.project(self.pt_2_top, 'wake'))
 
             # Airfoil Trailing Edge Upper Top Projection
+            # TODO Turn this into a function inside project
             pt_2 = self.pt_2_top
             y = self.domain_in.pt_2.y - self.pt_2_top.y
             v_norm = self.crv_top.normal(1.0)
@@ -355,22 +207,6 @@ class Blocking(object):
             point_format(output, self.pt_5_top)
             point_format(output, self.pt_1_top)
             point_format(output, self.pt_2_top)
-
-            # # Segment 2-3
-            # output.write(' {:d} 0\n'.format(2))
-            # point_format(output, pt_2)
-            # point_format(output, pt_3)
-            #
-            # # Segment 3-4
-            # output.write(' {:d} 0\n'.format(2))
-            # point_format(output, pt_3)
-            # point_format(output, pt_4)
-            #
-            # # Segment 4-1
-            # output.write(' {:d} 0\n'.format(3))
-            # point_format(output, pt_4)
-            # point_format(output, pt_5)
-            # point_format(output, pt_1)
 
 
 if __name__ == '__main__':

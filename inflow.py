@@ -23,10 +23,26 @@ C1 = 1.458 * 1e-6
 
 
 def sutherland():
+    """ Returns the dynamic viscosity computed with Sutherland's Law """
     return (C1 * t_static**(3./2.)) / (t_static + S)
 
 
 mu = sutherland()
 
+print(mu)
+print('Density = {}'.format(rho))
+print('Velocity = {}'.format(V))
+print('Temperature = {}'.format(t_static))
+print('Static Pressure = {}'.format(p_static))
+
+# V_pres = sqrt((p_total - p_static)/(0.5 * rho))
+# print(V_pres)
+
 c = (Re * mu) / (rho * V)
-print(c)
+print('Chord Length = {}'.format(c))
+# print(c/2.)
+
+sqrt(170.847/rho)
+
+def yplus():
+    return 
