@@ -1,0 +1,659 @@
+# Session file started:  2018/11/10 01:16:36
+# CFX-19.0
+
+# To avoid unnecessary file pre-processing and modifications, include
+# COMMAND FILE at the top of your session file.
+# If it is not included, the file is assumed to be older and will be
+# modified for backward compatibility.
+COMMAND FILE:
+  CFX Post Version = 19.0
+END
+
+
+# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case coarse_001/BOUNDARY:AIRFOIL, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case coarse_001/BOUNDARY:INLET, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case coarse_001/BOUNDARY:SYMMETRY, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case coarse_001/BOUNDARY:OUTLET, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>show /DATA READER/CASE:Case coarse_001/BOUNDARY:WALL, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case coarse_001/BOUNDARY:AIRFOIL, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case coarse_001/BOUNDARY:INLET, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case coarse_001/BOUNDARY:SYMMETRY, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case coarse_001/BOUNDARY:WALL, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>hide /DATA READER/CASE:Case coarse_001/BOUNDARY:OUTLET, view=/VIEW:View 1
+
+PLANE:Midplane
+  Apply Instancing Transform = On
+  Apply Texture = Off
+  Blend Texture = On
+  Bound Radius = 0.5 [m]
+  Colour = 0.75, 0.75, 0.75
+  Colour Map = Default Colour Map
+  Colour Mode = Variable
+  Colour Scale = Linear
+  Colour Variable = Mach Number
+  Colour Variable Boundary Values = Hybrid
+  Culling Mode = No Culling
+  Direction 1 Bound = 1.0 [m]
+  Direction 1 Orientation = 0 [degree]
+  Direction 1 Points = 10
+  Direction 2 Bound = 1.0 [m]
+  Direction 2 Points = 10
+  Domain List = Default Domain
+  Draw Faces = On
+  Draw Lines = Off
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Invert Plane Bound = Off
+  Lighting = On
+  Line Colour = 0, 0, 0
+  Line Colour Mode = Default
+  Line Width = 1
+  Max = 0.0
+  Min = 0.0
+  Normal = 1 , 0 , 0
+  Option = XY Plane
+  Plane Bound = None
+  Plane Type = Slice
+  Point = 0 [m], 0 [m], 0 [m]
+  Point 1 = 0 [m], 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m], 0 [m]
+  Point 3 = 0 [m], 1 [m], 0 [m]
+  Range = Global
+  Render Edge Angle = 0 [degree]
+  Specular Lighting = On
+  Surface Drawing = Smooth Shading
+  Texture Angle = 0
+  Texture Direction = 0 , 1 , 0
+  Texture File =
+  Texture Material = Metal
+  Texture Position = 0 , 0
+  Texture Scale = 1
+  Texture Type = Predefined
+  Tile Texture = Off
+  Transform Texture = Off
+  Transparency = 0.0
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.223874621367 [m]
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+
+# Sending visibility action from ViewUtilities
+>show /PLANE:Midplane, view=/VIEW:View 1
+
+VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 2.01469, 0, 0.223875
+    Scale = 0.112903
+    Pan = 0, 0
+    Rotation Quaternion = 0.279848, -0.364705, -0.115917, 0.880476
+  END
+
+END
+
+> update
+PLANE:Midplane
+  Apply Instancing Transform = On
+  Apply Texture = Off
+  Bound Radius = 0.5 [m]
+  Colour = 0.75, 0.75, 0.75
+  Colour Map = Default Colour Map
+  Colour Mode = Variable
+  Colour Scale = Linear
+  Colour Variable = Mach Number
+  Colour Variable Boundary Values = Hybrid
+  Culling Mode = No Culling
+  Direction 1 Bound = 1.0 [m]
+  Direction 1 Orientation = 0 [degree]
+  Direction 1 Points = 10
+  Direction 2 Bound = 1.0 [m]
+  Direction 2 Points = 10
+  Domain List = Default Domain
+  Draw Faces = On
+  Draw Lines = Off
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Invert Plane Bound = Off
+  Lighting = Off
+  Max = 0.0
+  Min = 0.0
+  Normal = 1 , 0 , 0
+  Option = XY Plane
+  Plane Bound = None
+  Plane Type = Slice
+  Point = 0 [m], 0 [m], 0 [m]
+  Point 1 = 0 [m], 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m], 0 [m]
+  Point 3 = 0 [m], 1 [m], 0 [m]
+  Range = Global
+  Specular Lighting = On
+  Surface Drawing = Smooth Shading
+  Transparency = 0.0
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.223874621367 [m]
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+
+VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 2.01469, 0, 0.223875
+    Scale = 0.160082
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+  END
+
+END
+
+> update
+PLANE:Midplane
+  Apply Instancing Transform = On
+  Apply Texture = Off
+  Blend Texture = On
+  Bound Radius = 0.5 [m]
+  Colour = 0.75, 0.75, 0.75
+  Colour Map = Default Colour Map
+  Colour Mode = Variable
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Hybrid
+  Culling Mode = No Culling
+  Direction 1 Bound = 1.0 [m]
+  Direction 1 Orientation = 0 [degree]
+  Direction 1 Points = 10
+  Direction 2 Bound = 1.0 [m]
+  Direction 2 Points = 10
+  Domain List = Default Domain
+  Draw Faces = On
+  Draw Lines = Off
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Invert Plane Bound = Off
+  Lighting = Off
+  Line Colour = 0, 0, 0
+  Line Colour Mode = Default
+  Line Width = 1
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Normal = 1 , 0 , 0
+  Option = XY Plane
+  Plane Bound = None
+  Plane Type = Slice
+  Point = 0 [m], 0 [m], 0 [m]
+  Point 1 = 0 [m], 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m], 0 [m]
+  Point 3 = 0 [m], 1 [m], 0 [m]
+  Range = Global
+  Render Edge Angle = 0 [degree]
+  Specular Lighting = On
+  Surface Drawing = Smooth Shading
+  Texture Angle = 0
+  Texture Direction = 0 , 1 , 0
+  Texture File =
+  Texture Material = Metal
+  Texture Position = 0 , 0
+  Texture Scale = 1
+  Texture Type = Predefined
+  Tile Texture = Off
+  Transform Texture = Off
+  Transparency = 0.0
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.223874621367 [m]
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+
+VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 2.01469, 0, 0.223875
+    Scale = 0.139763
+    Pan = 0, 0
+    Rotation Quaternion = 0, 0, 0, 1
+  END
+
+END
+
+> update
+
+> highlight regionlist=/DATA READER/CASE:Case coarse_001/PRIMITIVE2D:AIRFOIL \
+Region, domainlist=/DATA READER/CASE:Case coarse_001/DOMAIN:Default Domain
+
+> highlight regionlist=/DATA READER/CASE:Case coarse_001/PRIMITIVE2D:Primitive \
+2D, domainlist=/DATA READER/CASE:Case coarse_001/DOMAIN:Default Domain
+
+> highlight regionlist=/DATA READER/CASE:Case coarse_001/COMPOSITE:WALL Region, \
+domainlist=/DATA READER/CASE:Case coarse_001/DOMAIN:Default Domain
+
+> highlight regionlist=/DATA READER/CASE:Case coarse_001/PRIMITIVE2D:Primitive \
+2D C, domainlist=/DATA READER/CASE:Case coarse_001/DOMAIN:Default Domain
+
+POLYLINE:PressurePorts
+  Apply Instancing Transform = On
+  Boundary List = AIRFOIL
+  Colour = 0, 1, 0
+  Colour Map = Default Colour Map
+  Colour Mode = Constant
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Hybrid
+  Contour Level = 1
+  Domain List = /DOMAIN GROUP:All Domains
+  Input File =
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Line Width = 2
+  Location = /PLANE:Midplane
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Option = Boundary Intersection
+  Range = Global
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+
+# Sending visibility action from ViewUtilities
+>show /POLYLINE:PressurePorts, view=/VIEW:View 1
+
+LIBRARY:
+  CEL:
+    EXPRESSIONS:
+      CPEXP = (Pressure - 71150 [Pa]) / (0.5 * 0.9418[kg m^-3] * \
+(237.079^2) [m s^-1])
+    END
+  END
+END
+
+EXPRESSION EVALUATOR:
+  Evaluated Expression = CPEXP
+END
+
+> forceupdate EXPRESSION EVALUATOR
+
+USER SCALAR VARIABLE:Cp
+  Boundary Values = Conservative
+  Calculate Global Range = Off
+  Expression = CPEXP
+  Recipe = Expression
+  Variable to Copy = Pressure
+  Variable to Gradient = Pressure
+END
+
+CHART:PressureCoef
+  Chart Axes Font = Tahoma, 10, False, False, False, False
+  Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+  Chart Grid Line Width = 1
+  Chart Horizontal Grid = On
+  Chart Legend = On
+  Chart Legend Font = Tahoma, 8, False, False, False, False
+  Chart Legend Inside = Outside Chart
+  Chart Legend Justification = Center
+  Chart Legend Position = Bottom
+  Chart Legend Width Height = 0.2 , 0.4
+  Chart Legend X Justification = Right
+  Chart Legend XY Position = 0.73 , 0.275
+  Chart Legend Y Justification = Center
+  Chart Line Width = 2
+  Chart Lines Order = Series 1,Chart Line 1
+  Chart Minor Grid = Off
+  Chart Minor Grid Line Width = 1
+  Chart Symbol Size = 4
+  Chart Title = Title
+  Chart Title Font = Tahoma, 12, True, False, False, False
+  Chart Title Visibility = On
+  Chart Type = XY
+  Chart Vertical Grid = On
+  Chart X Axis Automatic Number Formatting = On
+  Chart X Axis Label = X Axis <units>
+  Chart X Axis Number Format = %10.3e
+  Chart Y Axis Automatic Number Formatting = On
+  Chart Y Axis Label = Y Axis <units>
+  Chart Y Axis Number Format = %10.3e
+  Default Chart X Variable = Chart Count
+  Default Chart Y Variable = Cp
+  Default Difference Line Calculation = From Points
+  Default Histogram Y Axis Weighting = None
+  Default Time Chart Variable = Pressure
+  Default Time Chart X Expression = Time
+  Default Time Variable Absolute Value = Off
+  Default Time Variable Boundary Values = Conservative
+  Default X Variable Absolute Value = Off
+  Default X Variable Boundary Values = Conservative
+  Default Y Variable Absolute Value = Off
+  Default Y Variable Boundary Values = Conservative
+  FFT Full Input Range = On
+  FFT Max = 0.0
+  FFT Min = 0.0
+  FFT Subtract Mean = Off
+  FFT Window Type = Hanning
+  FFT X Function = Frequency
+  FFT Y Function = Power Spectral Density
+  Histogram Automatic Divisions = Automatic
+  Histogram Divisions = -1.0,1.0
+  Histogram Divisions Count = 10
+  Histogram Y Axis Value = Count
+  Is FFT Chart = Off
+  Max X = 0.447
+  Max Y = 1.0
+  Min X = 0
+  Min Y = -1.0
+  Use Data For X Axis Labels = On
+  Use Data For Y Axis Labels = On
+  X Axis Automatic Range = Off
+  X Axis Inverted = Off
+  X Axis Logarithmic Scaling = Off
+  Y Axis Automatic Range = On
+  Y Axis Inverted = On
+  Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+    Chart Line Custom Data Selection = Off
+    Chart Line Filename =
+    Chart Series Type = Regular
+    Chart X Variable = Chart Count
+    Chart Y Variable = Cp
+    Histogram Y Axis Weighting = None
+    Location = /POLYLINE:PressurePorts
+    Monitor Data Filename =
+    Monitor Data Source = Case
+    Monitor Data X Variable Absolute Value = Off
+    Monitor Data Y Variable Absolute Value = Off
+    Operating Point Data Case = Case coarse_001
+    Operating Point Data Filename =
+    Operating Point Data Source = File
+    Series Name = Series 1
+    Time Chart Expression = Time
+    Time Chart Type = Point
+    Time Chart Variable = Cp
+    Time Chart X Expression = Time
+    Time Variable Absolute Value = Off
+    Time Variable Boundary Values = Conservative
+    X Variable Absolute Value = Off
+    X Variable Boundary Values = Conservative
+    Y Variable Absolute Value = Off
+    Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+      Auto Chart Line Colour = On
+      Auto Chart Symbol Colour = On
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 1.0, 0.0, 0.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Series 1
+      Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+    Report Caption =
+  END
+END
+
+VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 2.01469, 0, 0.223875
+    Scale = 0.165838
+    Pan = 1.83128, 3.15544
+    Rotation Quaternion = -0.393757, -0.00257361, -0.280559, -0.875342
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>hide /POLYLINE:PressurePorts, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>show /POLYLINE:PressurePorts, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>hide /POLYLINE:PressurePorts, view=/VIEW:View 1
+
+# Sending visibility action from ViewUtilities
+>show /POLYLINE:PressurePorts, view=/VIEW:View 1
+
+
+POLYLINE:PressurePorts
+  Apply Instancing Transform = On
+  Boundary List = AIRFOIL
+  Colour = 0, 1, 0
+  Colour Map = Default Colour Map
+  Colour Mode = Constant
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Hybrid
+  Contour Level = 1
+  Domain List = /DOMAIN GROUP:All Domains
+  Input File =
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Line Width = 2
+  Location = /PLANE:Midplane
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Option = Boundary Intersection
+  Range = Global
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+
+CHART:PressureCoef
+  Chart Axes Font = Tahoma, 10, False, False, False, False
+  Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+  Chart Grid Line Width = 1
+  Chart Horizontal Grid = On
+  Chart Legend = On
+  Chart Legend Font = Tahoma, 8, False, False, False, False
+  Chart Legend Inside = Outside Chart
+  Chart Legend Justification = Center
+  Chart Legend Position = Bottom
+  Chart Legend Width Height = 0.2 , 0.4
+  Chart Legend X Justification = Right
+  Chart Legend XY Position = 0.73 , 0.275
+  Chart Legend Y Justification = Center
+  Chart Line Width = 2
+  Chart Lines Order = Series 1,Chart Line 1
+  Chart Minor Grid = Off
+  Chart Minor Grid Line Width = 1
+  Chart Symbol Size = 4
+  Chart Title = Title
+  Chart Title Font = Tahoma, 12, True, False, False, False
+  Chart Title Visibility = On
+  Chart Type = XY
+  Chart Vertical Grid = On
+  Chart X Axis Automatic Number Formatting = On
+  Chart X Axis Label = X Axis <units>
+  Chart X Axis Number Format = %10.3e
+  Chart Y Axis Automatic Number Formatting = On
+  Chart Y Axis Label = Y Axis <units>
+  Chart Y Axis Number Format = %10.3e
+  Default Chart X Variable = X
+  Default Chart Y Variable = Cp
+  Default Difference Line Calculation = From Points
+  Default Histogram Y Axis Weighting = None
+  Default Time Chart Variable = Pressure
+  Default Time Chart X Expression = Time
+  Default Time Variable Absolute Value = Off
+  Default Time Variable Boundary Values = Conservative
+  Default X Variable Absolute Value = Off
+  Default X Variable Boundary Values = Conservative
+  Default Y Variable Absolute Value = Off
+  Default Y Variable Boundary Values = Conservative
+  FFT Full Input Range = On
+  FFT Max = 0.0
+  FFT Min = 0.0
+  FFT Subtract Mean = Off
+  FFT Window Type = Hanning
+  FFT X Function = Frequency
+  FFT Y Function = Power Spectral Density
+  Histogram Automatic Divisions = Automatic
+  Histogram Divisions = -1.0,1.0
+  Histogram Divisions Count = 10
+  Histogram Y Axis Value = Count
+  Is FFT Chart = Off
+  Max X = 0.447
+  Max Y = 1.0
+  Min X = 0
+  Min Y = -1.0
+  Use Data For X Axis Labels = On
+  Use Data For Y Axis Labels = On
+  X Axis Automatic Range = Off
+  X Axis Inverted = Off
+  X Axis Logarithmic Scaling = Off
+  Y Axis Automatic Range = On
+  Y Axis Inverted = On
+  Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+    Chart Line Custom Data Selection = Off
+    Chart Line Filename =
+    Chart Series Type = Regular
+    Chart X Variable = Chart Count
+    Chart Y Variable = Cp
+    Histogram Y Axis Weighting = None
+    Location = /POLYLINE:PressurePorts
+    Monitor Data Filename =
+    Monitor Data Source = Case
+    Monitor Data X Variable Absolute Value = Off
+    Monitor Data Y Variable Absolute Value = Off
+    Operating Point Data Case = Case coarse_001
+    Operating Point Data Filename =
+    Operating Point Data Source = File
+    Series Name = Series 1
+    Time Chart Expression = Time
+    Time Chart Type = Point
+    Time Chart Variable = Cp
+    Time Chart X Expression = Time
+    Time Variable Absolute Value = Off
+    Time Variable Boundary Values = Conservative
+    X Variable Absolute Value = Off
+    X Variable Boundary Values = Conservative
+    Y Variable Absolute Value = Off
+    Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+      Auto Chart Line Colour = On
+      Auto Chart Symbol Colour = On
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 1.0, 0.0, 0.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Series 1
+      Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+    Report Caption =
+  END
+END
+
+
+# Session file stopped:  2018/11/10 01:22:14
+

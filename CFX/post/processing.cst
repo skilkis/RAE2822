@@ -1,0 +1,2527 @@
+# State file created:  2018/11/13 14:24:32
+# CFX-19.0
+
+CALCULATOR:
+  Case Name = Case fine_mesh_002
+  Function = area
+  Verbose = Off
+END
+CHART:PressureCoef
+  Chart Axes = Both
+  Chart Axes Font = Tahoma, 10, False, False, False, False
+  Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+  Chart Grid Line Width = 1
+  Chart Horizontal Grid = On
+  Chart Legend = On
+  Chart Legend Font = Tahoma, 8, False, False, False, False
+  Chart Legend Inside = Outside Chart
+  Chart Legend Justification = Center
+  Chart Legend Position = Bottom
+  Chart Legend Width Height = 0.2 , 0.4
+  Chart Legend X Justification = Right
+  Chart Legend XY Position = 0.73 , 0.275
+  Chart Legend Y Justification = Center
+  Chart Line Width = 2
+  Chart Lines Order = Series 1,Chart Line 1
+  Chart Minor Grid = Off
+  Chart Minor Grid Line Width = 1
+  Chart Print Base Height = 700
+  Chart Print Base Width = 700
+  Chart Symbol Size = 4
+  Chart Text Colour = White
+  Chart Title = Title
+  Chart Title Font = Tahoma, 12, True, False, False, False
+  Chart Title Visibility = On
+  Chart Type = XY
+  Chart Vertical Grid = On
+  Chart Viewport Colour = Yellow
+  Chart X Axis Automatic Number Formatting = On
+  Chart X Axis Label = X Axis <units>
+  Chart X Axis Number Format = %10.3e
+  Chart Y Axis Automatic Number Formatting = On
+  Chart Y Axis Label = Y Axis <units>
+  Chart Y Axis Number Format = %10.3e
+  Default Chart X Variable = X
+  Default Chart Y Variable = Cp
+  Default Difference Line Calculation = From Points
+  Default Histogram Y Axis Weighting = None
+  Default Time Chart Variable = Pressure
+  Default Time Chart X Expression = Time
+  Default Time Variable Absolute Value = Off
+  Default Time Variable Boundary Values = Conservative
+  Default X Variable Absolute Value = Off
+  Default X Variable Boundary Values = Conservative
+  Default Y Variable Absolute Value = Off
+  Default Y Variable Boundary Values = Conservative
+  FFT Full Input Range = On
+  FFT Max = 0.0
+  FFT Min = 0.0
+  FFT Subtract Mean = Off
+  FFT Window Type = Hanning
+  FFT X Function = Frequency
+  FFT Y Function = Power Spectral Density
+  Histogram Automatic Divisions = Automatic
+  Histogram Divisions = -1.0,1.0
+  Histogram Divisions Count = 10
+  Histogram Y Axis Value = Count
+  Is FFT Chart = Off
+  Max X = 0.447
+  Max Y = 1.0
+  Min X = 0
+  Min Y = -1.0
+  Time Chart Keep Single Case = False
+  Use Data For X Axis Labels = On
+  Use Data For Y Axis Labels = On
+  X Axis Automatic Range = Off
+  X Axis Inverted = Off
+  X Axis Logarithmic Scaling = Off
+  Y Axis Automatic Range = On
+  Y Axis Inverted = On
+  Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+    Chart Line Custom Data Selection = Off
+    Chart Series Type = Regular
+    Chart X Variable = Chart Count
+    Chart Y Variable = Cp
+    Histogram Y Axis Weighting = None
+    Location = PressurePorts
+    Monitor Data Source = Case
+    Monitor Data X Variable Absolute Value = Off
+    Monitor Data Y Variable Absolute Value = Off
+    Operating Point Data Case = Case coarse_001
+    Operating Point Data Source = File
+    Series Name = Series 1
+    Time Chart Expression = Time
+    Time Chart Type = Point
+    Time Chart Variable = Cp
+    Time Chart X Expression = Time
+    Time Variable Absolute Value = Off
+    Time Variable Boundary Values = Conservative
+    X Variable Absolute Value = Off
+    X Variable Boundary Values = Conservative
+    Y Variable Absolute Value = Off
+    Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+      Auto Chart Line Colour = On
+      Auto Chart Symbol Colour = On
+      Case Name = Case fine_mesh_002
+      Category Values = 0
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 1.0, 0.0, 0.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Series 1
+      Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+    Automatic Item = None
+    Generation = Manual
+  END
+END
+CHART:YPlus
+  Chart Axes = Both
+  Chart Axes Font = Tahoma, 10, False, False, False, False
+  Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+  Chart Grid Line Width = 1
+  Chart Horizontal Grid = On
+  Chart Legend = On
+  Chart Legend Font = Tahoma, 8, False, False, False, False
+  Chart Legend Inside = Outside Chart
+  Chart Legend Justification = Center
+  Chart Legend Position = Bottom
+  Chart Legend Width Height = 0.2 , 0.4
+  Chart Legend X Justification = Right
+  Chart Legend XY Position = 0.73 , 0.275
+  Chart Legend Y Justification = Center
+  Chart Line Width = 2
+  Chart Lines Order = Series 1,Chart Line 1
+  Chart Minor Grid = Off
+  Chart Minor Grid Line Width = 1
+  Chart Print Base Height = 700
+  Chart Print Base Width = 700
+  Chart Symbol Size = 4
+  Chart Text Colour = White
+  Chart Title = Title
+  Chart Title Font = Tahoma, 12, True, False, False, False
+  Chart Title Visibility = On
+  Chart Type = XY
+  Chart Vertical Grid = On
+  Chart Viewport Colour = Yellow
+  Chart X Axis Automatic Number Formatting = On
+  Chart X Axis Label = X Axis <units>
+  Chart X Axis Number Format = %10.3e
+  Chart Y Axis Automatic Number Formatting = On
+  Chart Y Axis Label = Y Axis <units>
+  Chart Y Axis Number Format = %10.3e
+  Default Chart X Variable = X
+  Default Chart Y Variable = yplus
+  Default Difference Line Calculation = From Points
+  Default Histogram Y Axis Weighting = None
+  Default Time Chart Variable = Pressure
+  Default Time Chart X Expression = Time
+  Default Time Variable Absolute Value = Off
+  Default Time Variable Boundary Values = Conservative
+  Default X Variable Absolute Value = Off
+  Default X Variable Boundary Values = Conservative
+  Default Y Variable Absolute Value = Off
+  Default Y Variable Boundary Values = Conservative
+  FFT Full Input Range = On
+  FFT Max = 0.0
+  FFT Min = 0.0
+  FFT Subtract Mean = Off
+  FFT Window Type = Hanning
+  FFT X Function = Frequency
+  FFT Y Function = Power Spectral Density
+  Histogram Automatic Divisions = Automatic
+  Histogram Divisions = -1.0,1.0
+  Histogram Divisions Count = 10
+  Histogram Y Axis Value = Count
+  Is FFT Chart = Off
+  Max X = 1.0
+  Max Y = 1.0
+  Min X = -1.0
+  Min Y = -1.0
+  Time Chart Keep Single Case = False
+  Use Data For X Axis Labels = On
+  Use Data For Y Axis Labels = On
+  X Axis Automatic Range = On
+  X Axis Inverted = Off
+  X Axis Logarithmic Scaling = Off
+  Y Axis Automatic Range = On
+  Y Axis Inverted = Off
+  Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+    Chart Line Custom Data Selection = Off
+    Chart Series Type = Regular
+    Chart X Variable = Chart Count
+    Chart Y Variable = Cp
+    Histogram Y Axis Weighting = None
+    Location = PressurePorts
+    Monitor Data Source = Case
+    Monitor Data X Variable Absolute Value = Off
+    Monitor Data Y Variable Absolute Value = Off
+    Operating Point Data Case = Case fine_mesh_002
+    Operating Point Data Source = File
+    Series Name = Series 1
+    Time Chart Expression = Time
+    Time Chart Type = Point
+    Time Chart Variable = Cp
+    Time Chart X Expression = Time
+    Time Variable Absolute Value = Off
+    Time Variable Boundary Values = Conservative
+    X Variable Absolute Value = Off
+    X Variable Boundary Values = Conservative
+    Y Variable Absolute Value = Off
+    Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+      Auto Chart Line Colour = On
+      Auto Chart Symbol Colour = On
+      Case Name = Case fine_mesh_002
+      Category Values = 0
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 1.0, 0.0, 0.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Series 1
+      Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+    Automatic Item = None
+    Generation = Manual
+  END
+END
+CHART:velocityoutlet
+  Chart Axes = Both
+  Chart Axes Font = Tahoma, 10, False, False, False, False
+  Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+  Chart Grid Line Width = 1
+  Chart Horizontal Grid = On
+  Chart Legend = On
+  Chart Legend Font = Tahoma, 8, False, False, False, False
+  Chart Legend Inside = Outside Chart
+  Chart Legend Justification = Center
+  Chart Legend Position = Bottom
+  Chart Legend Width Height = 0.2 , 0.4
+  Chart Legend X Justification = Right
+  Chart Legend XY Position = 0.73 , 0.275
+  Chart Legend Y Justification = Center
+  Chart Line Width = 2
+  Chart Lines Order = Series 1,Chart Line 1
+  Chart Minor Grid = Off
+  Chart Minor Grid Line Width = 1
+  Chart Print Base Height = 700
+  Chart Print Base Width = 700
+  Chart Symbol Size = 4
+  Chart Text Colour = White
+  Chart Title = Title
+  Chart Title Font = Tahoma, 12, True, False, False, False
+  Chart Title Visibility = On
+  Chart Type = XY
+  Chart Vertical Grid = On
+  Chart Viewport Colour = Yellow
+  Chart X Axis Automatic Number Formatting = On
+  Chart X Axis Label = X Axis <units>
+  Chart X Axis Number Format = %10.3e
+  Chart Y Axis Automatic Number Formatting = On
+  Chart Y Axis Label = Y Axis <units>
+  Chart Y Axis Number Format = %10.3e
+  Default Chart X Variable = Velocity
+  Default Chart Y Variable = Y
+  Default Difference Line Calculation = From Points
+  Default Histogram Y Axis Weighting = None
+  Default Time Chart Variable = Pressure
+  Default Time Chart X Expression = Time
+  Default Time Variable Absolute Value = Off
+  Default Time Variable Boundary Values = Conservative
+  Default X Variable Absolute Value = Off
+  Default X Variable Boundary Values = Hybrid
+  Default Y Variable Absolute Value = Off
+  Default Y Variable Boundary Values = Conservative
+  FFT Full Input Range = On
+  FFT Max = 0.0
+  FFT Min = 0.0
+  FFT Subtract Mean = Off
+  FFT Window Type = Hanning
+  FFT X Function = Frequency
+  FFT Y Function = Power Spectral Density
+  Histogram Automatic Divisions = Automatic
+  Histogram Divisions = -1.0,1.0
+  Histogram Divisions Count = 10
+  Histogram Y Axis Value = Count
+  Is FFT Chart = Off
+  Max X = 1.0
+  Max Y = 1.0
+  Min X = -1.0
+  Min Y = -1.0
+  Time Chart Keep Single Case = False
+  Use Data For X Axis Labels = On
+  Use Data For Y Axis Labels = On
+  X Axis Automatic Range = On
+  X Axis Inverted = Off
+  X Axis Logarithmic Scaling = Off
+  Y Axis Automatic Range = On
+  Y Axis Inverted = Off
+  Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+    Chart Line Custom Data Selection = Off
+    Chart Series Type = Regular
+    Chart X Variable = Chart Count
+    Chart Y Variable = Cp
+    Histogram Y Axis Weighting = None
+    Location = /POLYLINE:outlet
+    Monitor Data Source = Case
+    Monitor Data X Variable Absolute Value = Off
+    Monitor Data Y Variable Absolute Value = Off
+    Operating Point Data Case = Case 5251_full
+    Operating Point Data Source = File
+    Series Name = Series 1
+    Time Chart Expression = Time
+    Time Chart Type = Point
+    Time Chart Variable = Cp
+    Time Chart X Expression = Time
+    Time Variable Absolute Value = Off
+    Time Variable Boundary Values = Conservative
+    X Variable Absolute Value = Off
+    X Variable Boundary Values = Conservative
+    Y Variable Absolute Value = Off
+    Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+      Auto Chart Line Colour = On
+      Auto Chart Symbol Colour = On
+      Case Name = Case fine_mesh_002
+      Category Values = 0
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 1.0, 0.0, 0.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Series 1
+      Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+    Automatic Item = None
+    Generation = Manual
+  END
+END
+CHART:wallshear
+  Chart Axes = Both
+  Chart Axes Font = Tahoma, 10, False, False, False, False
+  Chart Axes Titles Font = Tahoma, 10, True, False, False, False
+  Chart Grid Line Width = 1
+  Chart Horizontal Grid = On
+  Chart Legend = On
+  Chart Legend Font = Tahoma, 8, False, False, False, False
+  Chart Legend Inside = Outside Chart
+  Chart Legend Justification = Center
+  Chart Legend Position = Bottom
+  Chart Legend Width Height = 0.2 , 0.4
+  Chart Legend X Justification = Right
+  Chart Legend XY Position = 0.73 , 0.275
+  Chart Legend Y Justification = Center
+  Chart Line Width = 2
+  Chart Lines Order = Series 1,Chart Line 1
+  Chart Minor Grid = Off
+  Chart Minor Grid Line Width = 1
+  Chart Print Base Height = 700
+  Chart Print Base Width = 700
+  Chart Symbol Size = 4
+  Chart Text Colour = White
+  Chart Title = Wall Shear
+  Chart Title Font = Tahoma, 12, True, False, False, False
+  Chart Title Visibility = On
+  Chart Type = XY
+  Chart Vertical Grid = On
+  Chart Viewport Colour = Yellow
+  Chart X Axis Automatic Number Formatting = On
+  Chart X Axis Label = X Axis <units>
+  Chart X Axis Number Format = %10.3e
+  Chart Y Axis Automatic Number Formatting = On
+  Chart Y Axis Label = Y Axis <units>
+  Chart Y Axis Number Format = %10.3e
+  Default Chart X Variable = X
+  Default Chart Y Variable = shearwall
+  Default Difference Line Calculation = From Points
+  Default Histogram Y Axis Weighting = None
+  Default Time Chart Variable = Pressure
+  Default Time Chart X Expression = Time
+  Default Time Variable Absolute Value = Off
+  Default Time Variable Boundary Values = Conservative
+  Default X Variable Absolute Value = Off
+  Default X Variable Boundary Values = Conservative
+  Default Y Variable Absolute Value = Off
+  Default Y Variable Boundary Values = Conservative
+  FFT Full Input Range = On
+  FFT Max = 0.0
+  FFT Min = 0.0
+  FFT Subtract Mean = Off
+  FFT Window Type = Hanning
+  FFT X Function = Frequency
+  FFT Y Function = Power Spectral Density
+  Histogram Automatic Divisions = Automatic
+  Histogram Divisions = -1.0,1.0
+  Histogram Divisions Count = 10
+  Histogram Y Axis Value = Count
+  Is FFT Chart = Off
+  Max X = 1.0
+  Max Y = 1.0
+  Min X = -1.0
+  Min Y = -1.0
+  Time Chart Keep Single Case = False
+  Use Data For X Axis Labels = On
+  Use Data For Y Axis Labels = On
+  X Axis Automatic Range = On
+  X Axis Inverted = Off
+  X Axis Logarithmic Scaling = Off
+  Y Axis Automatic Range = On
+  Y Axis Inverted = Off
+  Y Axis Logarithmic Scaling = Off
+  CHART SERIES:Series 1
+    Chart Line Custom Data Selection = Off
+    Chart Series Type = Regular
+    Chart X Variable = Chart Count
+    Chart Y Variable = Cp
+    Histogram Y Axis Weighting = None
+    Location = PressurePorts
+    Monitor Data Source = Case
+    Monitor Data X Variable Absolute Value = Off
+    Monitor Data Y Variable Absolute Value = Off
+    Operating Point Data Case = Case fine_mesh_002
+    Operating Point Data Source = File
+    Series Name = Series 1
+    Time Chart Expression = Time
+    Time Chart Type = Point
+    Time Chart Variable = Cp
+    Time Chart X Expression = Time
+    Time Variable Absolute Value = Off
+    Time Variable Boundary Values = Conservative
+    X Variable Absolute Value = Off
+    X Variable Boundary Values = Conservative
+    Y Variable Absolute Value = Off
+    Y Variable Boundary Values = Conservative
+    CHART LINE:Chart Line 1
+      Auto Chart Line Colour = On
+      Auto Chart Symbol Colour = On
+      Case Name = Case fine_mesh_002
+      Category Values = 0
+      Chart FFT Line Type = Bars
+      Chart Line Colour = 1.0, 0.0, 0.0
+      Chart Line Style = Automatic
+      Chart Line Type = Lines
+      Chart Line Visibility = On
+      Chart Symbol Colour = 0.0, 1.0, 0.0
+      Chart Symbol Style = Automatic
+      Fill Area = On
+      Fill Area Options = Automatic
+      Is Valid = True
+      Line Name = Series 1
+      Use Automatic Line Naming = On
+    END
+  END
+  OBJECT REPORT OPTIONS:
+    Automatic Item = None
+    Generation = Manual
+  END
+END
+COLOUR MAP:Flat
+  Colour Map Colours = 0.000000,0.000000,0.000000,0.000000,1.000000,1.000000,\
+0.000000,0.000000,0.000000,1.000000
+  Colour Map Divisions = 2
+  Colour Map Storage Type = State
+  Colour Map Type = Gradient
+END
+COMMENT:User Data
+  Comment Exists = True
+  Comment Heading = User Data
+  Heading Level = 1
+END
+CONTOUR:Cp countour
+  Apply Instancing Transform = On
+  Clip Contour = Off
+  Colour Map = Default Colour Map
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Hybrid
+  Constant Contour Colour = On
+  Contour Range = Global
+  Culling Mode = Front Faces
+  Domain List = /DOMAIN GROUP:All Domains
+  Draw Contours = On
+  Font = Sans Serif
+  Fringe Fill = On
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Lighting = Off
+  Line Colour = 0, 0, 0
+  Line Colour Mode = Default
+  Line Width = 1
+  Location List = /PLANE:Midplane
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Number of Contours = 40
+  Show Numbers = Off
+  Specular Lighting = On
+  Surface Drawing = Smooth Shading
+  Text Colour = 0, 0, 0
+  Text Colour Mode = Default
+  Text Height = 0.024
+  Transparency = 0.0
+  Use Face Values = Off
+  Value List = 0 [Pa],1 [Pa]
+  Visibility = On
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+DATA READER:
+  Active Case Name = Case fine_mesh_002
+  Append Results = False
+  Apply X Offset = false
+  Apply Y Offset = false
+  Apply Z Offset = false
+  Clear All Objects = False
+  Construct Variables From Fourier Coefficients = true
+  Current Case List = Case fine_mesh_002
+  Current Case Name = D:/My Documents/Python/RAE2822/CFX/result/fine_mesh_2/\
+fine_mesh_002.res
+  Current Results File = D:/My Documents/Python/RAE2822/CFX/result/fine_mesh_2/\
+fine_mesh_002.res
+  Current Timestep = -1
+  Current Timevalue = 0
+  Edit Case Names = false
+  File Angle Units = rad
+  File Chemical Amount Units = mol
+  File Current Units = A
+  File Length Units = m
+  File Light Units = cd
+  File Mass Units = kg
+  File Money Units = GBP
+  File Solid Angle Units = sr
+  File Temperature Units = K
+  File Time Units = s
+  Force File Reload = False
+  Keep Camera Position = True
+  Load Particle Tracks = true
+  Multi Configuration File Load Option = Last Case
+  Open in New View = true
+  Open to Compare = false
+  Reference Acoustic Pressure = 2.0e-5 [Pa]
+  Reference Length = 1.0 [m]
+  Reference Velocity = 1.0 [m s^-1]
+  Timestep Match Criterion = Same Step
+  Timestep Sync Mode = By Time Value
+  Timevalue Match Criterion = Same Value
+  CASE:Case fine_mesh_002
+    Construct Variables From Fourier Coefficients = true
+    Current Case Name = D:/My Documents/Python/RAE2822/CFX/result/fine_mesh_2/\
+fine_mesh_002.res
+    Current Results File = D:/My Documents/Python/RAE2822/CFX/result/\
+fine_mesh_2/fine_mesh_002.res
+    Current Timestep = -1
+    Current Timevalue = 0
+    File Angle Units = rad
+    File Chemical Amount Units = mol
+    File Current Units = A
+    File Length Units = m
+    File Light Units = cd
+    File Mass Units = kg
+    File Money Units = GBP
+    File Solid Angle Units = sr
+    File Temperature Units = K
+    File Time Units = s
+    Multi Configuration File Load Option = Last Case
+    BOUNDARY:AIRFOIL
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = Off
+    END
+    BOUNDARY:INLET
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = Off
+    END
+    BOUNDARY:OUTLET
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = Off
+    END
+    BOUNDARY:SYMMETRY
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = Off
+    END
+    BOUNDARY:WALL
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 0.2, 0.5, 1
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = Off
+    END
+    COMPOSITE:Assembly
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    COMPOSITE:SYMMETRY Region
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    COMPOSITE:WALL Region
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    DOMAIN:Default Domain
+      Angle Definition Method = Instances in 360
+      Apply Reflection = false
+      Apply Rotation = true
+      Apply Translation = false
+      Axis From File = Custom
+      Background Mesh Density = 2000
+      Background Mesh Generation Method = Quasi Orthogonal
+      Blade Aligned Variable Available = false
+      Create Additional Turbo Variables = false
+      Do Cylindrical Initialization = False
+      Domain Type = Normal
+      Full Circle = Off
+      Hub Curve Mode = From Turbo Region
+      Inlet Curve Mode = From Turbo Region
+      Inlet Region = /DATA READER/CASE:Case fine_mesh_002/BOUNDARY:INLET
+      Instance Definition = From File
+      Linear Blade Aligned Variable Available = false
+      Number of Components in 360 = 1
+      Number of Copies = 1
+      Number of Data Instances = 1
+      Number of Passages in 360 = 1
+      Number of Passages in Component = 1
+      Outlet Curve Mode = From Turbo Region
+      Outlet Region = /DATA READER/CASE:Case fine_mesh_002/BOUNDARY:OUTLET
+      Principal Axis = Z
+      Reflection Plane Option = From Plane
+      Rotation Angle = 0 [degree]
+      Rotation Axis From = 0.0, 0.0, 0.0
+      Rotation Axis To = 1.0, 0.0, 0.0
+      Rotation Axis Type = Principal Axis
+      Shroud Curve Mode = From Turbo Region
+      TBR User Theta Correction = 0.0
+      Translation Vector = 0.0, 0.0, 0.0
+      Turbo 360 Case without Periodics = false
+      X = 0.0
+      Y = 0.0
+      Z = 0.0
+    END
+    PRIMITIVE2D:AIRFOIL Region
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Set Number = 1
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    PRIMITIVE2D:INLET Region
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Set Number = 2
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    PRIMITIVE2D:OUTLET Region
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Set Number = 3
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    PRIMITIVE2D:Primitive 2D
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Set Number = 4
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    PRIMITIVE2D:Primitive 2D A
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Set Number = 5
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    PRIMITIVE2D:Primitive 2D B
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Set Number = 6
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    PRIMITIVE2D:Primitive 2D C
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Set Number = 7
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+    PRIMITIVE3D:SOLID
+      Apply Instancing Transform = On
+      Apply Texture = Off
+      Blend Texture = On
+      Colour = 1, 0.5, 0
+      Colour Map = Default Colour Map
+      Colour Mode = Constant
+      Colour Scale = Linear
+      Colour Variable Boundary Values = Hybrid
+      Culling Mode = No Culling
+      Draw Faces = On
+      Draw Lines = Off
+      Instancing Transform = Default Transform
+      Lighting = true
+      Line Colour = 0, 0, 0
+      Line Colour Mode = Default
+      Line Width = 1
+      Range = Global
+      Render Edge Angle = 0 [degree]
+      Set Number = 1
+      Specular Lighting = On
+      Surface Drawing = Smooth Shading
+      Texture Angle = 0
+      Texture Direction = 0.0, 1.0, 0.0
+      Texture Material = Metal
+      Texture Position = 0.0, 0.0
+      Texture Scale = 1.0
+      Texture Type = Predefined
+      Tile Texture = Off
+      Transform Texture = Off
+      Transparency = 0.0
+      Visibility = false
+    END
+  END
+END
+DEFAULT INSTANCE TRANSFORM:Default Transform
+  Angle Definition Method = Instances in 360
+  Apply Reflection = false
+  Apply Rotation = true
+  Apply Translation = false
+  Full Circle = Off
+  Instancing Info From Domain = true
+  Number of Components in 360 = 12
+  Number of Copies = 1
+  Number of Passages in 360 = 12
+  Number of Passages in Component = 1
+  Principal Axis = Z
+  Reflection Plane Option = From Plane
+  Rotation Angle = 0 [degree]
+  Rotation Axis From = 0.0, 0.0, 0.0
+  Rotation Axis To = 1.0, 0.0, 0.0
+  Rotation Axis Type = Principal Axis
+  Translation Vector = 0.0, 0.0, 0.0
+  X = 0.0
+  Y = 0.0
+  Z = 0.0
+END
+DEFAULT LEGEND:Default Legend PressurePicture
+  Colour = 0, 0, 0
+  Font = Sans Serif
+  Legend Aspect = 0.07
+  Legend Format = %10.3e
+  Legend Orientation = Vertical
+  Legend Plot = /PLANE:Midplane
+  Legend Position = 0.02 , 0.15
+  Legend Resolution = 256
+  Legend Shading = Smooth
+  Legend Size = 0.6
+  Legend Ticks = 5
+  Legend Title = Mach Number
+  Legend Title Mode = Variable
+  Legend X Justification = Left
+  Legend Y Justification = Center
+  Related Object = PressurePicture
+  Show Legend Units = On
+  Text Colour Mode = Default
+  Text Height = 0.024
+  Text Rotation = 0
+  Visibility = true
+END
+DEFAULT LEGEND:Default Legend View 1
+  Colour = 0, 0, 0
+  Font = Sans Serif
+  Legend Aspect = 0.07
+  Legend Format = %10.3e
+  Legend Orientation = Vertical
+  Legend Plot = /PLANE:Midplane
+  Legend Position = 0.02 , 0.15
+  Legend Resolution = 256
+  Legend Shading = Smooth
+  Legend Size = 0.6
+  Legend Ticks = 5
+  Legend Title = Pressure
+  Legend Title Mode = User Specified
+  Legend X Justification = Left
+  Legend Y Justification = Center
+  Related Object = View 1
+  Show Legend Units = On
+  Text Colour Mode = Default
+  Text Height = 0.024
+  Text Rotation = 0
+  Visibility = Off
+END
+DEFAULT LEGEND:Default Legend View 2
+  Colour = 0, 0, 0
+  Font = Sans Serif
+  Legend Aspect = 0.07
+  Legend Format = %10.3e
+  Legend Orientation = Vertical
+  Legend Plot = /POLYLINE:PressurePorts
+  Legend Position = 0.02, 0.15
+  Legend Resolution = 256
+  Legend Shading = Smooth
+  Legend Size = 0.6
+  Legend Ticks = 5
+  Legend Title = Legend
+  Legend Title Mode = Variable and Location
+  Legend X Justification = Left
+  Legend Y Justification = Top
+  Related Object = View 2
+  Show Legend Units = On
+  Text Colour Mode = Default
+  Text Height = 0.024
+  Text Rotation = 0
+  Visibility = true
+END
+DEFAULT LEGEND:Default Legend View 3
+  Colour = 0, 0, 0
+  Font = Sans Serif
+  Legend Aspect = 0.07
+  Legend Format = %10.3e
+  Legend Orientation = Vertical
+  Legend Plot = /PLANE:Midplane
+  Legend Position = 0.02, 0.15
+  Legend Resolution = 256
+  Legend Shading = Smooth
+  Legend Size = 0.6
+  Legend Ticks = 5
+  Legend Title = Legend
+  Legend Title Mode = Variable and Location
+  Legend X Justification = Left
+  Legend Y Justification = Top
+  Related Object = View 3
+  Show Legend Units = On
+  Text Colour Mode = Default
+  Text Height = 0.024
+  Text Rotation = 0
+  Visibility = true
+END
+DEFAULT LEGEND:Default Legend View 4
+  Colour = 0, 0, 0
+  Font = Sans Serif
+  Legend Aspect = 0.07
+  Legend Format = %10.3e
+  Legend Orientation = Vertical
+  Legend Plot = /POLYLINE:PressurePorts
+  Legend Position = 0.02, 0.15
+  Legend Resolution = 256
+  Legend Shading = Smooth
+  Legend Size = 0.6
+  Legend Ticks = 5
+  Legend Title = Legend
+  Legend Title Mode = Variable and Location
+  Legend X Justification = Left
+  Legend Y Justification = Top
+  Related Object = View 4
+  Show Legend Units = On
+  Text Colour Mode = Default
+  Text Height = 0.024
+  Text Rotation = 0
+  Visibility = true
+END
+DEFORMATION INFO:
+  Deformation Scale = 1
+END
+EXPORT:
+  ANSYS Export Data = Element Heat Flux
+  ANSYS File Format = ANSYS
+  ANSYS Fluid Selection = All Fluids
+  ANSYS Specify Reference Temperature = false
+  BC Profile Type = Inlet Velocity
+  Case Summary Format = XML
+  Case Summary Type = ANSYS FSI
+  Export Chart Name = velocityoutlet
+  Export Connectivity = false
+  Export Coord Frame = Global
+  Export File = D:/My Documents/Python/RAE2822/data/farfield/\
+fine_mesh_SST.csv
+  Export Geometry = true
+  Export Node Numbers = false
+  Export Null Data = True
+  Export Type = Generic
+  Export Units System = Current
+  Export Variable Type = Current
+  External Export Data = None
+  Heat Flow Sign Flipping = Automatic
+  Include File Information = false
+  Include Header = true
+  Null Token = null
+  Overwrite = On
+  Precision = 8
+  Separator = ", "
+  Spatial Variables = X,Y,Z
+  Split Cut Lines = true
+  Vector Brackets = ()
+  Vector Display = Scalar
+END
+FILE PROCESSING:
+  Path Stack = .
+  Processing Mode = None
+  Supress File Replacement Warnings = false
+END
+LIBRARY:
+  CEL:
+    EXPRESSIONS:
+      Accumulated Time Step = 1969
+      CPEXP = (Pressure - 71150 [Pa]) / (0.5 * 0.9418[kg m^-3] * (237.079^2) \
+[m s^-1])
+      Current Time Step = 1969
+      Reference Pressure = 0 [atm]
+      Sequence Step = 1969
+      Time = 0 [s]
+      atstep = Accumulated Time Step
+      ctstep = Current Time Step
+      dragEXP = force_x()@AIRFOIL
+      liftEXP = force_y()@AIRFOIL
+      shearEXP = Wall Shear
+      sstep = Sequence Step
+      t = Time
+      yplusexp = Yplus
+    END
+  END
+END
+MASS FLOW CALC OPTION ON PHYSICAL SURFACES:
+  Option = Interpolated
+END
+PLANE:Midplane
+  Apply Instancing Transform = On
+  Apply Texture = Off
+  Blend Texture = On
+  Bound Radius = 0.5 [m]
+  Colour = 0.75, 0.75, 0.75
+  Colour Map = Rainbow 6
+  Colour Mode = Variable
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Hybrid
+  Culling Mode = No Culling
+  Direction 1 Bound = 1.0 [m]
+  Direction 1 Orientation = 0 [degree]
+  Direction 1 Points = 10
+  Direction 2 Bound = 1.0 [m]
+  Direction 2 Points = 10
+  Domain List = Default Domain
+  Draw Faces = On
+  Draw Lines = Off
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Invert Plane Bound = Off
+  Lighting = Off
+  Line Colour = 0, 0, 0
+  Line Colour Mode = Default
+  Line Width = 1
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Normal = 1 , 0 , 0
+  Option = XY Plane
+  Plane Bound = None
+  Plane Type = Slice
+  Point = 0 [m], 0 [m], 0 [m]
+  Point 1 = 0 [m], 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m], 0 [m]
+  Point 3 = 0 [m], 1 [m], 0 [m]
+  Range = Global
+  Render Edge Angle = 0 [degree]
+  Specular Lighting = On
+  Surface Drawing = Smooth Shading
+  Texture Angle = 0
+  Texture Direction = 0 , 1 , 0
+  Texture Material = Gold
+  Texture Position = 0 , 0
+  Texture Scale = 1
+  Texture Type = Predefined
+  Tile Texture = Off
+  Transform Texture = Off
+  Transparency = 0.0
+  Visibility = On
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.223874621367 [m]
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+PLANE:SeedPlane
+  Apply Instancing Transform = On
+  Apply Texture = Off
+  Blend Texture = On
+  Bound Radius = 0.5 [m]
+  Colour = 0.75, 0.75, 0.75
+  Colour Map = Default Colour Map
+  Colour Mode = Constant
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Hybrid
+  Culling Mode = No Culling
+  Direction 1 Bound = 1.0 [m]
+  Direction 1 Orientation = 0 [degree]
+  Direction 1 Points = 10
+  Direction 2 Bound = 1.0 [m]
+  Direction 2 Points = 10
+  Domain List = /DOMAIN GROUP:All Domains
+  Draw Faces = On
+  Draw Lines = Off
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Invert Plane Bound = Off
+  Lighting = On
+  Line Colour = 0, 0, 0
+  Line Colour Mode = Default
+  Line Width = 1
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Normal = 1 , 0 , 0
+  Option = YZ Plane
+  Plane Bound = None
+  Plane Type = Slice
+  Point = 0 [m], 0 [m], 0 [m]
+  Point 1 = 0 [m], 0 [m], 0 [m]
+  Point 2 = 1 [m], 0 [m], 0 [m]
+  Point 3 = 0 [m], 1 [m], 0 [m]
+  Range = Global
+  Render Edge Angle = 0 [degree]
+  Specular Lighting = On
+  Surface Drawing = Smooth Shading
+  Texture Angle = 0
+  Texture Direction = 0 , 1 , 0
+  Texture Material = Metal
+  Texture Position = 0 , 0
+  Texture Scale = 1
+  Texture Type = Predefined
+  Tile Texture = Off
+  Transform Texture = Off
+  Transparency = 0.0
+  Visibility = On
+  X = -2 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+POLYLINE:PressurePorts
+  Apply Instancing Transform = On
+  Boundary List = AIRFOIL
+  Colour = 0, 1, 0
+  Colour Map = Default Colour Map
+  Colour Mode = Constant
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Hybrid
+  Contour Level = 1
+  Domain List = /DOMAIN GROUP:All Domains
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Line Width = 0
+  Location = Midplane
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Option = Boundary Intersection
+  Range = Global
+  Visibility = On
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+POLYLINE:outlet
+  Apply Instancing Transform = On
+  Boundary List = OUTLET
+  Colour = 0, 1, 0
+  Colour Map = Default Colour Map
+  Colour Mode = Constant
+  Colour Scale = Linear
+  Colour Variable = Pressure
+  Colour Variable Boundary Values = Hybrid
+  Contour Level = 1
+  Domain List = /DOMAIN GROUP:All Domains
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Line Width = 2
+  Location = /PLANE:Midplane
+  Max = 0.0 [Pa]
+  Min = 0.0 [Pa]
+  Option = Boundary Intersection
+  Range = Global
+  Visibility = Off
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+REPORT:
+  Report Items = /TITLE PAGE,/REPORT/FILE INFORMATION OPTIONS,/REPORT/MESH \
+STATISTICS OPTIONS,/REPORT/PHYSICS SUMMARY OPTIONS,/REPORT/SOLUTION SUMMARY \
+OPTIONS,/COMMENT:User Data,/CHART:PressureCoef,/CHART:YPlus,/\
+VIEW:PressurePicture,/CHART:wallshear,/CHART:velocityoutlet
+  FILE INFORMATION OPTIONS:
+    Include In Report = true
+    This Exists = true
+  END
+  MESH STATISTICS OPTIONS:
+    Include In Report = true
+    Show Connectivity Number = false
+    Show Edge Length Ratio = false
+    Show Element Volume Ratio = false
+    Show Max Face Angle = false
+    Show Min Face Angle = false
+    Show Number of Elements = true
+    Show Number of Hexahedra = false
+    Show Number of Nodes = true
+    Show Number of Polyhedra = false
+    Show Number of Pyramids = false
+    Show Number of Tetrahedra = false
+    Show Number of Wedges = false
+    This Exists = true
+  END
+  PHYSICS SUMMARY OPTIONS:
+    Include In Report = true
+    Show Boundary Physics = true
+    Show Domain Physics = true
+    This Exists = true
+  END
+  PREVIEW:
+    This Exists = true
+    OUTPUT SETTINGS:
+      Chart Image Type = png
+      Chart Size = Same As Figure
+      Custom Chart Size Height = 384
+      Custom Chart Size Width = 512
+      Custom Figure Size Height = 384
+      Custom Figure Size Width = 512
+      Figure Image Type = png
+      Figure Size = 512 x 384
+      Fit Views = false
+      This Exists = true
+    END
+  END
+  PUBLISH:
+    Default Report Name = Report
+    Generate 3D Viewer Files = false
+    Report Format = HTML
+    Report Path = ./Report.htm
+    Save Images In Separate Folder = true
+    This Exists = true
+    OUTPUT SETTINGS:
+      Chart Image Type = png
+      Chart Size = Same As Figure
+      Custom Chart Size Height = 384
+      Custom Chart Size Width = 512
+      Custom Figure Size Height = 384
+      Custom Figure Size Width = 512
+      Figure Image Type = png
+      Figure Size = 512 x 384
+      Fit Views = false
+      This Exists = true
+    END
+  END
+  SOLUTION SUMMARY OPTIONS:
+    Include In Report = true
+    Show Boundary Flow Summary = On
+    Show Force and Torque Summary = Off
+    Show Forces = true
+    Show Torques = true
+    This Exists = true
+  END
+END
+SCALAR VARIABLE:Absolute Pressure
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Approximated Mass Flow
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Area
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Aspect Ratio
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Boundary Normal on PressurePorts X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Boundary Normal on PressurePorts Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Boundary Normal on PressurePorts Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Boundary Normal on outlet X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Boundary Normal on outlet Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Boundary Normal on outlet Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Connectivity Number
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Courant Number
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Curve Length on PressurePorts
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Curve Length on outlet
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Density
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Density.Beta
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Density.Gradient X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Density.Gradient Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Density.Gradient Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Dynamic Viscosity
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Eddy Viscosity
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Edge Length Ratio
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Element Volume Inverse
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Element Volume Ratio
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:First Blending Function for BSL and SST model
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Force X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Force Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Force Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Heat Flux
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Interpolated Mass Flow
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Isothermal Compressibility
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Length
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Local Speed of Sound
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Mach Number
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Mass Flow
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Maximum Face Angle
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Mesh Expansion Factor
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Minimum Face Angle
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Normal X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Normal Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Normal Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Normalized Force on PressurePorts X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Normalized Force on PressurePorts Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Normalized Force on PressurePorts Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Normalized Force on outlet X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Normalized Force on outlet Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Normalized Force on outlet Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Orthogonality Angle
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Pressure
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Pressure.Gradient X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Pressure.Gradient Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Pressure.Gradient Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Real Partition Number
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Second Blending Function for SST model
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Shear Strain Rate
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Solver Yplus
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Specific Heat Capacity at Constant Pressure
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Specific Heat Capacity at Constant Volume
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Specific Volume
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Static Enthalpy
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Static Entropy
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Streamline Number on Streamline 1
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Temperature
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Thermal Conductivity
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Time on Streamline 1
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Total Density
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Total Enthalpy
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Total Enthalpy.Beta
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Total Enthalpy.Gradient X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Total Enthalpy.Gradient Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Total Enthalpy.Gradient Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Total Pressure
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Total Temperature
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Eddy Dissipation
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Eddy Frequency
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Eddy Frequency.Beta
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Eddy Frequency.Gradient X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Eddy Frequency.Gradient Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Eddy Frequency.Gradient Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Kinetic Energy
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Kinetic Energy.Beta
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Kinetic Energy.Gradient X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Kinetic Energy.Gradient Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Turbulence Kinetic Energy.Gradient Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity u
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity u.Beta
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity u.Gradient X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity u.Gradient Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity u.Gradient Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity v
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity v.Beta
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity v.Gradient X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity v.Gradient Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity v.Gradient Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity w
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity w.Beta
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity w.Gradient X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity w.Gradient Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity w.Gradient Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Absolute Helicity
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Curl X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Curl Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Curl Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Divergence
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Helicity
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Invariant Q
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Lambda 2
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Normal Eigen Helicity
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Real Eigen Helicity
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Real Eigenvalue
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Stretched Swirling Strength
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Swirling Discriminant
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Swirling Normal X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Swirling Normal Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Swirling Normal Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Swirling Strength
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Swirling Vector X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Swirling Vector Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Velocity.Swirling Vector Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Volume
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Volume Porosity
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Volume of Finite Volumes
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Adjacent Temperature
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Distance
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Heat Flux
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Heat Transfer Coefficient
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Scale
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Scale.Gradient X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Scale.Gradient Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Scale.Gradient Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Shear X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Shear Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Wall Shear Z
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:X
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Y
+  Boundary Values = Conservative
+END
+SCALAR VARIABLE:Yplus
+  Boundary Values = Hybrid
+END
+SCALAR VARIABLE:Z
+  Boundary Values = Conservative
+END
+STREAMLINE:Streamline 1
+  Absolute Tolerance = 0.0 [m]
+  Add Sample Vertex Normals = Off
+  Apply Instancing Transform = On
+  Colour = 0.75, 0.75, 0.75
+  Colour Map = Flat
+  Colour Mode = Use Plot Variable
+  Colour Scale = Linear
+  Colour Variable = Velocity
+  Colour Variable Boundary Values = Conservative
+  Cross Periodics = On
+  Culling Mode = No Culling
+  Domain List = /DOMAIN GROUP:All Domains
+  Draw Faces = On
+  Draw Lines = Off
+  Draw Streams = On
+  Draw Symbols = Off
+  Grid Tolerance = 0.01
+  Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+  Lighting = On
+  Line Colour = 0, 0, 0
+  Line Width = 1
+  Location List = SeedPlane
+  Locator Sampling Method = Equally Spaced
+  Max = 0.0 [m s^-1]
+  Maximum Number of Items = 70
+  Min = 0.0 [m s^-1]
+  Number of Samples = 200
+  Number of Sides = 8
+  Random Seed = 1
+  Range = Global
+  Reduction Factor = 1.0
+  Reduction or Max Number = Max Number
+  Sample Spacing = 0.0660087
+  Sampling Accuracy = High
+  Sampling Aspect Ratio = 1
+  Sampling Grid Angle = 0 [degree]
+  Seed Point Type = Equally Spaced Samples
+  Simplify Geometry = Off
+  Specular Lighting = On
+  Stream Drawing Mode = Line
+  Stream Initial Direction = 0 , 0 , 0
+  Stream Size = 1.0
+  Stream Symbol = Ball
+  Streamline Direction = Forward
+  Streamline Maximum Periods = 20
+  Streamline Maximum Segments = 10000
+  Streamline Maximum Time = 0.0 [s]
+  Streamline Solver Type = RungeKutta2
+  Streamline Type = 3D Streamline
+  Streamline Width = 1
+  Surface Drawing = Smooth Shading
+  Surface Streamline Direction = Forward and Backward
+  Symbol Size = 1.0
+  Symbol Start Time = 10.0 [s]
+  Symbol Stop Time = -10.0 [s]
+  Symbol Time Interval = 1.0 [s]
+  Tolerance Mode = Grid Relative
+  Transparency = 0.0
+  Variable = Velocity
+  Variable Boundary Values = Conservative
+  Visibility = Off
+  OBJECT VIEW TRANSFORM:
+    Apply Reflection = Off
+    Apply Rotation = Off
+    Apply Scale = Off
+    Apply Translation = Off
+    Principal Axis = Z
+    Reflection Plane Option = XY Plane
+    Rotation Angle = 0.0 [degree]
+    Rotation Axis From = 0 [m], 0 [m], 0 [m]
+    Rotation Axis To = 0 [m], 0 [m], 0 [m]
+    Rotation Axis Type = Principal Axis
+    Scale Vector = 1 , 1 , 1
+    Translation Vector = 0 [m], 0 [m], 0 [m]
+    X = 0.0 [m]
+    Y = 0.0 [m]
+    Z = 0.0 [m]
+  END
+END
+SYMBOL CONTROL:
+  Symbol Size = 1
+END
+SYSTEM COLOUR MAP:Blue to White
+  Colour Map Colours = 0, 0, 0, 1, 1, 1, 1, 1, 1, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:FLUENT Rainbow
+  Colour Map Colours = 0, 0, 0, 1, 1, 0.278, 0, 1, 1, 1, 0.389, 0, 1, 0.5, 1, \
+0.444, 0, 1, 0, 1, 0.667, 1, 1, 0, 1, 1, 1, 0, 0, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:Greyscale
+  Colour Map Colours = 0, 0.01, 0.01, 0.01, 1, 1, 0.99, 0.99, 0.99, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:Inverse Greyscale
+  Colour Map Colours = 0, 0.99, 0.99, 0.99, 1, 1, 0.01, 0.01, 0.01, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:Inverse Rainbow
+  Colour Map Colours = 0, 1, 0, 0, 1, 0.10, 1, 0.5, 0, 1, 0.25, 1, 1, 0, 1, \
+0.43, 0.5, 1, 0, 1, 0.50, 0, 1, 0, 1, 0.56, 0, 1, 0.5, 1, 0.75, 0, 1, 1, 1, 0.90,\
+ 0, 0.5, 1, 1, 1, 0, 0, 1, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:Inverse Rainbow 6
+  Colour Map Colours = 0, 1, 0, 1, 1, 0.1, 1, 0, 0.5, 1, 0.2, 1, 0, 0, 1, 0.28,\
+ 1, 0.5, 0, 1, 0.4, 1, 1, 0, 1, 0.55, 0.5, 1, 0, 1, 0.6, 0, 1, 0, 1, 0.65, 0, 1, \
+0.5, 1, 0.8, 0, 1, 1, 1, 0.92, 0, 0.5, 1, 1, 1, 0, 0, 1, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:Minimal Map
+  Colour Map Colours = 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:Rainbow
+  Colour Map Colours = 0, 0, 0, 1, 1, 0.10, 0, 0.5, 1, 1, 0.25, 0, 1, 1, 1, \
+0.44, 0, 1, 0.5, 1, 0.50, 0, 1, 0, 1, 0.57, 0.5, 1, 0, 1, 0.75, 1, 1, 0, 1, 0.90,\
+ 1, 0.5, 0, 1, 1, 1, 0, 0, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:Rainbow 6
+  Colour Map Colours = 0, 0, 0, 1, 1, 0.08, 0, 0.5, 1, 1, 0.2, 0, 1, 1, 1, \
+0.35, 0, 1, 0.5, 1, 0.4, 0, 1, 0, 1, 0.45, 0.5, 1, 0, 1, 0.6, 1, 1, 0, 1, 0.72, \
+1, 0.5, 0, 1, 0.8, 1, 0, 0, 1, 0.9, 1, 0, 0.5, 1, 1, 1, 0, 1, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:Transparency
+  Colour Map Colours = 0, 1, 1, 1, 0, 1, 1, 1, 1, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:White to Blue
+  Colour Map Colours = 0, 1, 1, 1, 1, 1, 0, 0, 1, 1
+  Colour Map Divisions = 2
+  Colour Map Storage Type = System
+  Colour Map Type = Gradient
+END
+SYSTEM COLOUR MAP:Zebra
+  Colour Map Colours = 0, 1, 1, 1, 1, 1.0, 0, 0, 0, 1
+  Colour Map Divisions = 5
+  Colour Map Storage Type = System
+  Colour Map Type = Zebra
+END
+TITLE PAGE:
+  Include ANSYS Logo = true
+  Include Custom Logo = false
+  Include Date = true
+  Include TOC = true
+  Show Captions in TOC = true
+  Title Page Exists = true
+END
+UNIT SYSTEM:
+  Preferred Units System = SI
+  Update Units to Preferred = Off
+END
+USER SCALAR VARIABLE:Cp
+  Boundary Values = Conservative
+  Calculate Global Range = Off
+  Component Index = 1
+  Expression = CPEXP
+  Recipe = Expression
+  Variable to Copy = Pressure
+  Variable to Gradient = Pressure
+END
+USER SCALAR VARIABLE:shearwall
+  Boundary Values = Conservative
+  Calculate Global Range = Off
+  Component Index = 1
+  Expression = shearEXP
+  Recipe = Expression
+  Variable to Copy = Pressure
+  Variable to Gradient = Pressure
+END
+USER SCALAR VARIABLE:yplus
+  Boundary Values = Conservative
+  Calculate Global Range = Off
+  Component Index = 1
+  Expression = yplusexp
+  Recipe = Expression
+  Variable to Copy = Pressure
+  Variable to Gradient = Pressure
+END
+VECTOR VARIABLE:Boundary Normal on PressurePorts
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Boundary Normal on outlet
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Density.Gradient
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Force
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Normal
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Normalized Force on PressurePorts
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Normalized Force on outlet
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Pressure.Gradient
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Total Enthalpy.Gradient
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Turbulence Eddy Frequency.Gradient
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Turbulence Kinetic Energy.Gradient
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Velocity
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Velocity u.Gradient
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Velocity v.Gradient
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Velocity w.Gradient
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Velocity.Curl
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Velocity.Swirling Normal
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Velocity.Swirling Vector
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Wall Scale.Gradient
+  Boundary Values = Conservative
+END
+VECTOR VARIABLE:Wall Shear
+  Boundary Values = Conservative
+END
+VIEW:PressurePicture
+  Angular Coord Shift = 0.0
+  Auto Center = false
+  Axis Visibility = true
+  Border Visibility = false
+  Camera Mode = User Specified
+  Clip Scene = false
+  Coord Transform = Cartesian
+  Hide Difference Case = false
+  Highlight Type = Surface Mesh
+  Is A Figure = true
+  Light Angle = 50, 110
+  Object Visibility List = /CONTOUR:Cp countour,/DEFAULT LEGEND:Default Legend \
+PressurePicture,/PLANE:Midplane,/POLYLINE:PressurePorts,/WIREFRAME:Wireframe
+  Projection = Orthographic
+  Ruler Visibility = true
+  Standard View = Isometric Y
+  Valid Case = All Cases
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pan = 2.25295,-0.0509771
+    Pivot Point = 2.46244,0,0.223875
+    Rotation = -90, 0, 0
+    Rotation Quaternion = 0,0,0,1
+    Scale = 3.83197
+    Send To Viewer = True
+  END
+END
+VIEW:Turbo Initialisation View
+  Angular Coord Shift = 0.0
+  Auto Center = false
+  Axis Visibility = true
+  Border Visibility = false
+  Camera Mode = User Specified
+  Clip Scene = false
+  Coord Transform = Cartesian
+  Hide Difference Case = false
+  Highlight Type = Surface Mesh
+  Is A Figure = false
+  Light Angle = 50, 110
+  Object Visibility List = /WIREFRAME:Wireframe
+  Projection = Orthographic
+  Ruler Visibility = true
+  Standard View = Isometric Y
+  Valid Case = All Cases
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pan = 0,0
+    Pivot Point = 2.46244,0,0.223875
+    Rotation = -90, 0, 0
+    Rotation Quaternion = 0.279848,-0.364705,-0.115917,0.880476
+    Scale = 0.118414
+    Send To Viewer = True
+  END
+END
+VIEW:View 1
+  Angular Coord Shift = 0.0
+  Auto Center = false
+  Axis Visibility = true
+  Border Visibility = false
+  Camera Mode = User Specified
+  Clip Scene = false
+  Coord Transform = Cartesian
+  Hide Difference Case = false
+  Highlight Type = Surface Mesh
+  Is A Figure = false
+  Light Angle = 50, 110
+  Object Visibility List = /DEFAULT LEGEND:Default Legend View 1,/\
+PLANE:Midplane,/PLANE:SeedPlane,/POLYLINE:PressurePorts,/WIREFRAME:Wireframe
+  Projection = Orthographic
+  Ruler Visibility = true
+  Standard View = Isometric Y
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pan = -0.314372,0.168577
+    Pivot Point = -0.0634625,0.174614,0.223898
+    Rotation = -90, 0, 0
+    Rotation Quaternion = 0,0,0,1
+    Scale = 12.0763
+    Send To Viewer = True
+  END
+END
+VIEW:View 2
+  Angular Coord Shift = 0.0
+  Auto Center = false
+  Axis Visibility = true
+  Border Visibility = false
+  Camera Mode = User Specified
+  Clip Scene = false
+  Coord Transform = Cartesian
+  Hide Difference Case = false
+  Highlight Type = Surface Mesh
+  Is A Figure = false
+  Light Angle = 50, 110
+  Object Visibility List = /DEFAULT LEGEND:Default Legend View 2,/\
+WIREFRAME:Wireframe
+  Projection = Orthographic
+  Ruler Visibility = true
+  Standard View = Isometric Y
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pan = 0,0
+    Pivot Point = 0,0,0
+    Rotation = -90, 0, 0
+    Rotation Quaternion = 0.279848,-0.364705,-0.115917,0.880476
+    Scale = 1
+    Send To Viewer = True
+  END
+END
+VIEW:View 3
+  Angular Coord Shift = 0.0
+  Auto Center = false
+  Axis Visibility = true
+  Border Visibility = false
+  Camera Mode = User Specified
+  Clip Scene = false
+  Coord Transform = Cartesian
+  Hide Difference Case = false
+  Highlight Type = Surface Mesh
+  Is A Figure = false
+  Light Angle = 50, 110
+  Object Visibility List = /DEFAULT LEGEND:Default Legend View 3,/\
+PLANE:Midplane,/WIREFRAME:Wireframe
+  Projection = Orthographic
+  Ruler Visibility = true
+  Standard View = Isometric Y
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pan = 0,0
+    Pivot Point = 0,0,0
+    Rotation = -90, 0, 0
+    Rotation Quaternion = 0.0427445,-0.0643065,-0.0826825,0.993578
+    Scale = 0.123889
+    Send To Viewer = True
+  END
+END
+VIEW:View 4
+  Angular Coord Shift = 0.0
+  Auto Center = false
+  Axis Visibility = true
+  Border Visibility = false
+  Camera Mode = User Specified
+  Clip Scene = false
+  Coord Transform = Cartesian
+  Hide Difference Case = false
+  Highlight Type = Surface Mesh
+  Is A Figure = false
+  Light Angle = 50, 110
+  Object Visibility List = /DEFAULT LEGEND:Default Legend View 4,/\
+WIREFRAME:Wireframe
+  Projection = Orthographic
+  Ruler Visibility = true
+  Standard View = Isometric Y
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pan = 0,0
+    Pivot Point = 0,0,0
+    Rotation = -90, 0, 0
+    Rotation Quaternion = 0.279848,-0.364705,-0.115917,0.880476
+    Scale = 1
+    Send To Viewer = True
+  END
+END
+VIEWPORT MANAGER:
+  Background Colour = 0.42, 0.55, 0.871
+  Background Colour 2 = 1,1,1
+  Background Colour Type = Top-Bottom Gradient
+  Background Image = Mountains
+  Background Image Mapping = Flat
+  Background Image Type = Predefined
+  Background Type = Colour
+  Global Edge Colour = 0,0,0
+  Global Text Colour = 0,0,0
+  Maximized Viewport = -1
+  Synchronize Camera = false
+  Synchronize Visibility = true
+  View Length Units = m
+  Viewport 1 View = View 3
+  Viewport 2 View = View 1
+  Viewport 3 View = View 2
+  Viewport 4 View = View 4
+  Viewport Layout = No Split
+  X Split = 0.5
+  Y Split = 0.5
+END
+WIREFRAME:Wireframe
+  Apply Instancing Transform = On
+  Colour = 0, 0, 0
+  Domain List = All Domains
+  Edge Angle = 30 [degree]
+  Instancing Transform = Default Transform
+  Line Colour Mode = Default
+  Line Width = 1
+  Show Surface Mesh = Off
+  Visibility = On
+END

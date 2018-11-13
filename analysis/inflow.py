@@ -34,6 +34,7 @@ print('Density = {}'.format(rho))
 print('Velocity = {}'.format(V))
 print('Temperature = {}'.format(t_static))
 print('Static Pressure = {}'.format(p_static))
+print('Dynamic Pressure = {}'.format(0.5 * rho * V**2))
 
 # V_pres = sqrt((p_total - p_static)/(0.5 * rho))
 # print(V_pres)
@@ -44,5 +45,13 @@ print('Chord Length = {}'.format(c))
 
 sqrt(170.847/rho)
 
+
 def yplus():
-    return 
+    return
+
+
+def get_coefficient(force):
+    return force / (0.5 * rho * (V**2) * c**2)
+
+
+print(get_coefficient(3679.2))

@@ -85,7 +85,8 @@ def get_dir(folder_name=None):
                             % (folder_name, type(folder_name)))
 
 
-DIRS = {'DATA_DIR': get_dir('data')}
+DIRS = {'DATA_DIR': get_dir('data'),
+        'FIGURE_DIR': get_dir('analysis/figures')}
 
 if __name__ == '__main__':
     print get_dir('user')
